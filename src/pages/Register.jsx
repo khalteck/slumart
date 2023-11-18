@@ -48,7 +48,7 @@ const Register = () => {
 
   return (
     <div className="w-full flex md:flex-row flex-col font-mont">
-      <div className="w-full h-[250px] md:h-screen bg-caro3 bg-no-repeat bg-cover bg-center relative">
+      <div className="w-full h-[250px] md:h-screen bg-caro1 bg-no-repeat bg-cover bg-center relative">
         <div className="w-full h-full absolute top-0 left-0 p-5 md:p-10 bg-black/50 flex flex-col">
           {/* <img
             alt=""
