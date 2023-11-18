@@ -1,0 +1,18 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        caro1: "url('/images/carousel4.jpg')",
+        caro2: "url('/images/carousel2.jpg')",
+        caro3: "url('/images/explore.png')",
+      },
+    },
+  },
+  plugins: [],
+};
