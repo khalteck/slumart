@@ -8,27 +8,40 @@ const HomeSection1 = () => {
       <div className="w-full">
         <Carousel />
       </div>
-      <div className="w-full h-fit md:h-[20vh] flex flex-col md:flex-row relative top-[-20px] bg-black/50">
-        <div className="w-full h-full bg-red-400/70 p-2 md:p-5 flex flex-col gap-3 font-light text-white md:text-[1.5rem] items-center md:pt-[30px]">
-          <h1 className="font-bold">Immerse in Creativity</h1>
-          <button className="border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem]">
-            View Gallery
-          </button>
+      <div className="w-full md:min-h-[150px] h-[450px] md:h-[30vh] flex flex-col md:flex-row relative top-[-20px]">
+        <div className="w-full h-full bg-caro1 bg-no-repeat bg-cover text-white md:text-[1.5rem] items-center md:pt-[30px] relative">
+          <div className="w-full h-full absolute top-0 left-0 p-2 md:p-6 flex flex-col gap-1 items-center bg-blue-500/70 font">
+            <h1 className="font-bold leading-tight text-[1.5rem] md:text-[2.5rem]">
+              15,000+
+            </h1>
+            <p className="leading-tight">Volunteers</p>
+            <button className="w-fit border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem] mt-1 md:mt-4">
+              Join Us
+            </button>
+          </div>
         </div>
-        <div className="w-full h-full bg-[#f97316]/70 p-2 md:p-5 flex flex-col gap-3 font-light text-white md:text-[1.5rem] items-center md:pt-[30px]">
-          <h1 className="font-bold">Elevating Artistry</h1>
-          <button className="border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem]">
-            View Blog
-          </button>
+
+        <div className="w-full h-full bg-caro3 bg-no-repeat bg-cover text-white md:text-[1.5rem] items-center md:pt-[30px] relative">
+          <div className="w-full h-full absolute top-0 left-0 p-2 md:p-6 flex flex-col gap-1 items-center bg-green-500/70 font">
+            <h1 className="font-bold leading-tight text-[1.5rem] md:text-[2.5rem]">
+              380+
+            </h1>
+            <p className="leading-tight">Sponsors</p>
+            <button className="w-fit border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem] mt-1 md:mt-4">
+              Learn More
+            </button>
+          </div>
         </div>
-        <div className="w-full h-full bg-yellow-400/70  p-2 md:p-5 flex flex-col gap-3 font-light text-white md:text-[1.5rem] items-center md:pt-[30px]">
-          <h1 className="font-bold">Canvas of Infinite Inspiration</h1>
-          <button
-            onClick={() => navigate("/about")}
-            className="border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem]"
-          >
-            Learn More
-          </button>
+        <div className="w-full h-full bg-caro2 bg-no-repeat bg-cover text-white md:text-[1.5rem] items-center md:pt-[30px] relative">
+          <div className="w-full h-full absolute top-0 left-0 p-2 md:p-6 flex flex-col gap-1 items-center bg-red-500/70 font">
+            <h1 className="font-bold leading-tight text-[1.5rem] md:text-[2.5rem]">
+              77+
+            </h1>
+            <p className="leading-tight">Awards</p>
+            <button className="w-fit border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem] mt-1 md:mt-4">
+              Learn More
+            </button>
+          </div>
         </div>
       </div>
     </section>

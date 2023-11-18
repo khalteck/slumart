@@ -35,7 +35,7 @@ const Header = () => {
         scrollBackground
           ? "bg-gray-100 text-black shadow-md md:h-[80px]"
           : "bg-transparent md:bg-white text-black md:h-[130px] lg:h-[160px]"
-      } flex md:gap-20 lg:gap-[150px] justify-between px-3 lg:px-[10%] items-center transition-all duration-700 fixed top-0 left-0 z-[100] font-mont`}
+      } flex justify-between px-3 lg:px-[10%] items-center transition-all duration-700 fixed top-0 left-0 z-[100] font-mont`}
     >
       <Link to="/">
         {scrollBackground ? (
@@ -94,9 +94,9 @@ const Header = () => {
           } rounded-lg`}
         ></div>{" "}
       </div>
-      <div className="w-full hidden md:flex flex-col">
+      <div className="w-full hidden md:flex flex-col items-center justify-center">
         {!scrollBackground && (
-          <div className="w-full h-[80px] flex gap-12 items-center border-b border-gray-400 sm:text-[.8rem] lg:text-[.9rem]">
+          <div className="w-full h-[80px] flex gap-12 items-center justify-center sm:text-[.8rem] lg:text-[.9rem]">
             <div
               onClick={() => navigate("/")}
               className="flex gap-3 items-center cursor-pointer"
@@ -106,9 +106,9 @@ const Header = () => {
                 SlumArt
               </h1>
             </div>
-            <div
+            {/* <div
               onClick={() => navigate("/login")}
-              className="ml-auto flex gap-3 items-center text-[#f97316] text-[1.25rem] font-medium cursor-pointer"
+              className=" flex gap-3 items-center text-[#f97316] text-[1.25rem] font-medium cursor-pointer"
             >
               <img
                 alt=""
@@ -116,11 +116,11 @@ const Header = () => {
                 className="w-10 h-10"
               />
               <p>Login</p>
-            </div>
+            </div> */}
           </div>
         )}
 
-        <ul className="w-full sm:h-[80px] lg:h-[60px] gap-6 text-[1.1rem] items-center md:flex uppercase">
+        <ul className="sm:h-[80px] lg:h-[60px] gap-6 text-[1.1rem] items-center justify-center md:flex uppercase">
           <li
             onClick={() => navigate("/")}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
@@ -182,7 +182,18 @@ const Header = () => {
             Contact
           </li>
 
-          {scrollBackground && (
+          <li
+            // onClick={() => navigate("/contact")}
+            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+              currentPage === "/contact"
+                ? "text-[#f97316] font-bold"
+                : "text-black"
+            }`}
+          >
+            Join Us
+          </li>
+
+          {/* {scrollBackground && (
             <li className="gap-4 items-center ml-auto flex">
               <div className="ml-auto flex gap-3 items-center text-[#f97316] text-[1.25rem] font-medium">
                 <img
@@ -193,7 +204,7 @@ const Header = () => {
                 <p>Login</p>
               </div>
             </li>
-          )}
+          )} */}
         </ul>
       </div>
 
@@ -282,11 +293,21 @@ const Header = () => {
             <li
               onClick={() => {
                 handleClick();
-                navigate("/contact");
+                // navigate("/contact");
               }}
               className="py-2 uppercase"
             >
               Contact
+            </li>
+
+            <li
+              onClick={() => {
+                handleClick();
+                // navigate("/contact");
+              }}
+              className="py-2 uppercase"
+            >
+              Join us
             </li>
           </ul>
         </div>

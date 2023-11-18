@@ -20,13 +20,15 @@ const HomeSection3 = () => {
         <img
           data-aos="fade-right"
           data-aos-duration="1000"
+          data-aos-delay="300"
           alt=""
-          src="/images/feat1.jpg"
+          src="/images/explore.png"
           className="w-full h-[400px] md:h-[550px] object-cover object-top"
         />
         <div
           data-aos="fade-left"
           data-aos-duration="1000"
+          data-aos-delay="300"
           className="w-full flex flex-col gap-4"
         >
           <h3 className="font-bold text-[1.5rem]">
