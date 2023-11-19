@@ -1,6 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="bg-neutral-800 text-center text-neutral-200 lg:text-left">
+    <footer
+      id="footer"
+      className="bg-neutral-800 text-center text-neutral-200 lg:text-left"
+    >
       <div className="flex items-center justify-center border-b-2 border-neutral-200 px-3 md:px-[10%] py-6 dark:border-neutral-500 lg:justify-between">
         <div className="mr-12 hidden lg:block">
           <span>Get connected with us on social networks:</span>

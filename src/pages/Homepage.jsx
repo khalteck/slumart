@@ -8,6 +8,7 @@ import HomeSection3 from "../components/HomeSection3";
 import HomeSection4 from "../components/HomeSection4";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ScrollToTop from "../ScrollToTop";
 
 const Homepage = () => {
   useEffect(() => {
@@ -30,6 +31,7 @@ const Homepage = () => {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </>
   );
 };

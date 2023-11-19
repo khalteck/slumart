@@ -29,6 +29,24 @@ const Header = () => {
     setOpenMenu((prevState) => !prevState);
   }
 
+  function scrollToFooter() {
+    const footerSection = document.getElementById("footer");
+    if (footerSection) {
+      footerSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  function scrollToTeam() {
+    if (currentPage?.includes("about")) {
+      const teamSection = document.getElementById("team");
+      if (teamSection) {
+        teamSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/about#team");
+    }
+  }
+
   return (
     <header
       className={`w-full h-[60px] ${
@@ -140,24 +158,46 @@ const Header = () => {
             About
           </li>
           <li
-            onClick={() => navigate("/gallery")}
+            onClick={() => navigate("/projects")}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
-              currentPage === "/gallery"
+              currentPage === "/projects"
                 ? "text-[#f97316] font-bold"
                 : "text-black"
             }`}
           >
-            Gallery
+            Projects
           </li>
           <li
-            onClick={() => navigate("/blog")}
+            onClick={() => navigate("/media")}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
-              currentPage === "/blog"
+              currentPage === "/media"
                 ? "text-[#f97316] font-bold"
                 : "text-black"
             }`}
           >
-            Blog
+            Media
+          </li>
+
+          <li
+            onClick={() => scrollToTeam()}
+            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+              currentPage === "/team"
+                ? "text-[#f97316] font-bold"
+                : "text-black"
+            }`}
+          >
+            Team
+          </li>
+
+          <li
+            onClick={() => navigate("/volunteers")}
+            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+              currentPage === "/volunteer"
+                ? "text-[#f97316] font-bold"
+                : "text-black"
+            }`}
+          >
+            Volunteers
           </li>
 
           <li
@@ -172,7 +212,7 @@ const Header = () => {
           </li>
 
           <li
-            // onClick={() => navigate("/contact")}
+            onClick={() => scrollToFooter()}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
               currentPage === "/contact"
                 ? "text-[#f97316] font-bold"
@@ -180,17 +220,6 @@ const Header = () => {
             }`}
           >
             Contact
-          </li>
-
-          <li
-            // onClick={() => navigate("/contact")}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
-              currentPage === "/contact"
-                ? "text-[#f97316] font-bold"
-                : "text-black"
-            }`}
-          >
-            Join Us
           </li>
 
           {/* {scrollBackground && (
@@ -263,21 +292,41 @@ const Header = () => {
             <li
               onClick={() => {
                 handleClick();
-                navigate("/gallery");
+                navigate("/projects");
               }}
               className="py-2 uppercase"
             >
-              Gallery
+              Projects
             </li>
 
             <li
               onClick={() => {
                 handleClick();
-                navigate("/blog");
+                navigate("/media");
               }}
               className="py-2 uppercase"
             >
-              Blog
+              Media
+            </li>
+
+            <li
+              onClick={() => {
+                handleClick();
+                scrollToTeam();
+              }}
+              className="py-2 uppercase"
+            >
+              Team
+            </li>
+
+            <li
+              onClick={() => {
+                handleClick();
+                navigate("/volunteers");
+              }}
+              className="py-2 uppercase"
+            >
+              Volunteers
             </li>
 
             <li
@@ -293,21 +342,11 @@ const Header = () => {
             <li
               onClick={() => {
                 handleClick();
-                // navigate("/contact");
+                scrollToFooter();
               }}
               className="py-2 uppercase"
             >
               Contact
-            </li>
-
-            <li
-              onClick={() => {
-                handleClick();
-                // navigate("/contact");
-              }}
-              className="py-2 uppercase"
-            >
-              Join us
             </li>
           </ul>
         </div>

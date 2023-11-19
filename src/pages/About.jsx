@@ -1,8 +1,24 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useEffect } from "react";
+import ScrollToTop from "../ScrollToTop";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import TeamCard from "../components/TeamCard";
+import team from "../data/team.json";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#team") {
+      const teamSection = document.getElementById("team");
+      if (teamSection) {
+        teamSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location.hash]);
+
   return (
     <>
       <Header />
@@ -37,17 +53,17 @@ const About = () => {
           </div>
 
           <div className="w-full mt-10">
-            <div className="w-full flex flex-col rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-neutral-700 md:flex-row">
+            <div className="w-full flex flex-col rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-neutral-200 text-neutral-700 lg:flex-row">
               <img
-                className="h-96 w-full rounded-t-lg object-cover md:h-[500px] md:!rounded-none md:!rounded-l-lg"
+                className="h-96 w-full lg:w-1/2 rounded-t-lg object-cover md:h-[500px] md:!rounded-none md:!rounded-l-lg"
                 src="/images/story.jpg"
                 alt=""
               />
               <div className="w-full flex flex-col justify-start p-6">
-                <h5 className="mb-2 text-[2.5rem] font-medium text-neutral-50">
+                <h5 className="mb-2 text-[2.5rem] font-medium">
                   About the Project{" "}
                 </h5>
-                <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                <p className="mb-4 text-base">
                   This project will have twenty intakes (children from ten slum)
                   between ages ten to seventeen. They will undergo trainings
                   from the School of Art. The training runs for a three months.
@@ -57,6 +73,24 @@ const About = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section
+          id="team"
+          className="w-full px-3 md:px-[10%] py-[80px] bg-neutral-100"
+        >
+          <h2 className="font-bold text-[1.5rem] md:text-[2rem]">
+            <div className="w-fit mx-auto mb-4">
+              MEET OUR TEAM
+              <div className="w-[70%] h-3 bg-[#f97316] mt-1"></div>
+            </div>
+          </h2>
+
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10 mt-12">
+            {team?.map((item, index) => {
+              return <TeamCard key={index} item={item} />;
+            })}
           </div>
         </section>
 
@@ -103,6 +137,7 @@ const About = () => {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </>
   );
 };
