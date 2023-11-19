@@ -40,7 +40,7 @@ const About = () => {
             <div className="w-full flex flex-col rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-neutral-700 md:flex-row">
               <img
                 className="h-96 w-full rounded-t-lg object-cover md:h-[500px] md:!rounded-none md:!rounded-l-lg"
-                src="https://tecdn.b-cdn.net/wp-content/uploads/2020/06/vertical.jpg"
+                src="/images/story.jpg"
                 alt=""
               />
               <div className="w-full flex flex-col justify-start p-6">
@@ -61,7 +61,7 @@ const About = () => {
         </section>
 
         <section
-          className={`w-full h-[600px] bg-cover bg-center relative z-0 bg-caro3 text-white`}
+          className={`w-full h-[600px] md:h-[500px] bg-cover bg-center relative z-0 bg-caro3 text-white`}
         >
           <div className="w-full h-full absolute top-0 left-0 bg-black/60 md:flex justify-center">
             <div className="flex flex-col gap-3 px-3 md:px-[10%] py-12 relative">
