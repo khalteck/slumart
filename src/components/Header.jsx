@@ -158,6 +158,16 @@ const Header = () => {
             About
           </li>
           <li
+            onClick={() => scrollToTeam()}
+            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+              currentPage === "/team"
+                ? "text-[#f97316] font-bold"
+                : "text-black"
+            }`}
+          >
+            Team
+          </li>
+          <li
             onClick={() => navigate("/projects")}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
               currentPage === "/projects"
@@ -168,25 +178,14 @@ const Header = () => {
             Projects
           </li>
           <li
-            onClick={() => navigate("/media")}
+            onClick={() => navigate("/countries")}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
-              currentPage === "/media"
+              currentPage === "/countries"
                 ? "text-[#f97316] font-bold"
                 : "text-black"
             }`}
           >
-            Media
-          </li>
-
-          <li
-            onClick={() => scrollToTeam()}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
-              currentPage === "/team"
-                ? "text-[#f97316] font-bold"
-                : "text-black"
-            }`}
-          >
-            Team
+            Countries
           </li>
 
           <li
@@ -292,6 +291,16 @@ const Header = () => {
             <li
               onClick={() => {
                 handleClick();
+                scrollToTeam();
+              }}
+              className="py-2 uppercase"
+            >
+              Team
+            </li>
+
+            <li
+              onClick={() => {
+                handleClick();
                 navigate("/projects");
               }}
               className="py-2 uppercase"
@@ -302,21 +311,11 @@ const Header = () => {
             <li
               onClick={() => {
                 handleClick();
-                navigate("/media");
+                navigate("/countries");
               }}
               className="py-2 uppercase"
             >
-              Media
-            </li>
-
-            <li
-              onClick={() => {
-                handleClick();
-                scrollToTeam();
-              }}
-              className="py-2 uppercase"
-            >
-              Team
+              Countries
             </li>
 
             <li

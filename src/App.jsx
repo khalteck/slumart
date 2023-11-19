@@ -6,7 +6,7 @@ import Loader from "./components/Loader";
 const Homepage = lazy(() => import("./pages/Homepage"));
 const About = lazy(() => import("./pages/About"));
 const Projects = lazy(() => import("./pages/Projects"));
-const Media = lazy(() => import("./pages/Media"));
+const Countries = lazy(() => import("./pages/Countries"));
 const Volunteers = lazy(() => import("./pages/Volunteers"));
 const Shop = lazy(() => import("./pages/Shop"));
 const Login = lazy(() => import("./pages/Login"));
@@ -22,7 +22,7 @@ function App() {
         <Route path="/about" element={<About />} />
 
         <Route path="/projects" element={<Projects />} />
-        <Route path="/media" element={<Media />} />
+        <Route path="/countries" element={<Countries />} />
         <Route path="/volunteers" element={<Volunteers />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/login" element={<Login />} />

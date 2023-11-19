@@ -11,6 +11,7 @@ export default {
         caro1: "url('/images/carousel4.jpg')",
         caro2: "url('/images/carousel2.jpg')",
         caro3: "url('/images/explore.png')",
+        projects: "url('/images/projects.jpg')",
       },
     },
   },

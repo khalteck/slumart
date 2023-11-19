@@ -111,7 +111,7 @@ const HomeSection2 = () => {
           className="font-bold text-[1.5rem] md:text-[2rem]"
         >
           <div className="w-fit mx-auto">
-            RECENT CHARITY CAMPAIGNS
+            FEATURED PROJECTS
             <div className="w-[70%] h-3 bg-[#f97316] mt-1"></div>
           </div>
         </h2>
