@@ -42,7 +42,7 @@ const HomeSection3 = () => {
             ease of art rental today.
           </p>
           <button
-            onClick={() => navigate("/gallery")}
+            onClick={() => navigate("/projects")}
             className="w-fit bg-[#f97316] hover:bg-white hover:text-[#f97316] border border-[#f97316] px-5 md:px-8 py-2 md:py-3 md:mt-3 rounded-sm text-white font-medium transition-all duration-300"
           >
             View More

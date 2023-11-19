@@ -15,7 +15,10 @@ const HomeSection1 = () => {
               15,000+
             </h1>
             <p className="leading-tight">Volunteers</p>
-            <button className="w-fit border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem] mt-1 md:mt-4">
+            <button
+              onClick={() => navigate("/volunteers")}
+              className="w-fit border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem] mt-1 md:mt-4"
+            >
               Join Us
             </button>
           </div>
@@ -27,7 +30,10 @@ const HomeSection1 = () => {
               380+
             </h1>
             <p className="leading-tight">Sponsors</p>
-            <button className="w-fit border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem] mt-1 md:mt-4">
+            <button
+              onClick={() => navigate("/about")}
+              className="w-fit border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem] mt-1 md:mt-4"
+            >
               Learn More
             </button>
           </div>
@@ -38,7 +44,10 @@ const HomeSection1 = () => {
               77+
             </h1>
             <p className="leading-tight">Awards</p>
-            <button className="w-fit border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem] mt-1 md:mt-4">
+            <button
+              onClick={() => navigate("/projects")}
+              className="w-fit border-2 border-white rounded-sm px-3 py-1 md:py-2 font-bold text-[.85rem] mt-1 md:mt-4"
+            >
               Learn More
             </button>
           </div>
