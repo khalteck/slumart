@@ -4,11 +4,11 @@ import Carousel from "./Carousel";
 const HomeSection1 = () => {
   const navigate = useNavigate();
   return (
-    <section className="w-full min-h-fit h-screen flex flex-col">
+    <section className="w-full min-h-fit md:h-screen flex flex-col">
       <div className="w-full">
         <Carousel />
       </div>
-      <div className="w-full md:min-h-[150px] h-[450px] md:h-[30vh] flex flex-col md:flex-row relative top-[-20px]">
+      <div className="w-full md:min-h-[150px] h-[400px] md:h-[30vh] flex flex-col md:flex-row relative top-[-20px]">
         <div className="w-full h-full bg-caro1 bg-no-repeat bg-cover text-white md:text-[1.5rem] items-center md:pt-[30px] relative">
           <div className="w-full h-full absolute top-0 left-0 p-2 md:p-6 flex flex-col gap-1 items-center bg-blue-500/70 font">
             <h1 className="font-bold leading-tight text-[1.5rem] md:text-[2.5rem]">

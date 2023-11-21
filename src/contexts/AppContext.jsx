@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { createContext, useContext } from "react";
-import { useLocation } from "react-router-dom";
+import axios from "axios";
+import { createContext, useContext, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const AppContext = createContext();
 
@@ -9,10 +10,35 @@ const AppContextProvider = ({ children }) => {
   const location = useLocation();
   let currentPage = location.pathname;
 
+  const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
+  const [sendError, setSendError] = useState(false);
+
+  async function register(data) {
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        "https://slumart-production.up.railway.app/slum/register/",
+        data
+      );
+
+      console.log(response);
+    } catch (error) {
+      console.log("error =>", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <AppContext.Provider
       value={{
         currentPage,
+        loading,
+        sendError,
+        setSendError,
+        register,
       }}
     >
       {children}

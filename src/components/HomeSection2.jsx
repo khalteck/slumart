@@ -16,14 +16,14 @@ const HomeSection2 = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="w-full min-w-[18rem] rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-neutral-200 py-4 flex flex-col"
+          className="w-full min-w-[18rem] rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-neutral-200 bg-transparent py-4 flex flex-col"
         >
           <img
             alt=""
             src="/images/vol.png"
-            className="w-[80px] h-[80px] rounded-full mx-auto"
+            className="w-10 h-10 rounded-full mx-auto"
           />
-          <div className="border-b-2 border-[#f97316]/30 px-6 py-3 text-black font-medium text-xl text-center">
+          <div className="px-6 py-3 text-black font-medium text-xl text-center">
             Become a Volunteer
           </div>
           <div className="p-6">
@@ -47,14 +47,14 @@ const HomeSection2 = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="w-full min-w-[18rem] rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-neutral-200 py-4 flex flex-col"
+          className="w-full min-w-[18rem] rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-neutral-200 bg-transparent py-4 flex flex-col"
         >
           <img
             alt=""
             src="/images/icons8-money-50.png"
-            className="w-[80px] h-[80px] rounded-full mx-auto"
+            className="w-10 h-10 rounded-full mx-auto"
           />
-          <div className="border-b-2 border-[#f97316]/30 px-6 py-3 text-black font-medium text-xl text-center">
+          <div className="px-6 py-3 text-black font-medium text-xl text-center">
             Donate to Support
           </div>
           <div className="p-6">
@@ -76,14 +76,14 @@ const HomeSection2 = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
-          className="w-full min-w-[18rem] rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-neutral-200 py-4 flex flex-col"
+          className="w-full min-w-[18rem] rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-neutral-200 bg-transparent py-4 flex flex-col"
         >
           <img
             alt=""
             src="/images/icons8-project-50.png"
-            className="w-[80px] h-[80px] mx-auto"
+            className="w-10 h-10 mx-auto"
           />
-          <div className="border-b-2 border-[#f97316]/30 px-6 py-3 text-black font-medium text-xl text-center">
+          <div className="px-6 py-3 text-black font-medium text-xl text-center">
             The Project
           </div>
           <div className="p-6">

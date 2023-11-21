@@ -13,6 +13,7 @@ export default {
         caro3: "url('/images/explore.png')",
         projects: "url('/images/projects.jpg')",
         countries: "url('/images/countries.jpg')",
+        reg: "url('/images/volunteer.jpg')",
       },
     },
   },

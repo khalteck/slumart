@@ -2,8 +2,11 @@
 import ScrollToTop from "../ScrollToTop";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { useNavigate } from "react-router-dom";
 
 const Volunteers = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Header />
@@ -16,15 +19,46 @@ const Volunteers = () => {
               <h1
                 className={`w-full text-[2rem] md:text-[3.5rem] md:mt-12 text-center font-bold text-white leading-tight scale first-section-text`}
               >
-                Volunteer
+                Become a Volunteer
               </h1>
+              <button
+                onClick={() => navigate("/register")}
+                className="w-fit bg-[#f97316] hover:bg-white hover:text-[#f97316] border border-[#f97316] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
+              >
+                Register
+              </button>
             </div>
           </div>
         </section>
 
-        <div className="w-full min-h-[500px] md:pt-[150px] bg-gray-100 text-[2rem] flex justify-center items-center">
-          Volunteer Page
-        </div>
+        <section className="w-full px-3 md:px-[10%] py-[80px] flex gap-10 md:flex-row flex-col">
+          <img
+            alt=""
+            src="/images/volunteer.jpg"
+            className="w-full md:w-1/2 h-auto"
+          />
+          <div className="w-full md:w-1/2 flex flex-col gap-6">
+            <h2 className="font-bold text-[1.5rem] md:text-[2rem]">
+              <div className="w-fit">
+                BECOME A VOLUNTEER
+                <div className="w-[70%] h-3 bg-[#f97316] mt-1"></div>
+              </div>
+            </h2>
+            <div className="text-[1.1rem]">
+              Volunteers are needed to handle different sections of the
+              training. They are seen as partners that will help in the
+              implementation of the project as well as contribute effectively to
+              its success.
+            </div>
+
+            <button
+              onClick={() => navigate("/register")}
+              className="w-fit bg-[#f97316] hover:bg-white hover:text-[#f97316] border border-[#f97316] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
+            >
+              Join Us
+            </button>
+          </div>
+        </section>
       </main>
 
       <Footer />
