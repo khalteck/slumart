@@ -1,43 +1,39 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../contexts/AppContext";
 
 const Login = () => {
-  //   const {
-  //     setSendError,
-  //     setFormData,
-  //     setIsValidEmail,
-  //     formData,
-  //     isValidEmail,
-  //     sendError,
-  //     loading,
-  //     login,
-  //   } = useAppContext();
+  const { setloginError, login, loading, loginError } = useAppContext();
 
-  //   function handleChange(e) {
-  //     setSendError("");
-  //     const { value, id } = e.target;
-  //     let isValidEmail = true;
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  //     if (id === "email") {
-  //       // Define a regex pattern for email validation
-  //       const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-  //       isValidEmail = emailPattern.test(value);
-  //     }
+  function handleChange(e) {
+    setloginError("");
+    const { value, id } = e.target;
+    // let isValidEmail = true;
 
-  //     setFormData((prev) => {
-  //       return {
-  //         ...prev,
-  //         [id]: value,
-  //       };
-  //     });
-  //     setIsValidEmail(isValidEmail);
-  //   }
+    // if (id === "email") {
+    //   // Define a regex pattern for email validation
+    //   const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    //   isValidEmail = emailPattern.test(value);
+    // }
 
-  //   async function handleSubmit(e) {
-  //     e.preventDefault();
-  //     await login();
-  //   }
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [id]: value,
+      };
+    });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    await login(formData);
+  }
 
   const isFormDataValid = Object.values({}).every((value) => Boolean(value));
 
@@ -82,11 +78,9 @@ const Login = () => {
               <input
                 type="email"
                 id="email"
-                // onChange={handleChange}
-                // value={formData?.email}
-                className={`w-full px-3 py-4 border border-black/30 mt-2 outline-none ${
-                  isValidEmail ? "border-black/30" : "border-red-500"
-                }`}
+                onChange={handleChange}
+                value={formData?.email}
+                className={`w-full px-3 py-4 border border-black/30 mt-2 outline-none`}
                 required
               />
               {!isValidEmail && (
@@ -101,8 +95,8 @@ const Login = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
-                // onChange={handleChange}
-                // value={formData?.password}
+                onChange={handleChange}
+                value={formData?.password}
                 className={`w-full px-3 py-4 border border-black/30 mt-2 outline-none`}
                 required
               />
@@ -121,18 +115,29 @@ const Login = () => {
               Register
             </p>
 
-            {/* {sendError && <p className="text-red-500">{sendError}</p>} */}
+            {/* {loginError && <p className="text-red-500">{loginError}</p>} */}
+
+            {loginError && (
+              <div className="w-full border border-red-500 p-3">
+                {loginError?.map((err, ind) => {
+                  return (
+                    <p key={ind} className="text-red-500 text-sm">
+                      {err}
+                    </p>
+                  );
+                })}
+              </div>
+            )}
 
             <div className="w-full flex justify-center mt-7 md:mt-14">
               <button
                 // disabled={!isFormDataValid || !isValidEmail}
-                // onClick={(e) => handleSubmit(e)}
+                onClick={(e) => handleSubmit(e)}
                 className={`w-[200px] min-w-fit bg-[#f97316] hover:bg-[#f97316]/80 px-5 md:px-8 py-2 md:py-3 md:mt-3 rounded-sm text-white font-medium transition-all duration-300 ${
                   !isFormDataValid || (!isValidEmail && "cursor-not-allowed")
                 }`}
               >
-                {/* {loading ? "Processing" : "Login"} */}
-                Login
+                {loading ? "Processing..." : "Login"}
               </button>{" "}
             </div>
           </form>

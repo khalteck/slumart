@@ -5,39 +5,19 @@ import { useAppContext } from "../contexts/AppContext";
 import countriesArray from "../data/countries.json";
 
 const Register = () => {
-  const { setSendError, sendError, loading, register } = useAppContext();
-
-  const [formData, setFormData] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    username: "",
-    country: "",
-    password: "",
-  });
-
-  const [isValidEmail, setIsValidEmail] = useState(true);
-  const [isFormDataValid, setIsFormDataValid] = useState(true);
-
-  function handleChange(e) {
-    setSendError("");
-    const { value, id } = e.target;
-    let isValidEmail = true;
-
-    if (id === "email") {
-      // Define a regex pattern for email validation
-      const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-      isValidEmail = emailPattern.test(value);
-    }
-
-    setFormData((prev) => {
-      return {
-        ...prev,
-        [id]: value,
-      };
-    });
-    setIsValidEmail(isValidEmail);
-  }
+  const {
+    sendError,
+    loading,
+    register,
+    formData,
+    setIsFormDataValid,
+    isValidEmail,
+    passwordError,
+    handleChange,
+    isFormDataValid,
+    handleImageChange,
+    regError,
+  } = useAppContext();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -45,7 +25,7 @@ const Register = () => {
     const isValid = Object.values(formData).every((value) => Boolean(value));
     setIsFormDataValid(isValid);
 
-    if (isValid && isValidEmail) {
+    if (isValid && isValidEmail && !passwordError) {
       await register(formData);
     }
   }
@@ -78,7 +58,7 @@ const Register = () => {
           </p>
         </div>
       </div>
-      <div className="w-full h-full md:min-h-screen overflow-auto bg-white p-5 md:p-14 flex items-center">
+      <div className="w-full h-full md:min-h-screen overflow-auto bg-white p-5 md:p-14 flex pb-[100px]">
         <div className="w-full">
           <h2 className="text-[1.75rem] md:text-[2em] font-bold">
             Register an account
@@ -157,6 +137,41 @@ const Register = () => {
             </div>
 
             <div>
+              <label htmlFor="about_you">About you</label>
+              <textarea
+                type="text"
+                id="about_you"
+                onChange={handleChange}
+                value={formData?.about_you}
+                className={`w-full px-3 py-4 border border-black/30 mt-2 outline-none`}
+                required
+              />
+              {!isFormDataValid && !formData?.about_you && (
+                <p className="text-red-500 text-sm mt-2">
+                  About you is required
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="profile_image">Profile Image</label>
+              <input
+                type="file"
+                id="profile_image"
+                onChange={handleImageChange}
+                // value={formData?.profile_image}
+                className={`w-full px-3 py-4 border border-black/30 mt-2 outline-none`}
+                required
+              />
+
+              {!isFormDataValid && !formData?.profile_image && (
+                <p className="text-red-500 text-sm mt-2">
+                  Profile Image is required
+                </p>
+              )}
+            </div>
+
+            <div>
               <label htmlFor="country">Country</label>
               <select
                 id="country"
@@ -197,11 +212,28 @@ const Register = () => {
 
               <p
                 onClick={() => setShowPassword((prev) => !prev)}
-                className="w-fit absolute top-[53%] right-3 font-medium px-2 py-1 bg-[#f97316]/20 rounded-lg cursor-pointer text-[.75rem]"
+                className="w-fit absolute top-[50%] right-3 font-medium px-2 py-1 bg-[#f97316]/20 rounded-lg cursor-pointer text-[.75rem]"
               >
                 {showPassword ? "Hide" : "Show"}
               </p>
             </div>
+            {passwordError && (
+              <p className="text-red-500 text-sm mt-2">
+                Password must include at least one special symbol, one number
+              </p>
+            )}
+
+            {regError && (
+              <div className="w-full border border-red-500 p-3">
+                {regError?.map((err, ind) => {
+                  return (
+                    <p key={ind} className="text-red-500 text-sm">
+                      {err}
+                    </p>
+                  );
+                })}
+              </div>
+            )}
 
             <p>Have an account?</p>
             <p
@@ -218,7 +250,7 @@ const Register = () => {
               </p>
             )} */}
 
-            <div className="w-full flex justify-center mt-7 md:mt-14">
+            <div className="w-full flex justify-center mt-7 md:my-14">
               <button
                 disabled={loading}
                 onClick={(e) => handleSubmit(e)}
@@ -226,7 +258,7 @@ const Register = () => {
                   !isFormDataValid || (!isValidEmail && "cursor-not-allowed")
                 }`}
               >
-                {loading ? "Processing" : "Register"}
+                {loading ? "Processing..." : "Register"}
               </button>{" "}
             </div>
           </form>

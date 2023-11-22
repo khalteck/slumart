@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import "./index.css";
 import { lazy, Suspense } from "react";
 import Loader from "./components/Loader";
+import { useAppContext } from "./contexts/AppContext";
+import Banner from "./components/Banner";
 
 const Homepage = lazy(() => import("./pages/Homepage"));
 const About = lazy(() => import("./pages/About"));
@@ -15,8 +17,11 @@ const Register = lazy(() => import("./pages/Register"));
 // const Construction = lazy(() => import("./pages/Construction"))
 
 function App() {
+  const { regSuccess } = useAppContext();
   return (
     <Suspense fallback={<Loader />}>
+      {regSuccess && <Banner message={regSuccess} />}
+
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<About />} />
