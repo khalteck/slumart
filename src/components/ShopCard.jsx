@@ -1,8 +1,4 @@
-/* eslint-disable react/prop-types */
-import { useNavigate } from "react-router-dom";
-
-const ProjectCard = ({ item }) => {
-  const navigate = useNavigate();
+const ShopCard = () => {
   return (
     <div
       data-aos="fade-left"
@@ -25,21 +21,25 @@ const ProjectCard = ({ item }) => {
         </a>
       </div>
       <div className="px-6 pt-4">
-        <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800">
-          {item?.title}
+        <h5 className="mb-2 text-xl font-normal leading-tight text-neutral-800">
+          ARTPIECE ONE
         </h5>
-        <p className="mb-4 text-base text-neutral-600">{item?.description}</p>
+        <p className="mb-4 text-base text-neutral-600">
+          A great transformation in Art and Finance is gradually taking over the
+          space.
+        </p>
+        <p className="font-bold text-[1.5rem]">N10,000</p>
       </div>
       <div className="w-full mt-auto p-6">
         <button
-          onClick={() => navigate(`/projects/${item?.id}`)}
+          // onClick={() => navigate("/gallery")}
           className="w-fit bg-[#f97316] hover:bg-white hover:text-[#f97316] border border-[#f97316] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
         >
-          View Details
+          Buy
         </button>
       </div>
     </div>
   );
 };
 
-export default ProjectCard;
+export default ShopCard;

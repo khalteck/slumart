@@ -3,6 +3,7 @@ import ScrollToTop from "../ScrollToTop";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ProjectCard from "../components/ProjectCard";
+import projectData from "../data/projects.json";
 
 const Projects = () => {
   return (
@@ -23,8 +24,14 @@ const Projects = () => {
           </div>
         </section>
 
-        <section className="w-full px-3 md:px-[10%] py-10 md:py-[80px] bg-white">
-          <p className="mb-10 text-center font-light text-[1.25rem]">
+        <section className="w-full px-3 md:px-[10%] py-10 bg-white">
+          <h2 className="font-bold text-[1.5rem] md:text-[2rem] mb-10">
+            <div className="w-fit mx-auto">
+              PROJECTS
+              <div className="w-[70%] h-3 bg-[#f97316] mt-1"></div>
+            </div>
+          </h2>
+          <p className="mb-10 text-center font-normal text-[1.25rem]">
             Welcome to our projects page, a curated collection showcasing our
             creative endeavors and innovative solutions.
             <br /> Dive into a world of diverse projects of various countries,
@@ -32,12 +39,15 @@ const Projects = () => {
             pushing boundaries.{" "}
           </p>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-10">
+            {projectData?.map((item, index) => {
+              return <ProjectCard key={index} item={item} />;
+            })}
+            {/* <ProjectCard />
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
+            <ProjectCard /> */}
           </div>
         </section>
       </main>

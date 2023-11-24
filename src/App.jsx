@@ -8,6 +8,7 @@ import Banner from "./components/Banner";
 const Homepage = lazy(() => import("./pages/Homepage"));
 const About = lazy(() => import("./pages/About"));
 const Projects = lazy(() => import("./pages/Projects"));
+const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
 const Countries = lazy(() => import("./pages/Countries"));
 const Volunteers = lazy(() => import("./pages/Volunteers"));
 const Shop = lazy(() => import("./pages/Shop"));
@@ -27,6 +28,7 @@ function App() {
         <Route path="/about" element={<About />} />
 
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/countries" element={<Countries />} />
         <Route path="/volunteers" element={<Volunteers />} />
         <Route path="/shop" element={<Shop />} />

@@ -177,7 +177,7 @@ const Header = () => {
           >
             Projects
           </li>
-          <li
+          {/* <li
             onClick={() => navigate("/countries")}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
               currentPage === "/countries"
@@ -197,7 +197,7 @@ const Header = () => {
             }`}
           >
             Volunteers
-          </li>
+          </li> */}
 
           <li
             onClick={() => navigate("/shop")}
@@ -219,6 +219,17 @@ const Header = () => {
             }`}
           >
             Contact
+          </li>
+
+          <li
+            onClick={() => navigate("/login")}
+            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+              currentPage === "/login"
+                ? "text-[#f97316] font-bold"
+                : "text-black"
+            }`}
+          >
+            Login
           </li>
 
           {/* {scrollBackground && (

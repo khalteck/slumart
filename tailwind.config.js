@@ -14,6 +14,7 @@ export default {
         projects: "url('/images/projects.jpg')",
         countries: "url('/images/countries.jpg')",
         reg: "url('/images/volunteer.jpg')",
+        shop: "url('/images/shop.jpg')",
       },
     },
   },
