@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAppContext } from "../contexts/AppContext";
 
 const Header = () => {
-  const { currentPage } = useAppContext();
+  const { currentPage, userData, logout, isAdmin } = useAppContext();
 
   const [openMenu, setOpenMenu] = useState(false);
   const [scrollBackground, setScrollBackground] = useState(false);
@@ -221,16 +221,43 @@ const Header = () => {
             Contact
           </li>
 
-          <li
-            onClick={() => navigate("/login")}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
-              currentPage === "/login"
-                ? "text-[#f97316] font-bold"
-                : "text-black"
-            }`}
-          >
-            Login
-          </li>
+          {isAdmin && (
+            <li
+              onClick={() => navigate("/admin")}
+              className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+                currentPage === "/contact"
+                  ? "text-[#f97316] font-bold"
+                  : "text-black"
+              }`}
+            >
+              Dashboard
+            </li>
+          )}
+
+          {userData?.access ? (
+            <li
+              onClick={logout}
+              className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.85rem] text-black flex gap-2 items-center bg-[#f97316]/20 px-2 py-1 rounded-sm`}
+            >
+              <img
+                alt=""
+                src={userData?.user_data?.profile_image}
+                className="w-5 h-5 rounded-full"
+              />
+              <p>Logout</p>
+            </li>
+          ) : (
+            <li
+              onClick={() => navigate("/login")}
+              className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+                currentPage === "/login"
+                  ? "text-[#f97316] font-bold"
+                  : "text-black"
+              }`}
+            >
+              Login
+            </li>
+          )}
 
           {/* {scrollBackground && (
             <li className="gap-4 items-center ml-auto flex">

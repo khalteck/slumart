@@ -16,6 +16,7 @@ const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
 
 const AdminHome = lazy(() => import("./admin/AdminHome"));
+const AdminArtPiece = lazy(() => import("./admin/AdminArtPiece"));
 
 // const Construction = lazy(() => import("./pages/Construction"))
 
@@ -36,9 +37,13 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
 
+        {/* ADMIN PROTECTED ROUTES */}
         <Route path="/admin" element={isAdmin ? <AdminHome /> : <Login />} />
+        <Route
+          path="/admin/art-piece"
+          element={isAdmin ? <AdminArtPiece /> : <Login />}
+        />
       </Routes>
     </Suspense>
   );

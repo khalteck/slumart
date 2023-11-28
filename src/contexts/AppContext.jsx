@@ -172,8 +172,10 @@ const AppContextProvider = ({ children }) => {
           navigate("/");
         }
         setloginSuccess("Login Success!");
+        setregSuccess("Logged In!");
         setTimeout(() => {
           setloginSuccess("");
+          setregSuccess("");
         }, 3000);
       }
     } catch (error) {
@@ -184,6 +186,17 @@ const AppContextProvider = ({ children }) => {
     } finally {
       setLoading(false);
     }
+  }
+
+  function logout() {
+    localStorage.removeItem("userData");
+    setIsAdmin(false);
+    setuserData(null);
+    navigate("/");
+    setregSuccess("Logged Out!");
+    setTimeout(() => {
+      setregSuccess("");
+    }, 3000);
   }
 
   return (
@@ -211,6 +224,7 @@ const AppContextProvider = ({ children }) => {
         isAdmin,
         toggleSidebar,
         openSideBar,
+        logout,
       }}
     >
       {children}

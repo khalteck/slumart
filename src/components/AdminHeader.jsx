@@ -1,16 +1,19 @@
 import { useAppContext } from "../contexts/AppContext";
 
 const AdminHeader = () => {
-  const { currentPage, toggleSidebar } = useAppContext();
+  const { currentPage, toggleSidebar, logout } = useAppContext();
   return (
     <div className="w-full h-[80px] flex items-center justify-between md:pl-[300px] md:pr-8 px-3 shadow-md">
-      <p className="font-medium text-[.85rem] md:text-xl">
-        Admin Dashboard /{" "}
+      <p className="font-medium text-[.85rem] md:text-[1rem] flex items-center gap-1">
+        Admin Dashboard{" "}
         <span className="font-normal">
-          {currentPage?.includes("/admin") ? "Projects" : "Art Pieces"}
+          / {currentPage === "/admin" ? "Projects" : "Art Pieces"}
         </span>
       </p>
-      <button className="px-3 py-2 border-2 border-black/80 hover:border-red-500 rounded-sm hover:bg-red-500 hover:text-white hidden md:block">
+      <button
+        onClick={logout}
+        className="px-3 py-2 border-2 border-black/80 hover:border-red-500 rounded-sm hover:bg-red-500 hover:text-white hidden md:block"
+      >
         Sign out
       </button>
       <img

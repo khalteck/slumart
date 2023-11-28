@@ -3,7 +3,7 @@ import { useAppContext } from "../contexts/AppContext";
 
 const AdminSidebar = () => {
   const navigate = useNavigate();
-  const { openSideBar, toggleSidebar } = useAppContext();
+  const { openSideBar, toggleSidebar, currentPage } = useAppContext();
 
   return (
     <>
@@ -24,10 +24,22 @@ const AdminSidebar = () => {
               </h1>
             </div>
           </li>
-          <li className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer">
+          <li
+            onClick={() => navigate("/admin")}
+            className="w-full bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer py-3 pl-6 flex gap-3 relative"
+          >
+            {currentPage === "/admin" && (
+              <div className="w-2 h-[80%] absolute top-[50%] left-0 translate-y-[-50%] rounded-md bg-[#f97316]"></div>
+            )}
             Projects
           </li>
-          <li className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer">
+          <li
+            onClick={() => navigate("/admin/art-piece")}
+            className="w-full bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer py-3 pl-6 flex gap-3 relative"
+          >
+            {currentPage === "/admin/art-piece" && (
+              <div className="w-2 h-[80%] absolute top-[50%] left-0 translate-y-[-50%] rounded-md bg-[#f97316]"></div>
+            )}
             Art Pieces
           </li>
         </ul>
