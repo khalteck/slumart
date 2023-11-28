@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
+import { useEffect } from "react";
 import { createContext, useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -11,6 +12,12 @@ const AppContextProvider = ({ children }) => {
   let currentPage = location.pathname;
 
   const navigate = useNavigate();
+
+  // admin mobil header
+  const [openSideBar, setopenSideBar] = useState(false);
+  function toggleSidebar() {
+    setopenSideBar((prev) => !prev);
+  }
 
   const [loading, setLoading] = useState(false);
   const [sendError, setSendError] = useState(false);
@@ -94,6 +101,8 @@ const AppContextProvider = ({ children }) => {
 
       const response = await axios.post(
         "https://slumart-production.up.railway.app/slum/register/",
+        // "https://slumart-production.up.railway.app/slum/reg/admin/",
+
         formData,
         {
           headers: {
@@ -126,6 +135,12 @@ const AppContextProvider = ({ children }) => {
   const [userData, setuserData] = useState(
     JSON.parse(localStorage.getItem("userData")) || null
   );
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    userData?.user_data?.is_admin === true
+      ? setIsAdmin(true)
+      : setIsAdmin(false);
+  }, [userData]);
 
   async function login(data) {
     try {
@@ -151,7 +166,11 @@ const AppContextProvider = ({ children }) => {
       if (response?.status >= 200 && response?.status < 300) {
         localStorage.setItem("userData", JSON.stringify(response?.data));
         setuserData(response?.data);
-        navigate("/");
+        if (response?.data?.user_data?.is_admin === true) {
+          navigate("/admin");
+        } else {
+          navigate("/");
+        }
         setloginSuccess("Login Success!");
         setTimeout(() => {
           setloginSuccess("");
@@ -189,6 +208,9 @@ const AppContextProvider = ({ children }) => {
         loginSuccess,
         login,
         userData,
+        isAdmin,
+        toggleSidebar,
+        openSideBar,
       }}
     >
       {children}

@@ -15,10 +15,12 @@ const Shop = lazy(() => import("./pages/Shop"));
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
 
+const AdminHome = lazy(() => import("./admin/AdminHome"));
+
 // const Construction = lazy(() => import("./pages/Construction"))
 
 function App() {
-  const { regSuccess } = useAppContext();
+  const { regSuccess, isAdmin } = useAppContext();
   return (
     <Suspense fallback={<Loader />}>
       {regSuccess && <Banner message={regSuccess} />}
@@ -35,6 +37,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
+
+        <Route path="/admin" element={isAdmin ? <AdminHome /> : <Login />} />
       </Routes>
     </Suspense>
   );
