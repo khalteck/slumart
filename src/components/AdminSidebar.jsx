@@ -3,7 +3,7 @@ import { useAppContext } from "../contexts/AppContext";
 
 const AdminSidebar = () => {
   const navigate = useNavigate();
-  const { openSideBar, toggleSidebar, currentPage } = useAppContext();
+  const { openSideBar, toggleSidebar, currentPage, logout } = useAppContext();
 
   return (
     <>
@@ -75,11 +75,29 @@ const AdminSidebar = () => {
                   />
                 </div>
               </li>
-              <li className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer">
+              <li
+                onClick={() => {
+                  navigate("/admin");
+                  toggleSidebar();
+                }}
+                className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer"
+              >
                 Projects
               </li>
-              <li className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer">
+              <li
+                onClick={() => {
+                  navigate("/admin/art-piece");
+                  toggleSidebar();
+                }}
+                className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer"
+              >
                 Art Pieces
+              </li>
+              <li
+                onClick={logout}
+                className="w-full p-3 bg-red-500/40 rounded-md hover:bg-[#f97316]/80 cursor-pointer"
+              >
+                Sign out
               </li>
             </ul>
           </div>

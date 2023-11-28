@@ -1,21 +1,32 @@
 import { useAppContext } from "../contexts/AppContext";
 
 const AdminHeader = () => {
-  const { currentPage, toggleSidebar, logout } = useAppContext();
+  const { currentPage, toggleSidebar, logout, userData } = useAppContext();
   return (
-    <div className="w-full h-[80px] flex items-center justify-between md:pl-[300px] md:pr-8 px-3 shadow-md">
+    <div className="w-full h-[60px] md:h-[80px] flex items-center justify-between md:pl-[300px] md:pr-8 px-3 shadow-md">
       <p className="font-medium text-[.85rem] md:text-[1rem] flex items-center gap-1">
         Admin Dashboard{" "}
         <span className="font-normal">
-          / {currentPage === "/admin" ? "Projects" : "Art Pieces"}
+          {currentPage === "/admin"
+            ? "/ Projects"
+            : currentPage === "/admin/art-pieces"
+            ? "/ Art Pieces"
+            : ""}
         </span>
       </p>
-      <button
-        onClick={logout}
-        className="px-3 py-2 border-2 border-black/80 hover:border-red-500 rounded-sm hover:bg-red-500 hover:text-white hidden md:block"
-      >
-        Sign out
-      </button>
+      <div className="flex gap-3 items-center">
+        <img
+          alt=""
+          src={userData?.user_data?.profile_image}
+          className="w-10 h-auto hidden md:block"
+        />
+        <button
+          onClick={logout}
+          className="px-3 py-1 border-2 border-[#f97316] hover:border-[#f97316] rounded-sm hover:bg-[#f97316] hover:text-white hidden md:block"
+        >
+          Sign out
+        </button>
+      </div>
       <img
         onClick={toggleSidebar}
         alt=""

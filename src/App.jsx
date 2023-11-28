@@ -17,6 +17,8 @@ const Register = lazy(() => import("./pages/Register"));
 
 const AdminHome = lazy(() => import("./admin/AdminHome"));
 const AdminArtPiece = lazy(() => import("./admin/AdminArtPiece"));
+const AdminProjectDetails = lazy(() => import("./admin/AdminProjectDetails"));
+const AdminAddProject = lazy(() => import("./admin/AdminAddProject"));
 
 // const Construction = lazy(() => import("./pages/Construction"))
 
@@ -43,6 +45,14 @@ function App() {
         <Route
           path="/admin/art-piece"
           element={isAdmin ? <AdminArtPiece /> : <Login />}
+        />
+        <Route
+          path="/admin/project/:id"
+          element={isAdmin ? <AdminProjectDetails /> : <Login />}
+        />
+        <Route
+          path="/admin/create-project"
+          element={isAdmin ? <AdminAddProject /> : <Login />}
         />
       </Routes>
     </Suspense>
