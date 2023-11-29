@@ -70,7 +70,20 @@ const ProjectDetails = () => {
   return (
     <>
       <Header />
-      <main className="w-full pt-[50px] md:pt-[150px] min-h-screen pb-10 bg-neutral-100/50">
+      <main className="w-full md:pt-[80px] min-h-screen pb-10 bg-neutral-100/50">
+        <section
+          className={`w-full h-[300px] md:h-[400px] bg-cover bg-center relative z-0 bg-projects`}
+        >
+          <div className="w-full h-full absolute top-0 left-0 bg-black/60 px-3 py-[100px] lg:px-[15%] lg:py-[150px] md:flex justify-center items-center">
+            <div className="flex flex-col items-center gap-3 mt-[50px] sm:mt-[100px] lg:mt-0 relative">
+              <h1
+                className={`w-full text-[2rem] md:text-[3.5rem] text-center font-bold text-white leading-tight scale first-section-text uppercase`}
+              >
+                {currentProject?.title}
+              </h1>
+            </div>
+          </div>
+        </section>
         <section className="w-full px-3 md:px-[10%] py-10">
           <h2 className="font-bold text-[1.5rem] md:text-[2rem] mb-10">
             <div className="w-fit mx-auto">

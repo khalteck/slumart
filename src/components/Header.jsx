@@ -49,11 +49,11 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full h-[60px] ${
+      className={`w-full h-[70px] ${
         scrollBackground
-          ? "bg-gray-100 text-black shadow-md md:h-[80px]"
-          : "bg-transparent md:bg-white text-black md:h-[130px] lg:h-[170px]"
-      } flex justify-between px-3 lg:px-[10%] items-center transition-all duration-700 fixed top-0 left-0 z-[100] font-mont shadow-md pt-3`}
+          ? "bg-gray-100 text-black shadow-md md:h-[90px]"
+          : "bg-transparent md:bg-white text-black md:h-[180px]"
+      } flex justify-between px-3 lg:px-[10%] items-center transition-all duration-700 fixed top-0 left-0 z-[100] font-mont shadow-md md:pt-3`}
     >
       <Link to="/">
         {scrollBackground ? (
@@ -65,12 +65,12 @@ const Header = () => {
               >
                 <img
                   alt=""
-                  src="/images/logo.png"
-                  className="md:w-12 md:h-12 w-8 h-8"
+                  src="/images/new-logo2.png"
+                  className="w-[150px] md:w-[300px] h-auto"
                 />
-                <h1 className="text-black text-[2rem] md:text-[3rem] font-bold">
+                {/* <h1 className="text-black text-[2rem] md:text-[3rem] font-bold">
                   SlumArt
-                </h1>
+                </h1> */}
               </div>
             </div>
           </>
@@ -81,10 +81,14 @@ const Header = () => {
               onClick={() => navigate("/")}
               className="gap-3 items-center md:hidden flex cursor-pointer"
             >
-              <img alt="" src="/images/logo.png" className="w-10 h-10" />
-              <h1 className="text-white text-[2rem] md:text-[3rem] font-bold">
+              <img
+                alt=""
+                src="/images/new-logo.png"
+                className="w-[150px] md:w-[300px] h-auto"
+              />{" "}
+              {/* <h1 className="text-white text-[2rem] md:text-[3rem] font-bold">
                 SlumArt
-              </h1>
+              </h1> */}
             </div>
           </>
         )}
@@ -119,10 +123,14 @@ const Header = () => {
               onClick={() => navigate("/")}
               className="flex gap-3 items-center cursor-pointer"
             >
-              <img alt="" src="/images/logo.png" className="w-14 h-14" />
-              <h1 className="text-black text-[2rem] md:text-[4rem] font-bold">
+              <img
+                alt=""
+                src="/images/new-logo2.png"
+                className="w-[150px] md:w-[300px] h-auto"
+              />
+              {/* <h1 className="text-black text-[2rem] md:text-[4rem] font-bold">
                 SlumArt
-              </h1>
+              </h1> */}
             </div>
             {/* <div
               onClick={() => navigate("/login")}
@@ -346,7 +354,7 @@ const Header = () => {
               Projects
             </li>
 
-            <li
+            {/* <li
               onClick={() => {
                 handleClick();
                 navigate("/countries");
@@ -364,7 +372,7 @@ const Header = () => {
               className="py-2 uppercase"
             >
               Volunteers
-            </li>
+            </li> */}
 
             <li
               onClick={() => {
