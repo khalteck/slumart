@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import { useEffect } from "react";
@@ -232,6 +233,11 @@ const AppContextProvider = ({ children }) => {
 
   async function submitComment(data) {
     try {
+      if (!userData?.access) {
+        navigate("/login");
+        return;
+      }
+
       setCommentLoader(true);
 
       const formData = new FormData();
@@ -248,12 +254,6 @@ const AppContextProvider = ({ children }) => {
           },
         }
       );
-
-      console.log("response", response);
-
-      // if (response.status === 201) {
-      //   navigate("/");
-      // }
     } catch (error) {
       console.log("error submitting comment =>", error);
     } finally {
@@ -312,6 +312,11 @@ const AppContextProvider = ({ children }) => {
   const [replyLoader, setReplyLoader] = useState(false);
   async function submitReplies(data) {
     try {
+      if (!userData?.access) {
+        navigate("/login");
+        return;
+      }
+
       setReplyLoader(true);
 
       const formData = new FormData();

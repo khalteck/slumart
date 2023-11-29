@@ -25,7 +25,10 @@ const ProjectCard = ({ item }) => {
         </a>
       </div>
       <div className="px-6 pt-4">
-        <h5 className="mb-2 text-[1.5rem] font-medium leading-tight text-neutral-800">
+        <h5
+          onClick={() => navigate(`/project-details/${item?.id}`)}
+          className="mb-2 text-[1.5rem] font-medium leading-tight text-neutral-800 hover:underline cursor-pointer"
+        >
           {item?.title}
         </h5>
         <p className="mb-4 text-[1.25rem] text-neutral-600">

@@ -46,16 +46,10 @@ const Projects = () => {
             each a testament to our passion for excellence and commitment to
             pushing boundaries.{" "}
           </p>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-10">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-10 mb-8">
             {allProjectsHome?.map((item, index) => {
               return <ProjectCard key={index} item={item} />;
             })}
-            {/* <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard /> */}
           </div>
         </section>
       </main>

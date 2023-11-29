@@ -19,6 +19,7 @@ const ProjectDetails = () => {
     userData,
     fetchComments,
     allComments,
+    currentPage,
   } = useAppContext();
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const ProjectDetails = () => {
   useEffect(() => {
     const dataArray = allProjectsHome?.filter((x) => x?.id == id)[0];
     setcurrentProject(dataArray);
-  }, [allProjectsHome]);
+  }, [allProjectsHome, currentPage]);
 
   const [formData, setFormData] = useState({
     comment: "",
@@ -101,7 +102,7 @@ const ProjectDetails = () => {
                 <img
                   alt=""
                   src={currentProject?.author?.profile_image}
-                  className="w-[100px] h-[100px] object-cover rounded-full my-1"
+                  className="w-[80px] h-[80px] object-cover rounded-full my-1"
                 />
                 <div>
                   <p>Created:</p>

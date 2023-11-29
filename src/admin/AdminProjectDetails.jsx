@@ -4,24 +4,35 @@ import AdminSidebar from "../components/AdminSidebar";
 import ScrollToTop from "../ScrollToTop";
 import { useParams } from "react-router-dom";
 import { useAdminContext } from "../contexts/AdminContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
+import AdminComment from "../components/AdminComment";
 
 const AdminProjectDetails = () => {
-  // const { userData } = useAppContext();
-
   const navigate = useNavigate();
   const { id } = useParams();
   const { fetchProjects, allProjects, deleteProject, tinyLoader, deleteId } =
     useAdminContext();
-  const { userData } = useAppContext();
+
+  const { userData, fetchComments, allComments } = useAppContext();
 
   useEffect(() => {
     fetchProjects(userData?.access);
+    fetchComments();
   }, []);
 
   const currentProject = allProjects?.filter((x) => x?.id == id)[0];
+
+  const [projectComments, setProjectComments] = useState([]);
+
+  useEffect(() => {
+    const array = allComments?.filter((itm) => {
+      return itm?.blog == currentProject?.id;
+    });
+
+    setProjectComments(array);
+  }, [allComments]);
 
   return (
     <>
@@ -58,7 +69,7 @@ const AdminProjectDetails = () => {
                 </div>
                 <div className="flex justify-between gap-3 mt-10">
                   <p className="flex gap-1 items-center text-[1.5rem]">
-                    3{" "}
+                    {projectComments?.length}{" "}
                     <img
                       alt=""
                       src="/images/icons8-comment-50.png"
@@ -97,49 +108,15 @@ const AdminProjectDetails = () => {
                 Projects Comments
               </h2>
 
-              <div className="w-full flex flex-col gap-3">
-                <div className="w-full bg-white rounded-lg p-3">
-                  <p className="text-[.85rem] text-black/50 mb-2">
-                    By: John Doe
-                  </p>
-                  <p>
-                    {" "}
-                    This project will have twenty intakes (children from ten
-                    slum) between ages ten to seventeen.
-                  </p>
-                  <div className="w-full pl-12 md:pl-[100px]">
-                    <div className="w-full border-l-2 border-gray-300 flex flex-col gap-2 mt-3 pl-3">
-                      <p className="text-[.85rem] text-black/50">Replies:</p>
-                      <p className="border-b border-black/20 pt-2">
-                        Thanks for this
-                      </p>
-                      <p className="border-b border-black/20 pt-2">Wow</p>
-                      <p className="border-b border-black/20 pt-2">Nice one</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="w-full bg-white rounded-lg p-3">
-                  <p className="text-[.85rem] text-black/50 mb-2">
-                    By: John Doe
-                  </p>
-                  <p>
-                    {" "}
-                    This project will have twenty intakes (children from ten
-                    slum) between ages ten to seventeen.
-                  </p>
-                  <div className="w-full pl-12 md:pl-[100px]">
-                    <div className="w-full border-l-2 border-gray-300 flex flex-col gap-2 mt-3 pl-3">
-                      <p className="text-[.85rem] text-black/50">Replies:</p>
-                      <p className="border-b border-black/20 pt-2">
-                        Thanks for this
-                      </p>
-                      <p className="border-b border-black/20 pt-2">Wow</p>
-                      <p className="border-b border-black/20 pt-2">Nice one</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {projectComments?.map((item, index) => {
+                return (
+                  <AdminComment
+                    key={index}
+                    item={item}
+                    projectComments={projectComments}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

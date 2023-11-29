@@ -5,10 +5,11 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TeamCard from "../components/TeamCard";
 import team from "../data/team.json";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const About = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.hash === "#team") {
@@ -125,7 +126,7 @@ const About = () => {
 
               <div className="w-full text-center mt-4">
                 <button
-                  // onClick={() => navigate("/gallery")}
+                  onClick={() => navigate("/projects")}
                   className="w-fit bg-[#f97316] hover:bg-white hover:text-[#f97316] border border-[#f97316] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
                 >
                   Get Involved

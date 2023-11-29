@@ -38,19 +38,15 @@ const Register = () => {
     <div className="w-full flex md:flex-row flex-col font-mont md:h-screen">
       <div className="w-full h-[250px] md:h-screen bg-reg bg-no-repeat bg-cover bg-center relative">
         <div className="w-full h-full absolute top-0 left-0 p-5 md:p-10 bg-black/50 flex flex-col">
-          {/* <img
-            alt=""
-            src="/images/logo.png"
-            className="w-[130px] h-auto md:w-[200px] md:h-[180px] rounded-sm md:rounded-b-lg"
-          /> */}
           <div
             onClick={() => navigate("/")}
             className="gap-3 items-center flex cursor-pointer"
           >
-            <img alt="" src="/images/logo.png" className="w-12 h-12" />
-            <h1 className="text-white text-[2rem] md:text-[3rem] font-bold">
-              SlumArt
-            </h1>
+            <img
+              alt=""
+              src="/images/new-logo.png"
+              className="w-[150px] md:w-[200px] h-auto"
+            />
           </div>
           <p className="text-[1.25rem] md:text-[2.5rem] mb-auto md:mb-0 mt-auto text-white font-medium first-section-text">
             Transform your surroundings with the allure of fine art through our
