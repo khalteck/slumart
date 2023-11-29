@@ -1,11 +1,19 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
+import { useEffect } from "react";
 import ScrollToTop from "../ScrollToTop";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ProjectCard from "../components/ProjectCard";
-import projectData from "../data/projects.json";
+import { useAppContext } from "../contexts/AppContext";
 
 const Projects = () => {
+  const { allProjectsHome, fetchProjectsHome } = useAppContext();
+
+  useEffect(() => {
+    fetchProjectsHome();
+  }, []);
+
   return (
     <>
       <Header />
@@ -39,7 +47,7 @@ const Projects = () => {
             pushing boundaries.{" "}
           </p>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-10">
-            {projectData?.map((item, index) => {
+            {allProjectsHome?.map((item, index) => {
               return <ProjectCard key={index} item={item} />;
             })}
             {/* <ProjectCard />

@@ -11,12 +11,12 @@ const ProjectCard = ({ item }) => {
       className="w-full min-w-[300px] flex flex-col rounded-lg bg-neutral-200 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
     >
       <div
-        className="relative overflow-hidden bg-cover bg-no-repeat"
+        className="h-[100px] relative overflow-hidden bg-cover bg-no-repeat"
         data-te-ripple-init
         data-te-ripple-color="light"
       >
         <img
-          className="rounded-t-lg w-full h-full object-cover"
+          className="rounded-t-lg w-full h-full object-cover object-top"
           src="/images/project2.png"
           alt=""
         />
@@ -25,10 +25,13 @@ const ProjectCard = ({ item }) => {
         </a>
       </div>
       <div className="px-6 pt-4">
-        <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800">
+        <h5 className="mb-2 text-[1.5rem] font-medium leading-tight text-neutral-800">
           {item?.title}
         </h5>
-        <p className="mb-4 text-base text-neutral-600">{item?.description}</p>
+        <p className="mb-4 text-[1.25rem] text-neutral-600">
+          {item?.content?.split("")?.slice(0, 40)?.join("")}
+          {"..."}
+        </p>
       </div>
       <div className="w-full mt-auto p-6">
         <button

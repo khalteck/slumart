@@ -31,7 +31,6 @@ const AdminContextProvider = ({ children }) => {
         }
       );
 
-      console.log("response", response);
       if (response.status === 201) {
         navigate("/admin");
       }
@@ -48,7 +47,6 @@ const AdminContextProvider = ({ children }) => {
     try {
       setTinyLoader(true);
 
-      // Make a GET request to the endpoint
       const response = await axios.get(
         "https://slumart-production.up.railway.app/slum/create/blog/",
         {
@@ -59,7 +57,6 @@ const AdminContextProvider = ({ children }) => {
         }
       );
 
-      console.log("response", response);
       setAllProjects(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -83,7 +80,6 @@ const AdminContextProvider = ({ children }) => {
       setTinyLoader(true);
       setdeleteId(projectId);
 
-      // Make a DELETE request to the endpoint with the projectId to delete
       const response = await axios.delete(
         `https://slumart-production.up.railway.app/slum/create/blog/${projectId}`,
         {
@@ -106,6 +102,37 @@ const AdminContextProvider = ({ children }) => {
     }
   }
 
+  async function editProject(data, token, projectId) {
+    try {
+      setTinyLoader(true);
+
+      const formData = new FormData();
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+
+      const response = await axios.put(
+        `https://slumart-production.up.railway.app/slum/create/blog/${projectId}/`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response?.status === 200) {
+        navigate("/admin");
+      }
+    } catch (error) {
+      console.error("Error updating project:", error);
+    } finally {
+      setTinyLoader(false);
+      fetchProjects(token);
+    }
+  }
+
   return (
     <AdminContext.Provider
       value={{
@@ -115,6 +142,7 @@ const AdminContextProvider = ({ children }) => {
         allProjects,
         deleteProject,
         deleteId,
+        editProject,
       }}
     >
       {children}

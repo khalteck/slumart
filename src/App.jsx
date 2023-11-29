@@ -19,6 +19,7 @@ const AdminHome = lazy(() => import("./admin/AdminHome"));
 const AdminArtPiece = lazy(() => import("./admin/AdminArtPiece"));
 const AdminProjectDetails = lazy(() => import("./admin/AdminProjectDetails"));
 const AdminAddProject = lazy(() => import("./admin/AdminAddProject"));
+const AdminEditProject = lazy(() => import("./admin/AdminEditProject"));
 
 // const Construction = lazy(() => import("./pages/Construction"))
 
@@ -53,6 +54,10 @@ function App() {
         <Route
           path="/admin/create-project"
           element={isAdmin ? <AdminAddProject /> : <Login />}
+        />
+        <Route
+          path="/admin/project/:id/edit"
+          element={isAdmin ? <AdminEditProject /> : <Login />}
         />
       </Routes>
     </Suspense>

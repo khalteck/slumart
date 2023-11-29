@@ -14,7 +14,7 @@ const AdminProjectCard = ({ item }) => {
       data-aos="fade-left"
       data-aos-duration="1000"
       data-aos-delay="300"
-      className="w-full min-w-[300px] flex flex-col rounded-lg bg-neutral-200 shadow-md"
+      className="w-full min-w-[200px] flex flex-col rounded-lg bg-neutral-200 shadow-md"
     >
       <div className="px-6 pt-4 flex flex-col h-full">
         <h5
@@ -45,15 +45,28 @@ const AdminProjectCard = ({ item }) => {
         {tinyLoader && deleteId === item?.id ? (
           <p className="text-red-500">Deleting...</p>
         ) : (
-          <div
-            onClick={() => deleteProject(userData?.access, item?.id)}
-            className="w-8 h-8 p-1 rounded-full bg-red-500/20 cursor-pointer"
-          >
-            <img
-              alt=""
-              src="/images/icons8-delete-48.png"
-              className="w-7 h-auto"
-            />
+          <div className="flex gap-3 items-center">
+            <div
+              onClick={() => deleteProject(userData?.access, item?.id)}
+              className="w-8 h-8 p-1 rounded-full bg-red-500/20 cursor-pointer"
+            >
+              <img
+                alt=""
+                src="/images/icons8-delete-48.png"
+                className="w-7 h-auto"
+              />
+            </div>
+
+            <div
+              onClick={() => navigate(`/admin/project/${item?.id}/edit`)}
+              className="w-8 h-8 p-1 rounded-full bg-green-500/20 cursor-pointer"
+            >
+              <img
+                alt=""
+                src="/images/icons8-edit-64.png"
+                className="w-7 h-auto"
+              />
+            </div>
           </div>
         )}
         <p className="flex gap-1 items-center">

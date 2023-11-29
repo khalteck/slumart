@@ -1,15 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
-// import { useAppContext } from "../contexts/AppContext";
 import ScrollToTop from "../ScrollToTop";
 import { useParams } from "react-router-dom";
 import { useAdminContext } from "../contexts/AdminContext";
 import { useEffect } from "react";
 import { useAppContext } from "../contexts/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const AdminProjectDetails = () => {
   // const { userData } = useAppContext();
+
+  const navigate = useNavigate();
   const { id } = useParams();
   const { fetchProjects, allProjects, deleteProject, tinyLoader, deleteId } =
     useAdminContext();
@@ -33,11 +35,6 @@ const AdminProjectDetails = () => {
 
           <div className="w-full">
             <div className="w-full flex flex-col rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-neutral-200/50 border-2 border-[#f97316] text-neutral-700 lg:flex-row">
-              {/* <img
-                className="h-96 w-full lg:w-1/2 rounded-t-lg object-cover md:h-[500px] md:!rounded-none md:!rounded-l-lg"
-                src={currentProject?.image}
-                alt=""
-              /> */}
               <div className="w-full flex flex-col justify-start p-6">
                 <h5 className="mb-2 text-[1.5rem] md:text-[2.5rem] font-medium">
                   {currentProject?.title}
@@ -72,14 +69,24 @@ const AdminProjectDetails = () => {
                   {tinyLoader && deleteId === currentProject?.id ? (
                     <p className="text-red-500">Deleting...</p>
                   ) : (
-                    <button
-                      onClick={() =>
-                        deleteProject(userData?.access, currentProject?.id)
-                      }
-                      className="w-fit bg-red-500 hover:bg-white hover:text-red-500 border border-red-500 px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
-                    >
-                      Delete
-                    </button>
+                    <div className="flex gap-3">
+                      <button
+                        onClick={() =>
+                          navigate(`/admin/project/${currentProject?.id}/edit`)
+                        }
+                        className="w-fit bg-white text-red-black border border-black px-5 md:px-8 py-2 rounded-sm font-medium transition-all duration-300"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        onClick={() =>
+                          deleteProject(userData?.access, currentProject?.id)
+                        }
+                        className="w-fit bg-red-500 hover:bg-white hover:text-red-500 border border-red-500 px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
+                      >
+                        Delete
+                      </button>
+                    </div>
                   )}
                 </div>
               </div>

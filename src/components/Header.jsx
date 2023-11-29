@@ -52,8 +52,8 @@ const Header = () => {
       className={`w-full h-[60px] ${
         scrollBackground
           ? "bg-gray-100 text-black shadow-md md:h-[80px]"
-          : "bg-transparent md:bg-white text-black md:h-[130px] lg:h-[160px]"
-      } flex justify-between px-3 lg:px-[10%] items-center transition-all duration-700 fixed top-0 left-0 z-[100] font-mont`}
+          : "bg-transparent md:bg-white text-black md:h-[130px] lg:h-[170px]"
+      } flex justify-between px-3 lg:px-[10%] items-center transition-all duration-700 fixed top-0 left-0 z-[100] font-mont shadow-md pt-3`}
     >
       <Link to="/">
         {scrollBackground ? (

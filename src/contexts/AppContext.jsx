@@ -199,6 +199,145 @@ const AppContextProvider = ({ children }) => {
     }, 3000);
   }
 
+  //=================================================to fetch projects
+  const [allProjectsHome, setAllProjectsHome] = useState([]);
+
+  async function fetchProjectsHome() {
+    try {
+      setLoading(true);
+
+      const response = await axios.get(
+        "https://slumart-production.up.railway.app/slum/create/blog/",
+        {
+          headers: {
+            // Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      // console.log("response", response);
+      setAllProjectsHome(response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  //====================================to submit comment
+
+  const [inlineLoader, setInlineLoader] = useState(false);
+  const [commentLoader, setCommentLoader] = useState(false);
+
+  async function submitComment(data) {
+    try {
+      setCommentLoader(true);
+
+      const formData = new FormData();
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+
+      const response = await axios.post(
+        "https://slumart-production.up.railway.app/slum/comment/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      console.log("response", response);
+
+      // if (response.status === 201) {
+      //   navigate("/");
+      // }
+    } catch (error) {
+      console.log("error submitting comment =>", error);
+    } finally {
+      setCommentLoader(false);
+      fetchProjectsHome();
+      fetchComments();
+    }
+  }
+
+  const [allComments, setAllComments] = useState([]);
+
+  async function fetchComments() {
+    try {
+      setInlineLoader(true);
+
+      const response = await axios.get(
+        "https://slumart-production.up.railway.app/slum/comment/",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      setAllComments(response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setInlineLoader(false);
+    }
+  }
+
+  const [allReplies, setAllReplies] = useState([]);
+
+  async function fetchReplies() {
+    try {
+      setInlineLoader(true);
+
+      const response = await axios.get(
+        "https://slumart-production.up.railway.app/slum/reply/",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      setAllReplies(response.data);
+    } catch (error) {
+      console.error("Error fetching replies:", error);
+    } finally {
+      setInlineLoader(false);
+    }
+  }
+
+  const [replyLoader, setReplyLoader] = useState(false);
+  async function submitReplies(data) {
+    try {
+      setReplyLoader(true);
+
+      const formData = new FormData();
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+
+      const response = await axios.post(
+        "https://slumart-production.up.railway.app/slum/reply/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      console.log("response", response);
+    } catch (error) {
+      console.log("error submitting comment =>", error);
+    } finally {
+      setReplyLoader(false);
+      fetchReplies();
+    }
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -225,6 +364,17 @@ const AppContextProvider = ({ children }) => {
         toggleSidebar,
         openSideBar,
         logout,
+        fetchProjectsHome,
+        allProjectsHome,
+        inlineLoader,
+        submitComment,
+        fetchComments,
+        allComments,
+        fetchReplies,
+        allReplies,
+        submitReplies,
+        replyLoader,
+        commentLoader,
       }}
     >
       {children}

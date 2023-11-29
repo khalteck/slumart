@@ -7,7 +7,10 @@ const Shop = () => {
   return (
     <>
       <Header />
-      <main className="w-full md:pt-[120px]">
+      <main className="w-full md:pt-[120px] relative">
+        <div className="w-full h-screen bg-white fixed top-0 left-0 flex justify-center items-center z-20">
+          Under construction...
+        </div>
         <section
           className={`w-full h-[300px] md:h-[400px] bg-cover bg-top relative z-0 bg-shop`}
         >
