@@ -10,19 +10,12 @@ const AdminSidebar = () => {
       <div className="w-[280px] bg-[#0f172a] p-4 fixed left-0 top-0 h-screen overflow-y-auto text-white hidden md:block">
         <ul className="w-full flex flex-col gap-3">
           <li className="w-full mb-14">
-            <div
+            <img
+              alt=""
+              src="/images/new-logo.png"
+              className="w-[150px] md:w-[200px] h-auto"
               onClick={() => navigate("/")}
-              className="gap-3 items-center flex cursor-pointer"
-            >
-              <img
-                alt=""
-                src="/images/logo.png"
-                className="md:w-12 md:h-12 w-8 h-8"
-              />
-              <h1 className="text-white text-[1.75rem] md:text-[2rem] font-bold">
-                SlumArt
-              </h1>
-            </div>
+            />
           </li>
           <li
             onClick={() => navigate("/admin")}
@@ -51,19 +44,12 @@ const AdminSidebar = () => {
           <div className="w-[70%] bg-[#0f172a] p-4 overflow-y-auto text-white">
             <ul className="w-full flex flex-col gap-3">
               <li className="w-full mb-14 flex justify-between items-center">
-                <div
+                <img
+                  alt=""
+                  src="/images/new-logo.png"
+                  className="w-[150px] md:w-[200px] h-auto"
                   onClick={() => navigate("/")}
-                  className="gap-3 items-center flex cursor-pointer"
-                >
-                  <img
-                    alt=""
-                    src="/images/logo.png"
-                    className="md:w-12 md:h-12 w-8 h-8"
-                  />
-                  <h1 className="text-white text-[1.75rem] md:text-[2rem] font-bold">
-                    SlumArt
-                  </h1>
-                </div>
+                />
                 <div
                   onClick={toggleSidebar}
                   className="w-8 h-8 flex justify-center items-center rounded-full bg-white"

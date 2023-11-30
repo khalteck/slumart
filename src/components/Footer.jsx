@@ -57,10 +57,11 @@ const Footer = () => {
         <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="">
             <h6 className="mb-4 flex items-center justify-center font-semibold md:justify-start">
-              <div className="gap-3 items-center flex">
-                <img alt="" src="/images/logo.png" className="w-10 h-10" />
-                <h1 className="text-white text-[2rem] font-bold">SlumArt</h1>
-              </div>
+              <img
+                alt=""
+                src="/images/new-logo.png"
+                className="w-[150px] md:w-[200px] h-auto"
+              />
             </h6>
             <p>
               Transform your surroundings with the allure of fine art through

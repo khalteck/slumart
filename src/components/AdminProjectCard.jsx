@@ -1,13 +1,29 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 import { useAdminContext } from "../contexts/AdminContext";
 import { useAppContext } from "../contexts/AppContext";
+import { useEffect, useState } from "react";
 
 const AdminProjectCard = ({ item }) => {
   const navigate = useNavigate();
 
   const { deleteProject, tinyLoader, deleteId } = useAdminContext();
-  const { userData } = useAppContext();
+  const { userData, fetchComments, allComments } = useAppContext();
+
+  useEffect(() => {
+    fetchComments();
+  }, []);
+
+  const [projectComments, setProjectComments] = useState([]);
+
+  useEffect(() => {
+    const array = allComments?.filter((itm) => {
+      return itm?.blog == item?.id;
+    });
+
+    setProjectComments(array);
+  }, [allComments]);
 
   return (
     <div
@@ -70,7 +86,7 @@ const AdminProjectCard = ({ item }) => {
           </div>
         )}
         <p className="flex gap-1 items-center">
-          3{" "}
+          {projectComments?.length}{" "}
           <img
             alt=""
             src="/images/icons8-comment-50.png"

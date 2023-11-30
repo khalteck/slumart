@@ -133,6 +133,31 @@ const AdminContextProvider = ({ children }) => {
     }
   }
 
+  //==========================================================to handle art pieces ====================
+  const [allArtpieces, setAllArtpieces] = useState([]);
+
+  async function fetchArts() {
+    try {
+      setTinyLoader(true);
+
+      const response = await axios.get(
+        "https://slumart-production.up.railway.app/slum/sell/artpiece/",
+        {
+          headers: {
+            // Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      setAllArtpieces(response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setTinyLoader(false);
+    }
+  }
+
   return (
     <AdminContext.Provider
       value={{
@@ -143,6 +168,8 @@ const AdminContextProvider = ({ children }) => {
         deleteProject,
         deleteId,
         editProject,
+        allArtpieces,
+        fetchArts,
       }}
     >
       {children}
