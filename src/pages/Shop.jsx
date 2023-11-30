@@ -1,16 +1,28 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
+import { useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ShopCard from "../components/ShopCard";
+import { useAdminContext } from "../contexts/AdminContext";
+// import { useNavigate } from "react-router-dom";
 
 const Shop = () => {
+  const { fetchArts, allArtpieces } = useAdminContext();
+
+  // const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchArts();
+  }, []);
+
   return (
     <>
       <Header />
       <main className="w-full md:pt-[120px] relative">
-        <div className="w-full h-screen bg-white fixed top-0 left-0 flex justify-center items-center z-20">
+        {/* <div className="w-full h-screen bg-white fixed top-0 left-0 flex justify-center items-center z-20">
           Under construction...
-        </div>
+        </div> */}
         <section
           className={`w-full h-[300px] md:h-[400px] bg-cover bg-top relative z-0 bg-shop`}
         >
@@ -36,13 +48,16 @@ const Shop = () => {
             Explore an artistic haven on our shop page, showcasing a curated
             collection of captivating artworks.
           </p>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-10">
-            <ShopCard />
-            <ShopCard />
-            <ShopCard />
-            <ShopCard />
-            <ShopCard />
-            <ShopCard />
+
+          {allArtpieces?.length === 0 && (
+            <div className="w-full h-[200px] flex justify-center items-center bg-white border">
+              No art pieces yet..
+            </div>
+          )}
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-10 mb-8">
+            {allArtpieces?.map((item, index) => {
+              return <ShopCard key={index} item={item} />;
+            })}
           </div>
         </section>
       </main>

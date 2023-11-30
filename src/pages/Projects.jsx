@@ -46,6 +46,12 @@ const Projects = () => {
             each a testament to our passion for excellence and commitment to
             pushing boundaries.{" "}
           </p>
+
+          {allProjectsHome?.length === 0 && (
+            <div className="w-full h-[200px] flex justify-center items-center bg-white border">
+              No projects yet..
+            </div>
+          )}
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-10 mb-8">
             {allProjectsHome?.map((item, index) => {
               return <ProjectCard key={index} item={item} />;

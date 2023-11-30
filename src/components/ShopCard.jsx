@@ -1,4 +1,5 @@
-const ShopCard = () => {
+/* eslint-disable react/prop-types */
+const ShopCard = ({ item }) => {
   return (
     <div
       data-aos="fade-left"
@@ -7,13 +8,13 @@ const ShopCard = () => {
       className="w-full min-w-[300px] flex flex-col rounded-lg bg-neutral-200 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
     >
       <div
-        className="relative overflow-hidden bg-cover bg-no-repeat"
+        className="relative h-[200px] overflow-hidden bg-cover bg-no-repeat"
         data-te-ripple-init
         data-te-ripple-color="light"
       >
         <img
           className="rounded-t-lg w-full h-full object-cover"
-          src="/images/project2.png"
+          src={item?.images[0]}
           alt=""
         />
         <a href="#!">
@@ -21,14 +22,12 @@ const ShopCard = () => {
         </a>
       </div>
       <div className="px-6 pt-4">
-        <h5 className="mb-2 text-xl font-normal leading-tight text-neutral-800">
-          ARTPIECE ONE
+        <h5 className="mb-2 text-[2rem] font-medium leading-tight text-neutral-800">
+          {item?.name}
         </h5>
-        <p className="mb-4 text-base text-neutral-600">
-          A great transformation in Art and Finance is gradually taking over the
-          space.
-        </p>
-        <p className="font-bold text-[1.5rem]">N10,000</p>
+        <p className="mb-2 text-base text-neutral-600">{item?.materials}</p>
+        <p className="mb-2 text-base text-neutral-600">Size: {item?.size}</p>
+        <p className="font-bold text-[1.5rem]">N{item?.price}</p>
       </div>
       <div className="w-full mt-auto p-6">
         <button

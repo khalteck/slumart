@@ -44,6 +44,11 @@ const AdminArtPiece = () => {
                 />
               </button>
             </div>
+            {allArtpieces?.length === 0 && (
+              <div className="w-full h-[200px] flex justify-center items-center bg-white border">
+                No art pieces yet..
+              </div>
+            )}
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
               {allArtpieces?.map((x, index) => {
                 return <AdminArtPieceCard key={index} item={x} />;
