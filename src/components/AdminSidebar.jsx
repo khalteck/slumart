@@ -35,6 +35,15 @@ const AdminSidebar = () => {
             )}
             Art Pieces
           </li>
+          <li
+            onClick={() => navigate("/admin/add-admin")}
+            className="w-full bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer py-3 pl-6 flex gap-3 relative"
+          >
+            {currentPage === "/admin/add-admin" && (
+              <div className="w-2 h-[80%] absolute top-[50%] left-0 translate-y-[-50%] rounded-md bg-[#f97316]"></div>
+            )}
+            Add Admin
+          </li>
         </ul>
       </div>
 
@@ -80,8 +89,17 @@ const AdminSidebar = () => {
                 Art Pieces
               </li>
               <li
+                onClick={() => {
+                  navigate("/admin/add-admin");
+                  toggleSidebar();
+                }}
+                className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer"
+              >
+                Add Admin
+              </li>
+              <li
                 onClick={logout}
-                className="w-full p-3 bg-red-500/40 rounded-md hover:bg-[#f97316]/80 cursor-pointer"
+                className="w-full p-3 bg-red-500/40 rounded-md hover:bg-[#f97316]/80 cursor-pointer mt-10"
               >
                 Sign out
               </li>

@@ -71,7 +71,7 @@ const AdminEditProject = () => {
               <textarea
                 type="text"
                 id="content"
-                className="w-full md:w-[80%] bg-white p-3 border border-black/60 rounded-sm outline-none"
+                className="w-full h-[300px] md:w-[80%] bg-white p-3 border border-black/60 rounded-sm outline-none"
                 placeholder="Example content"
                 onChange={handleFormChange}
                 value={formData?.content}

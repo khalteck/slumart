@@ -15,7 +15,6 @@ const AdminArtPiece = () => {
     fetchArts();
   }, []);
 
-  console.log("allArtpieces", allArtpieces);
   return (
     <>
       <AdminSidebar />

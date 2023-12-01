@@ -1,21 +1,32 @@
 import { useState } from "react";
 import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
-import { useAppContext } from "../contexts/AppContext";
 import { useAdminContext } from "../contexts/AdminContext";
 import { ClipLoader } from "react-spinners";
 
 const AdminAddArt = () => {
-  const { userData } = useAppContext();
-  const { subitProject, tinyLoader } = useAdminContext();
+  const {
+    submitProject,
+    tinyLoader,
+    setsendError,
+    sendError,
+    setSelectedImages,
+    selectedImages,
+  } = useAdminContext();
 
   const [formData, setFormData] = useState({
-    title: "",
-    content: "",
-    author: userData?.user_data?.id,
+    name: "",
+    size: "",
+    materials: "",
+    condition: "",
+    price: "",
+    from_home: "",
+    likes: "",
+    images: [],
   });
 
   function handleFormChange(e) {
+    setsendError("");
     const { id, value } = e.target;
     setFormData((prev) => {
       return {
@@ -24,6 +35,35 @@ const AdminAddArt = () => {
       };
     });
   }
+
+  const handleFileInputChange = (e) => {
+    const files = e.target.files;
+    const selectedFiles = [];
+
+    for (let i = 0; i < files.length && i < 4; i++) {
+      // Limiting to 4 files
+      if (files[i].type.startsWith("image/")) {
+        selectedFiles.push(files[i]);
+      }
+    }
+
+    setSelectedImages(selectedFiles);
+    setFormData((prev) => {
+      return {
+        ...prev,
+        images: selectedFiles,
+      };
+    });
+  };
+
+  const removeImageAtIndex = (indexToRemove) => {
+    const updatedImages = [
+      ...selectedImages.slice(0, indexToRemove),
+      ...selectedImages.slice(indexToRemove + 1),
+    ];
+    setSelectedImages(updatedImages);
+  };
+
   return (
     <>
       <AdminSidebar />
@@ -83,7 +123,7 @@ const AdminAddArt = () => {
                 type="text"
                 id="price"
                 className="w-full md:w-[80%] bg-white p-3 border border-black/60 rounded-sm outline-none"
-                placeholder="Excellent"
+                placeholder=""
                 onChange={handleFormChange}
               />
             </div>
@@ -115,10 +155,54 @@ const AdminAddArt = () => {
               />
             </div>
 
+            <div className="flex flex-col gap-1">
+              <label htmlFor="profile_image">Upload Images (Maximum - 4)</label>
+              <input
+                type="file"
+                id="Images"
+                className={`w-full md:w-[80%] px-3 py-4 border border-black/30 mt-2 outline-none`}
+                required
+                multiple
+                accept="image/*"
+                onChange={handleFileInputChange}
+              />
+            </div>
+
+            <div className="w-full flex gap-3 flex-wrap">
+              {selectedImages?.map((file, index) => (
+                <div
+                  key={index}
+                  className="relative w-fit h-fit border border-[#f97316] rounded-lg"
+                >
+                  <div
+                    onClick={() => removeImageAtIndex(index)}
+                    className="w-6 h-6 flex justify-center items-center p-1 rounded-full cursor-pointer bg-red-300 absolute top-[-8px] right-[-8px]"
+                  >
+                    <img
+                      src="/images/icons8-close-48.png"
+                      alt={`remove`}
+                      className="w-4 h-4"
+                    />
+                  </div>
+                  <img
+                    src={URL.createObjectURL(file)}
+                    alt={`preview-${index}`}
+                    className="w-[100px] h-[100px]"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {sendError && (
+              <p className="w-full md:w-[80%] px-3 py-2 bg-red-500/30 border border-red-500">
+                An error occurred!
+              </p>
+            )}
+
             <button
               onClick={(e) => {
                 e.preventDefault();
-                subitProject(formData);
+                submitProject(formData);
               }}
               className="w-fit bg-[#f97316] hover:opacity-70 border border-[#f97316] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300 flex gap-2 items-center"
             >

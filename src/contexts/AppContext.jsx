@@ -360,6 +360,7 @@ const AppContextProvider = ({ children }) => {
         passwordError,
         regError,
         regSuccess,
+        setregSuccess,
         setloginError,
         loginError,
         loginSuccess,
