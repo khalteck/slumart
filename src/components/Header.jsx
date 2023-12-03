@@ -125,7 +125,7 @@ const Header = () => {
             >
               <img
                 alt=""
-                src="/images/new-logo2.png"
+                src="/images/slum-art-logo-1.png"
                 className="w-[150px] md:w-[250px] h-auto"
               />
             </div>
