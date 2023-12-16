@@ -67,6 +67,10 @@ const Footer = () => {
               Transform your surroundings with the allure of fine art through
               our art rental services.
             </p>
+            <p className="mt-3">
+              <span className="text-yellow-300">Address</span>: 3 eckankar
+              drive, jakande estate isolo Lagos Nigeria
+            </p>
           </div>
           <div className="">
             <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
