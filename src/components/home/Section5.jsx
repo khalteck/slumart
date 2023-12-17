@@ -16,7 +16,7 @@ const Section5 = () => {
           <img
             alt="team"
             src="/images/team-1.png"
-            className="w-full h-auto min-h-[300px] bg-black/20"
+            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
           <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
             Omotayo Sharon
@@ -27,7 +27,7 @@ const Section5 = () => {
           <img
             alt="team"
             src="/images/team-2.png"
-            className="w-full h-auto min-h-[300px] bg-black/20"
+            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
           <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
             Kayode Afeez
@@ -38,7 +38,7 @@ const Section5 = () => {
           <img
             alt="team"
             src="/images/team-3.png"
-            className="w-full h-auto min-h-[300px] bg-black/20"
+            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
           <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
             Chinedu Tope
@@ -49,7 +49,7 @@ const Section5 = () => {
           <img
             alt="team"
             src="/images/team-4.png"
-            className="w-full h-auto min-h-[300px] bg-black/20"
+            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
           <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
             Tolulope Ahmed
@@ -60,7 +60,7 @@ const Section5 = () => {
           <img
             alt="team"
             src="/images/team-5.png"
-            className="w-full h-auto min-h-[300px] bg-black/20"
+            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
           <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
             Hamidat Chi
@@ -71,7 +71,7 @@ const Section5 = () => {
           <img
             alt="team"
             src="/images/team-6.png"
-            className="w-full h-auto min-h-[300px] bg-black/20"
+            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
           <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
             Sandra Bola
