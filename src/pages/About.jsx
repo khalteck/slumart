@@ -23,7 +23,7 @@ const About = () => {
   return (
     <>
       <Header />
-      <main className="w-full md:pt-[120px]">
+      <main className="w-full md:pt-[80px]">
         <section
           className={`w-full h-[300px] md:h-[400px] bg-cover bg-center relative z-0 bg-caro1`}
         >

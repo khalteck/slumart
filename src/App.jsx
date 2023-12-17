@@ -5,7 +5,7 @@ import Loader from "./components/Loader";
 import { useAppContext } from "./contexts/AppContext";
 import Banner from "./components/Banner";
 
-const Homepage = lazy(() => import("./pages/Homepage"));
+const Homepage2 = lazy(() => import("./pages/Homepage2"));
 const About = lazy(() => import("./pages/About"));
 const Projects = lazy(() => import("./pages/Projects"));
 const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
@@ -35,7 +35,7 @@ function App() {
       {regSuccess && <Banner message={regSuccess} />}
 
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Homepage2 />} />
         <Route path="/about" element={<About />} />
 
         <Route path="/projects" element={<Projects />} />

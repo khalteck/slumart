@@ -13,7 +13,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const scrollThreshold = 400;
+      const scrollThreshold = 300;
 
       setScrollBackground(scrollY > scrollThreshold);
     };
@@ -29,34 +29,48 @@ const Header = () => {
     setOpenMenu((prevState) => !prevState);
   }
 
-  function scrollToFooter() {
-    const footerSection = document.getElementById("footer");
-    if (footerSection) {
-      footerSection.scrollIntoView({ behavior: "smooth" });
-    }
-  }
+  // function scrollToFooter() {
+  //   const footerSection = document.getElementById("footer");
+  //   if (footerSection) {
+  //     footerSection.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }
 
-  function scrollToTeam() {
-    if (currentPage?.includes("about")) {
-      const teamSection = document.getElementById("team");
-      if (teamSection) {
-        teamSection.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      navigate("/about#team");
-    }
-  }
+  // function scrollToTeam() {
+  //   if (currentPage?.includes("about")) {
+  //     const teamSection = document.getElementById("team");
+  //     if (teamSection) {
+  //       teamSection.scrollIntoView({ behavior: "smooth" });
+  //     }
+  //   } else {
+  //     navigate("/about#team");
+  //   }
+  // }
 
   return (
     <header
-      className={`w-full h-[70px] ${
+      className={`w-full h-[70px] font-poppins ${
         scrollBackground
-          ? "bg-gray-100 text-black shadow-md md:h-[90px]"
-          : "bg-transparent md:bg-white text-black md:h-[150px]"
-      } flex justify-between px-3 lg:px-[10%] items-center transition-all duration-700 fixed top-0 left-0 z-[100] font-mont md:pt-2`}
+          ? "bg-gray-100 text-black md:h-[90px]"
+          : !scrollBackground && currentPage === "/"
+          ? "bg-transparent text-black md:h-[90px]"
+          : "bg-gray-100 text-black md:h-[90px]"
+      } flex justify-between px-3 md:px-[3%] lg:px-[10%] items-center transition-all duration-700 fixed top-0 left-0 z-[100] font-mont md:pt-2`}
     >
       <Link to="/">
-        {scrollBackground ? (
+        <div className="">
+          <div
+            onClick={() => navigate("/")}
+            className="gap-3 items-center flex cursor-pointer"
+          >
+            <img
+              alt=""
+              src="/images/new-logo3.png"
+              className="w-[150px] md:w-[200px] h-auto"
+            />
+          </div>
+        </div>
+        {/* {scrollBackground ? (
           <>
             <div className="">
               <div
@@ -68,9 +82,6 @@ const Header = () => {
                   src="/images/new-logo2.png"
                   className="w-[150px] md:w-[200px] h-auto"
                 />
-                {/* <h1 className="text-black text-[2rem] md:text-[3rem] font-bold">
-                  SlumArt
-                </h1> */}
               </div>
             </div>
           </>
@@ -86,12 +97,9 @@ const Header = () => {
                 src="/images/new-logo.png"
                 className="w-[150px] md:w-[250px] h-auto"
               />{" "}
-              {/* <h1 className="text-white text-[2rem] md:text-[3rem] font-bold">
-                SlumArt
-              </h1> */}
             </div>
           </>
-        )}
+        )} */}
       </Link>
       <div
         onClick={handleClick}
@@ -102,7 +110,7 @@ const Header = () => {
             scrollBackground
               ? "bg-[#f97316]"
               : !scrollBackground
-              ? "bg-white"
+              ? "bg-black"
               : "bg-[#f97316]"
           } rounded-lg`}
         ></div>
@@ -111,28 +119,13 @@ const Header = () => {
             scrollBackground
               ? "bg-[#f97316]"
               : !scrollBackground
-              ? "bg-white"
+              ? "bg-black"
               : "bg-[#f97316]"
           } rounded-lg`}
         ></div>{" "}
       </div>
-      <div className="w-full hidden md:flex flex-col items-center justify-center">
-        {!scrollBackground && (
-          <div className="w-full h-[80px] flex gap-12 mt-3 items-center justify-center sm:text-[.8rem] lg:text-[.9rem]">
-            <div
-              onClick={() => navigate("/")}
-              className="flex gap-3 items-center cursor-pointer"
-            >
-              <img
-                alt=""
-                src="/images/slum-art-logo-1.png"
-                className="w-[150px] md:w-[250px] h-auto"
-              />
-            </div>
-          </div>
-        )}
-
-        <ul className="sm:h-[80px] lg:h-[60px] gap-6 text-[1.1rem] items-center justify-center md:flex uppercase mt-2">
+      <div className="w-full hidden md:flex flex-col md:ml-[5%] lg:ml-[10%]">
+        <ul className="sm:h-[80px] lg:h-[60px] gap-6 text-[1.1rem] items-center md:flex uppercase">
           <li
             onClick={() => navigate("/")}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
@@ -151,7 +144,7 @@ const Header = () => {
           >
             About
           </li>
-          <li
+          {/* <li
             onClick={() => scrollToTeam()}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
               currentPage === "/team"
@@ -160,7 +153,7 @@ const Header = () => {
             }`}
           >
             Team
-          </li>
+          </li> */}
           <li
             onClick={() => navigate("/projects")}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
@@ -169,7 +162,7 @@ const Header = () => {
                 : "text-black"
             }`}
           >
-            Projects
+            Gallery
           </li>
           {/* <li
             onClick={() => navigate("/countries")}
@@ -180,20 +173,42 @@ const Header = () => {
             }`}
           >
             Countries
-          </li>
+          </li> */}
 
           <li
             onClick={() => navigate("/volunteers")}
+            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+              currentPage === "/volunteers"
+                ? "text-[#f97316] font-bold"
+                : "text-black"
+            }`}
+          >
+            Volunteer
+          </li>
+
+          <li
+            // onClick={() => navigate("/volunteers")}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
               currentPage === "/volunteer"
                 ? "text-[#f97316] font-bold"
                 : "text-black"
             }`}
           >
-            Volunteers
-          </li> */}
+            DONATE
+          </li>
 
           <li
+            // onClick={() => navigate("/volunteers")}
+            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+              currentPage === "/volunteer"
+                ? "text-[#f97316] font-bold"
+                : "text-black"
+            }`}
+          >
+            Blogs
+          </li>
+
+          {/* <li
             onClick={() => navigate("/shop")}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
               currentPage === "/shop"
@@ -202,8 +217,8 @@ const Header = () => {
             }`}
           >
             Shop
-          </li>
-
+          </li> */}
+          {/* 
           <li
             onClick={() => scrollToFooter()}
             className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
@@ -213,7 +228,7 @@ const Header = () => {
             }`}
           >
             Contact
-          </li>
+          </li> */}
 
           {isAdmin && (
             <li
@@ -231,7 +246,7 @@ const Header = () => {
           {userData?.access ? (
             <li
               onClick={logout}
-              className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.85rem] text-black flex gap-2 items-center bg-[#f97316]/20 px-2 py-1 rounded-sm`}
+              className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.85rem] text-black flex gap-2 items-center bg-[#f97316]/20 px-2 py-1 rounded-sm ml-auto`}
             >
               <img
                 alt=""
@@ -241,36 +256,39 @@ const Header = () => {
               <p>Logout</p>
             </li>
           ) : (
-            <li
-              onClick={() => navigate("/login")}
-              className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
-                currentPage === "/login"
-                  ? "text-[#f97316] font-bold"
-                  : "text-black"
-              }`}
-            >
-              Login
-            </li>
+            <>
+              <li
+                onClick={() => navigate("/login")}
+                className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ml-auto ${
+                  currentPage === "/login"
+                    ? "text-[#f97316] font-bold"
+                    : "text-black"
+                }`}
+              >
+                <button className="px-3 py-1 border-2 border-black rounded-md">
+                  Login
+                </button>
+              </li>
+              <li
+                onClick={() => navigate("/register")}
+                className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ml-[-10px] ${
+                  currentPage === "/login"
+                    ? "text-[#f97316] font-bold"
+                    : "text-black"
+                }`}
+              >
+                <button className="px-3 py-1 border-2 border-black bg-black text-white rounded-md">
+                  Register
+                </button>
+              </li>
+            </>
           )}
-
-          {/* {scrollBackground && (
-            <li className="gap-4 items-center ml-auto flex">
-              <div className="ml-auto flex gap-3 items-center text-[#f97316] text-[1.25rem] font-medium">
-                <img
-                  alt=""
-                  src="/images/icons8-user-50.png"
-                  className="w-10 h-10"
-                />
-                <p>Login</p>
-              </div>
-            </li>
-          )} */}
         </ul>
       </div>
 
       {/* mobile dropdown */}
       {openMenu && (
-        <div className="w-full min-h-fit h-[100vh] z-[200] bg-neutral-800 fixed top-0 left-0 lg:hidden">
+        <div className="w-full min-h-fit h-[100vh] z-[200] bg-black fixed top-0 left-0 lg:hidden overflow-y-auto">
           <div
             onClick={() => {
               handleClick();
@@ -283,23 +301,7 @@ const Header = () => {
               src="/images/icons8-close-50.png"
             />
           </div>
-          <ul className="slide float-right w-full min-h-[150px] bg-neutral-800 py-10 text-white gap-3 px-7 text-[1.25rem] md:hidden flex flex-col">
-            <li className="py-2 uppercase border-b">
-              <div
-                onClick={() => {
-                  handleClick();
-                  navigate("/login");
-                }}
-                className="flex gap-3 items-center text-[#f97316] text-[1.25rem] font-medium cursor-pointer"
-              >
-                <img
-                  alt=""
-                  src="/images/icons8-user-50.png"
-                  className="w-10 h-10"
-                />
-                <p>Login</p>
-              </div>
-            </li>
+          <ul className="slide float-right w-full min-h-[150px] bg-black py-10 text-white gap-3 px-7 text-[1.25rem] md:hidden flex flex-col">
             <li
               onClick={() => {
                 handleClick();
@@ -320,7 +322,7 @@ const Header = () => {
               About
             </li>
 
-            <li
+            {/* <li
               onClick={() => {
                 handleClick();
                 scrollToTeam();
@@ -328,7 +330,7 @@ const Header = () => {
               className="py-2 uppercase"
             >
               Team
-            </li>
+            </li> */}
 
             <li
               onClick={() => {
@@ -337,17 +339,7 @@ const Header = () => {
               }}
               className="py-2 uppercase"
             >
-              Projects
-            </li>
-
-            {/* <li
-              onClick={() => {
-                handleClick();
-                navigate("/countries");
-              }}
-              className="py-2 uppercase"
-            >
-              Countries
+              Gallery
             </li>
 
             <li
@@ -357,20 +349,30 @@ const Header = () => {
               }}
               className="py-2 uppercase"
             >
-              Volunteers
-            </li> */}
+              Volunteer
+            </li>
 
             <li
               onClick={() => {
                 handleClick();
-                navigate("/shop");
+                // navigate("/countries");
               }}
               className="py-2 uppercase"
             >
-              Shop
+              Donate
             </li>
 
             <li
+              onClick={() => {
+                handleClick();
+                // navigate("/shop");
+              }}
+              className="py-2 uppercase"
+            >
+              Blogs
+            </li>
+
+            {/* <li
               onClick={() => {
                 handleClick();
                 scrollToFooter();
@@ -378,6 +380,28 @@ const Header = () => {
               className="py-2 uppercase"
             >
               Contact
+            </li> */}
+
+            <li className="py-2 uppercase border-t">
+              <div
+                onClick={() => {
+                  handleClick();
+                  navigate("/login");
+                }}
+                className="flex gap-3 items-center font-light text-[1rem] cursor-pointer"
+              >
+                <p>Login</p>
+              </div>
+
+              <div
+                onClick={() => {
+                  handleClick();
+                  navigate("/register");
+                }}
+                className="flex gap-3 items-center font-light text-[1rem] cursor-pointer mt-3"
+              >
+                <p>Register</p>
+              </div>
             </li>
           </ul>
         </div>
