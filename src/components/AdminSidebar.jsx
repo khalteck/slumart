@@ -44,12 +44,18 @@ const AdminSidebar = () => {
             )}
             Add Admin
           </li>
+          <li
+            onClick={() => navigate("/")}
+            className="w-full bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer py-3 pl-6 flex gap-3 relative"
+          >
+            Back to site
+          </li>
         </ul>
       </div>
 
       {/* mobile */}
       {openSideBar && (
-        <div className="w-full fixed left-0 top-0 h-screen flex">
+        <div className="w-full fixed left-0 top-0 h-screen flex z-[999]">
           <div className="w-[70%] bg-[#0f172a] p-4 overflow-y-auto text-white">
             <ul className="w-full flex flex-col gap-3">
               <li className="w-full mb-14 flex justify-between items-center">
@@ -96,6 +102,15 @@ const AdminSidebar = () => {
                 className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer"
               >
                 Add Admin
+              </li>
+              <li
+                onClick={() => {
+                  navigate("/");
+                  toggleSidebar();
+                }}
+                className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer"
+              >
+                Back to site
               </li>
               <li
                 onClick={logout}

@@ -108,19 +108,19 @@ const Header = () => {
         <div
           className={`w-full h-1 ${
             scrollBackground
-              ? "bg-[#f97316]"
+              ? "bg-[#F7C30D]"
               : !scrollBackground
               ? "bg-black"
-              : "bg-[#f97316]"
+              : "bg-[#F7C30D]"
           } rounded-lg`}
         ></div>
         <div
           className={`w-full h-1 ${
             scrollBackground
-              ? "bg-[#f97316]"
+              ? "bg-[#F7C30D]"
               : !scrollBackground
               ? "bg-black"
-              : "bg-[#f97316]"
+              : "bg-[#F7C30D]"
           } rounded-lg`}
         ></div>{" "}
       </div>
@@ -128,17 +128,17 @@ const Header = () => {
         <ul className="sm:h-[80px] lg:h-[60px] gap-6 text-[1.1rem] items-center md:flex uppercase">
           <li
             onClick={() => navigate("/")}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
-              currentPage === "/" ? "text-[#f97316] font-bold" : "text-black"
+            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
+              currentPage === "/" ? "text-[#F7C30D] font-bold" : "text-black"
             }`}
           >
             Home
           </li>
           <li
             onClick={() => navigate("/about")}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/about"
-                ? "text-[#f97316] font-bold"
+                ? "text-[#F7C30D] font-bold"
                 : "text-black"
             }`}
           >
@@ -146,9 +146,9 @@ const Header = () => {
           </li>
           {/* <li
             onClick={() => scrollToTeam()}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/team"
-                ? "text-[#f97316] font-bold"
+                ? "text-[#F7C30D] font-bold"
                 : "text-black"
             }`}
           >
@@ -156,9 +156,9 @@ const Header = () => {
           </li> */}
           <li
             onClick={() => navigate("/projects")}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/projects"
-                ? "text-[#f97316] font-bold"
+                ? "text-[#F7C30D] font-bold"
                 : "text-black"
             }`}
           >
@@ -166,9 +166,9 @@ const Header = () => {
           </li>
           {/* <li
             onClick={() => navigate("/countries")}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/countries"
-                ? "text-[#f97316] font-bold"
+                ? "text-[#F7C30D] font-bold"
                 : "text-black"
             }`}
           >
@@ -177,9 +177,9 @@ const Header = () => {
 
           <li
             onClick={() => navigate("/volunteers")}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/volunteers"
-                ? "text-[#f97316] font-bold"
+                ? "text-[#F7C30D] font-bold"
                 : "text-black"
             }`}
           >
@@ -188,9 +188,9 @@ const Header = () => {
 
           <li
             // onClick={() => navigate("/volunteers")}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/volunteer"
-                ? "text-[#f97316] font-bold"
+                ? "text-[#F7C30D] font-bold"
                 : "text-black"
             }`}
           >
@@ -199,9 +199,9 @@ const Header = () => {
 
           <li
             // onClick={() => navigate("/volunteers")}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/volunteer"
-                ? "text-[#f97316] font-bold"
+                ? "text-[#F7C30D] font-bold"
                 : "text-black"
             }`}
           >
@@ -210,9 +210,9 @@ const Header = () => {
 
           {/* <li
             onClick={() => navigate("/shop")}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/shop"
-                ? "text-[#f97316] font-bold"
+                ? "text-[#F7C30D] font-bold"
                 : "text-black"
             }`}
           >
@@ -221,9 +221,9 @@ const Header = () => {
           {/* 
           <li
             onClick={() => scrollToFooter()}
-            className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/contact"
-                ? "text-[#f97316] font-bold"
+                ? "text-[#F7C30D] font-bold"
                 : "text-black"
             }`}
           >
@@ -233,9 +233,9 @@ const Header = () => {
           {isAdmin && (
             <li
               onClick={() => navigate("/admin")}
-              className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ${
+              className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
                 currentPage === "/contact"
-                  ? "text-[#f97316] font-bold"
+                  ? "text-[#F7C30D] font-bold"
                   : "text-black"
               }`}
             >
@@ -246,7 +246,7 @@ const Header = () => {
           {userData?.access ? (
             <li
               onClick={logout}
-              className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.85rem] text-black flex gap-2 items-center bg-[#f97316]/20 px-2 py-1 rounded-sm ml-auto`}
+              className={`px-3 py-1 border-2 border-black bg-black text-white rounded-md ml-auto flex items-center gap-3 cursor-pointer`}
             >
               <img
                 alt=""
@@ -259,9 +259,9 @@ const Header = () => {
             <>
               <li
                 onClick={() => navigate("/login")}
-                className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ml-auto ${
+                className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ml-auto ${
                   currentPage === "/login"
-                    ? "text-[#f97316] font-bold"
+                    ? "text-[#F7C30D] font-bold"
                     : "text-black"
                 }`}
               >
@@ -271,9 +271,9 @@ const Header = () => {
               </li>
               <li
                 onClick={() => navigate("/register")}
-                className={`cursor-pointer hover:text-[#f97316] transition-all duration-300 text-[.9rem] ml-[-10px] ${
+                className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ml-[-10px] ${
                   currentPage === "/login"
-                    ? "text-[#f97316] font-bold"
+                    ? "text-[#F7C30D] font-bold"
                     : "text-black"
                 }`}
               >
