@@ -52,6 +52,7 @@ const Section3 = () => {
             alt=""
             src="/images/hero3.png"
             className="w-full md:w-[55%] h-auto"
+            loading="lazy"
           />
         </div>
       </div>
