@@ -38,7 +38,11 @@ const Section1 = () => {
           className="w-[200px] h-auto mt-10"
         />
       </div>
-      <img alt="hero" src="/images/hero1.png" className="w-full md:w-[50%]" />
+      <img
+        alt="hero"
+        src="/images/hero1.png"
+        className="w-full md:w-[50%] min-h-[600px]"
+      />
     </section>
   );
 };
