@@ -51,7 +51,7 @@ const Section3 = () => {
           <img
             alt=""
             src="/images/hero3.png"
-            className="w-full md:w-[55%] h-auto"
+            className="w-full md:w-[55%] h-auto min-h-[350px] bg-black/50"
           />
         </div>
       </div>

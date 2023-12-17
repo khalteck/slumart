@@ -27,7 +27,7 @@ const Section2 = () => {
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-delay="200"
-            className="relative w-full h-fit"
+            className="relative w-full h-fit min-h-[350px]"
           >
             <img
               alt=""
@@ -46,7 +46,7 @@ const Section2 = () => {
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-delay="200"
-            className="relative w-full h-fit"
+            className="relative w-full h-fit min-h-[350px]"
           >
             <img
               alt=""
@@ -67,7 +67,7 @@ const Section2 = () => {
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-delay="200"
-            className="relative w-full h-fit"
+            className="relative w-full h-fit min-h-[350px]"
           >
             <img
               alt=""
@@ -88,7 +88,7 @@ const Section2 = () => {
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-delay="200"
-            className="relative w-full h-fit"
+            className="relative w-full h-fit min-h-[350px]"
           >
             <img
               alt=""

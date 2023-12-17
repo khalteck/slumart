@@ -2,12 +2,12 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="bg-[#040921] text-center text-neutral-200 lg:text-left mt-[80px] lg:mt-[120px] lg:pt-10 relative"
+      className="bg-[#040921] text-center text-neutral-200 lg:text-left mt-[80px] lg:mt-[120px] lg:pt-[60px] relative"
     >
       <img
         alt="decor"
         src="/images/footer-decor.png"
-        className="w-full h-auto absolute top-[-30px] sm:top-[-60px] lg:top-[-100px] left-0"
+        className="w-full h-auto absolute top-[-30px] sm:top-[-60px] lg:top-[-140px] left-0"
       />
       <div className="pb-10 py-10 sm:pt-[100px] px-3 md:px-[10%] text-center md:text-left">
         <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
