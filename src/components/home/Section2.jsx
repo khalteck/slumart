@@ -33,7 +33,6 @@ const Section2 = () => {
               alt=""
               src="/images/exhibition1.png"
               className="w-full h-auto"
-              loading="lazy"
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black/50 p-5 flex items-center justify-center font-semibold text-[1.5rem] md:text-[2rem] lg:text-[3rem] text-white">
               <div className="flex flex-col gap-1 items-center">
@@ -53,7 +52,6 @@ const Section2 = () => {
               alt=""
               src="/images/exhibition1.png"
               className="w-full h-auto"
-              loading="lazy"
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black/50 p-5 flex items-center justify-center font-semibold text-[1.5rem] md:text-[2rem] lg:text-[3rem] text-white">
               <div className="flex flex-col gap-1 items-center">
@@ -75,7 +73,6 @@ const Section2 = () => {
               alt=""
               src="/images/exhibition2.png"
               className="w-full h-auto"
-              loading="lazy"
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black/50 p-5 flex items-center justify-center font-semibold text-[1.5rem] md:text-[2rem] lg:text-[3rem] text-white">
               <div className="flex flex-col gap-1 items-center">
@@ -97,7 +94,6 @@ const Section2 = () => {
               alt=""
               src="/images/exhibition1.png"
               className="w-full h-auto"
-              loading="lazy"
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black/50 p-5 flex items-center justify-center font-semibold text-[1.5rem] md:text-[2rem] lg:text-[3rem] text-white">
               <div className="flex flex-col gap-1 items-center">

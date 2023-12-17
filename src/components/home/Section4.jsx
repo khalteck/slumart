@@ -33,12 +33,7 @@ const Section4 = () => {
           data-aos-delay="300"
           className="flex flex-col w-full md:w-[400px] gap-4 text-[1.5rem] md:text-[2rem] font-light"
         >
-          <img
-            alt=""
-            src="/images/art1.png"
-            className="w-full h-auto"
-            loading="lazy"
-          />
+          <img alt="" src="/images/art1.png" className="w-full h-auto" />
           <div className="flex flex-col gap-2 md:gap-3">
             <p>Roman Empire </p>
             <p className="text-[1.3rem]">by- Omotolani Afeez</p>
@@ -51,12 +46,7 @@ const Section4 = () => {
           data-aos-delay="300"
           className="sm:flex flex-col w-full md:w-[400px] gap-4 text-[1.5rem] md:text-[2rem] font-light hidden"
         >
-          <img
-            alt=""
-            src="/images/art1.png"
-            className="w-full h-auto"
-            loading="lazy"
-          />
+          <img alt="" src="/images/art1.png" className="w-full h-auto" />
           <div className="flex flex-col gap-2 md:gap-3">
             <p>Roman Empire </p>
             <p className="text-[1.3rem]">by- Omotolani Afeez</p>

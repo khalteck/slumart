@@ -35,7 +35,6 @@ const Section1 = () => {
           data-aos-duration="800"
           alt="decor"
           src="/images/decor1.png"
-          loading="lazy"
           className="w-[200px] h-auto mt-10"
         />
       </div>
