@@ -75,7 +75,7 @@ const Comment = ({ item }) => {
                 e.preventDefault();
                 submitReplies(replyData);
               }}
-              className="w-fit bg-[#f97316] hover:opacity-70 border border-[#f97316] px-5 md:px-8 py-2 mt-3 rounded-sm text-white font-medium transition-all duration-300 flex gap-2 items-center"
+              className="w-fit bg-[#F7C30D] hover:opacity-70 border border-[#F7C30D] px-5 md:px-8 py-2 mt-3 rounded-sm text-white font-medium transition-all duration-300 flex gap-2 items-center"
             >
               {replyLoader ? "Processing" : "Reply"}
               {replyLoader && <ClipLoader color={"#fff"} size={20} />}

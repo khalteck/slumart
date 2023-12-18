@@ -36,15 +36,15 @@ const Projects = () => {
           <h2 className="font-bold text-[1.5rem] md:text-[2rem] mb-10">
             <div className="w-fit mx-auto">
               PROJECTS
-              <div className="w-[70%] h-3 bg-[#f97316] mt-1"></div>
+              <div className="w-[70%] h-3 bg-[#F7C30D] mt-1"></div>
             </div>
           </h2>
           <p className="mb-10 text-center font-normal text-[1.25rem]">
-            Welcome to our projects page, a curated collection showcasing our
+            Welcome to our blog page, a curated collection showcasing our
             creative endeavors and innovative solutions.
-            <br /> Dive into a world of diverse projects of various countries,
+            {/* <br /> Dive into a world of diverse projects of various countries,
             each a testament to our passion for excellence and commitment to
-            pushing boundaries.{" "}
+            pushing boundaries.{" "} */}
           </p>
 
           {allProjectsHome?.length === 0 && (
@@ -52,7 +52,7 @@ const Projects = () => {
               No projects yet..
             </div>
           )}
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-10 mb-8">
+          <div className="w-full flex flex-wrap gap-4 md:gap-10 mb-8">
             {allProjectsHome?.map((item, index) => {
               return <ProjectCard key={index} item={item} />;
             })}

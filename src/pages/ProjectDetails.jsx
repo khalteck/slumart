@@ -78,7 +78,7 @@ const ProjectDetails = () => {
           <div className="w-full h-full absolute top-0 left-0 bg-black/60 px-3 py-[100px] lg:px-[15%] lg:py-[150px] md:flex justify-center items-center">
             <div className="flex flex-col items-center gap-3 mt-[50px] sm:mt-[100px] lg:mt-0 relative">
               <h1
-                className={`w-full text-[2rem] md:text-[3.5rem] text-center font-bold text-white leading-tight scale first-section-text uppercase`}
+                className={`w-full text-[2rem] md:text-[3rem] text-center font-bold text-white leading-tight scale first-section-text uppercase`}
               >
                 {currentProject?.title}
               </h1>
@@ -88,11 +88,11 @@ const ProjectDetails = () => {
         <section className="w-full px-3 md:px-[10%] py-10">
           <h2 className="font-bold text-[1.5rem] md:text-[2rem] mb-10">
             <div className="w-fit mx-auto">
-              PROJECT DETAILS
-              <div className="w-[70%] h-3 bg-[#f97316] mt-1"></div>
+              BLOG DETAILS
+              <div className="w-[70%] h-3 bg-[#F7C30D] mt-1"></div>
             </div>
           </h2>
-          <div className="w-full flex flex-col rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-white border-2 border-[#f97316] text-neutral-700 lg:flex-row">
+          <div className="w-full flex flex-col rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-white border-2 border-[#F7C30D] text-neutral-700 lg:flex-row">
             <div className="w-full flex flex-col justify-start p-6">
               <h5 className="mb-2 text-[1.5rem] md:text-[2.5rem] font-medium">
                 {currentProject?.title}
@@ -126,7 +126,7 @@ const ProjectDetails = () => {
               </div>
             </div>
           </div>{" "}
-          <div className="w-full border-2 border-[#f97316] rounded-lg p-4 mt-10 bg-neutral-200/50">
+          <div className="w-full border-2 border-[#F7C30D] rounded-lg p-4 mt-10 bg-neutral-200/50">
             <h2 className="text-[1.5rem] font-medium mb-5">
               Projects Comments
             </h2>
@@ -160,7 +160,7 @@ const ProjectDetails = () => {
                       e.preventDefault();
                       submitComment(formData);
                     }}
-                    className="w-fit bg-[#f97316] hover:opacity-70 border border-[#f97316] px-5 md:px-8 py-2 mt-3 rounded-sm text-white font-medium transition-all duration-300 flex gap-2 items-center"
+                    className="w-fit bg-[#F7C30D] hover:opacity-70 border border-[#F7C30D] px-5 md:px-8 py-2 mt-3 rounded-sm text-white font-medium transition-all duration-300 flex gap-2 items-center"
                   >
                     {commentLoader ? "Processing" : "Comment"}
                     {commentLoader && <ClipLoader color={"#fff"} size={20} />}

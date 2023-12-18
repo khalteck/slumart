@@ -155,9 +155,9 @@ const Header = () => {
             Team
           </li> */}
           <li
-            onClick={() => navigate("/projects")}
+            onClick={() => navigate("/shop")}
             className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
-              currentPage === "/projects"
+              currentPage === "/shop"
                 ? "text-[#F7C30D] font-bold"
                 : "text-black"
             }`}
@@ -198,9 +198,9 @@ const Header = () => {
           </li>
 
           <li
-            // onClick={() => navigate("/volunteers")}
+            onClick={() => navigate("/projects")}
             className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
-              currentPage === "/volunteer"
+              currentPage === "/projects"
                 ? "text-[#F7C30D] font-bold"
                 : "text-black"
             }`}
@@ -335,7 +335,7 @@ const Header = () => {
             <li
               onClick={() => {
                 handleClick();
-                navigate("/projects");
+                navigate("/shop");
               }}
               className="py-2 uppercase"
             >
@@ -365,7 +365,7 @@ const Header = () => {
             <li
               onClick={() => {
                 handleClick();
-                // navigate("/shop");
+                navigate("/projects");
               }}
               className="py-2 uppercase"
             >

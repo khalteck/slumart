@@ -23,7 +23,7 @@ const Volunteers = () => {
               </h1>
               <button
                 onClick={() => navigate("/register")}
-                className="w-fit bg-[#f97316] hover:bg-white hover:text-[#f97316] border border-[#f97316] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
+                className="w-fit bg-[#F7C30D] hover:bg-white hover:text-[#F7C30D] border border-[#F7C30D] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
               >
                 Register
               </button>
@@ -41,7 +41,7 @@ const Volunteers = () => {
             <h2 className="font-bold text-[1.5rem] md:text-[2rem]">
               <div className="w-fit">
                 BECOME A VOLUNTEER
-                <div className="w-[70%] h-3 bg-[#f97316] mt-1"></div>
+                <div className="w-[70%] h-3 bg-[#F7C30D] mt-1"></div>
               </div>
             </h2>
             <div className="text-[1.1rem]">
@@ -53,7 +53,7 @@ const Volunteers = () => {
 
             <button
               onClick={() => navigate("/register")}
-              className="w-fit bg-[#f97316] hover:bg-white hover:text-[#f97316] border border-[#f97316] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
+              className="w-fit bg-[#F7C30D] hover:bg-white hover:text-[#F7C30D] border border-[#F7C30D] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
             >
               Join Us
             </button>

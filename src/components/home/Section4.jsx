@@ -1,4 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from "react";
+import { useAdminContext } from "../../contexts/AdminContext";
+import ShopCard from "../ShopCard";
+
 const Section4 = () => {
+  const { fetchArts, allArtpieces } = useAdminContext();
+
+  useEffect(() => {
+    fetchArts();
+  }, []);
+
   return (
     <section className="w-full pb-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">
       <div className="flex md:flex-row flex-col justify-between items-end">
@@ -26,7 +37,18 @@ const Section4 = () => {
         </div>
       </div>
 
-      <div className="mt-10 flex gap-10">
+      {allArtpieces?.length === 0 && (
+        <div className="w-full h-[200px] flex justify-center items-center bg-white border mt-10">
+          No art pieces yet..
+        </div>
+      )}
+      <div className="w-full flex flex-wrap gap-4 md:gap-10 mb-8 mt-10">
+        {allArtpieces?.map((item, index) => {
+          return <ShopCard key={index} item={item} />;
+        })}
+      </div>
+
+      {/* <div className="mt-10 flex gap-10">
         <div
           data-aos="zoom-in"
           data-aos-duration="800"
@@ -44,6 +66,7 @@ const Section4 = () => {
             <p>N25,000</p>
           </div>
         </div>
+
         <div
           data-aos="zoom-in"
           data-aos-duration="800"
@@ -61,7 +84,7 @@ const Section4 = () => {
             <p>N25,000</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

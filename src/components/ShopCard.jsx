@@ -2,37 +2,23 @@
 const ShopCard = ({ item }) => {
   return (
     <div
-      data-aos="fade-left"
-      data-aos-duration="1000"
+      data-aos="zoom-in"
+      data-aos-duration="800"
       data-aos-delay="300"
-      className="w-full min-w-[300px] flex flex-col rounded-lg bg-neutral-200 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+      className="flex flex-col w-full md:w-[400px] gap-4 text-[1.5rem] md:text-[2rem] font-light"
     >
-      <div
-        className="relative h-[200px] overflow-hidden bg-cover bg-no-repeat"
-        data-te-ripple-init
-        data-te-ripple-color="light"
-      >
-        <img
-          className="rounded-t-lg w-full h-full object-cover"
-          src={item?.images[0]}
-          alt=""
-        />
-        <a href="#!">
-          <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
-        </a>
-      </div>
-      <div className="px-6 pt-4">
-        <h5 className="mb-2 text-[2rem] font-medium leading-tight text-neutral-800">
-          {item?.name}
-        </h5>
-        <p className="mb-2 text-base text-neutral-600">{item?.materials}</p>
-        <p className="mb-2 text-base text-neutral-600">Size: {item?.size}</p>
-        <p className="font-bold text-[1.5rem]">N{item?.price}</p>
-      </div>
-      <div className="w-full mt-auto p-6">
+      <img
+        alt=""
+        src={item?.images[0]}
+        className="w-full h-auto min-h-[300px] bg-black/50 hover:scale-110 cursor-pointer transition-all duration-300"
+      />
+      <div className="flex flex-col gap-2 md:gap-3">
+        <p>{item?.name} </p>
+        <p className="text-[1.3rem]">by- Omotolani Afeez</p>
+        <p>N{item?.price}</p>
         <button
           // onClick={() => navigate("/gallery")}
-          className="w-fit bg-[#f97316] hover:bg-white hover:text-[#f97316] border border-[#f97316] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
+          className="w-fit h-fit text-[1.25rem] bg-[#F7C30D] hover:bg-white hover:text-[#F7C30D] border border-[#F7C30D] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
         >
           Buy
         </button>

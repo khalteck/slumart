@@ -84,7 +84,7 @@ const About = () => {
           <h2 className="font-bold text-[1.5rem] md:text-[2rem]">
             <div className="w-fit mx-auto mb-4">
               MEET OUR TEAM
-              <div className="w-[70%] h-3 bg-[#f97316] mt-1"></div>
+              <div className="w-[70%] h-3 bg-[#F7C30D] mt-1"></div>
             </div>
           </h2>
 
@@ -103,7 +103,7 @@ const About = () => {
               <h2 className="font-bold text-[1.5rem] md:text-[2rem]">
                 <div className="w-fit mx-auto mb-4">
                   GET INVOLVED
-                  <div className="w-[70%] h-3 bg-[#f97316] mt-1"></div>
+                  <div className="w-[70%] h-3 bg-[#F7C30D] mt-1"></div>
                 </div>
               </h2>
 
@@ -127,7 +127,7 @@ const About = () => {
               <div className="w-full text-center mt-4">
                 <button
                   onClick={() => navigate("/projects")}
-                  className="w-fit bg-[#f97316] hover:bg-white hover:text-[#f97316] border border-[#f97316] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
+                  className="w-fit bg-[#F7C30D] hover:bg-white hover:text-[#F7C30D] border border-[#F7C30D] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
                 >
                   Get Involved
                 </button>
