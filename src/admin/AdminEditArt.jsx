@@ -39,7 +39,7 @@ const AdminEditArt = () => {
     price: currentArt?.price || "",
     from_home: currentArt?.from_home || "",
     likes: Number(currentArt?.likes) || 0,
-    images: [],
+    // images: [],
   });
 
   console.log("formData", formData);
@@ -62,7 +62,6 @@ const AdminEditArt = () => {
   // console.log("currentArt", currentArt);
 
   const handleFileInputChange = (e) => {
-    setsendError("");
     const files = e.target.files;
     const selectedFiles = [];
 
@@ -73,11 +72,16 @@ const AdminEditArt = () => {
       }
     }
 
+    const formDataObject = {};
+    selectedFiles.forEach((file, index) => {
+      formDataObject[`image${index + 1}`] = file;
+    });
+
     setSelectedImages(selectedFiles);
     setFormData((prev) => {
       return {
         ...prev,
-        images: selectedFiles,
+        ...formDataObject,
       };
     });
   };
@@ -230,7 +234,7 @@ const AdminEditArt = () => {
               ))}
             </div>
 
-            <h3>Previously uploaded image(s)</h3>
+            {/* <h3>Previously uploaded image(s)</h3>
             <div className="w-full flex gap-3 flex-wrap">
               {currentArt?.images?.map((file, index) => (
                 <div
@@ -246,7 +250,7 @@ const AdminEditArt = () => {
                       alt={`remove`}
                       className="w-4 h-4"
                     />
-                  </div> */}
+                  </div> 
                   <img
                     src={
                       typeof file === "string"
@@ -258,7 +262,7 @@ const AdminEditArt = () => {
                   />
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {sendError && (
               <p className="w-full md:w-[80%] px-3 py-2 bg-red-500/30 border border-red-500">

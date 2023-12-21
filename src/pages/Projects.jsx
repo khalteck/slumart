@@ -26,7 +26,7 @@ const Projects = () => {
               <h1
                 className={`w-full text-[2rem] md:text-[3.5rem] md:mt-12 text-center font-bold text-white leading-tight scale first-section-text`}
               >
-                EXPLORE OUR PROJECTS
+                BLOG
               </h1>
             </div>
           </div>
@@ -35,7 +35,7 @@ const Projects = () => {
         <section className="w-full px-3 md:px-[10%] py-10 bg-white">
           <h2 className="font-bold text-[1.5rem] md:text-[2rem] mb-10">
             <div className="w-fit mx-auto">
-              PROJECTS
+              EXPLORE OUR BLOGS
               <div className="w-[70%] h-3 bg-[#F7C30D] mt-1"></div>
             </div>
           </h2>

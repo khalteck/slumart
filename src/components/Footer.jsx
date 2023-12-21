@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer
@@ -32,25 +34,50 @@ const Footer = () => {
                 Reach Out
               </h6>
               <p className="mb-4">
-                <a href="#!" className="text-neutral-600 dark:text-neutral-200">
+                <a
+                  href="https://www.facebook.com/slumart1?mibextid=ZbWKwL"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-neutral-600 dark:text-neutral-200"
+                >
                   Facebook
                 </a>
               </p>
               <p className="mb-4">
-                <a href="#!" className="text-neutral-600 dark:text-neutral-200">
+                <a
+                  href="https://www.instagram.com/slumart1?igsh=OGQ5ZDc2ODk2ZA=="
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-neutral-600 dark:text-neutral-200"
+                >
                   Instagram
                 </a>
               </p>
               <p className="mb-4">
-                <a href="#!" className="text-neutral-600 dark:text-neutral-200">
-                  Twitter
+                <a
+                  href="https://www.tiktok.com/@slum.art.foundati?_t=8iNS5mh7guM&_r=1"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-neutral-600 dark:text-neutral-200"
+                >
+                  Tiktok
                 </a>
               </p>
-              <p>
+              <p className="mb-4">
+                <a
+                  href="https://www.youtube.com/@slumart3912"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-neutral-600 dark:text-neutral-200"
+                >
+                  Youtube
+                </a>
+              </p>
+              {/* <p>
                 <a href="#!" className="text-neutral-600 dark:text-neutral-200">
                   Whatsapp
                 </a>
-              </p>
+              </p> */}
             </div>
 
             <div className="flex flex-col items-center">
@@ -58,19 +85,25 @@ const Footer = () => {
                 Explore
               </h6>
               <p className="mb-4">
-                <a href="#!" className="text-neutral-600 dark:text-neutral-200">
+                <Link
+                  to="/about"
+                  className="text-neutral-600 dark:text-neutral-200"
+                >
                   Our Story
-                </a>
+                </Link>
               </p>
               <p className="mb-4">
-                <a href="#!" className="text-neutral-600 dark:text-neutral-200">
+                <Link to="/" className="text-neutral-600 dark:text-neutral-200">
                   Home
-                </a>
+                </Link>
               </p>
               <p className="mb-4">
-                <a href="#!" className="text-neutral-600 dark:text-neutral-200">
+                <Link
+                  to="/shop"
+                  className="text-neutral-600 dark:text-neutral-200"
+                >
                   Gallery
-                </a>
+                </Link>
               </p>
             </div>
           </div>

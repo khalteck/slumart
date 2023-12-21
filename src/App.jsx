@@ -17,9 +17,13 @@ const Register = lazy(() => import("./pages/Register"));
 
 const AdminHome = lazy(() => import("./admin/AdminHome"));
 const AdminArtPiece = lazy(() => import("./admin/AdminArtPiece"));
+const AdminExhibition = lazy(() => import("./admin/AdminExhibition"));
+
 const AdminProjectDetails = lazy(() => import("./admin/AdminProjectDetails"));
 const AdminAddProject = lazy(() => import("./admin/AdminAddProject"));
 const AdminEditProject = lazy(() => import("./admin/AdminEditProject"));
+const AdminAddExhibit = lazy(() => import("./admin/AdminAddExhibit"));
+const AdminEditExhibit = lazy(() => import("./admin/AdminEditExhibit"));
 
 const AdminArtDetails = lazy(() => import("./admin/AdminArtDetails"));
 const AdminAddArt = lazy(() => import("./admin/AdminAddArt"));
@@ -51,6 +55,18 @@ function App() {
         <Route
           path="/admin/art-piece"
           element={isAdmin ? <AdminArtPiece /> : <Login />}
+        />
+        <Route
+          path="/admin/exhibition"
+          element={isAdmin ? <AdminExhibition /> : <Login />}
+        />
+        <Route
+          path="/admin/create-exhibit"
+          element={isAdmin ? <AdminAddExhibit /> : <Login />}
+        />
+        <Route
+          path="/admin/exhibition/:id/edit"
+          element={isAdmin ? <AdminEditExhibit /> : <Login />}
         />
         <Route
           path="/admin/project/:id"

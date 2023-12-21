@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState } from "react";
 import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
 import { useAdminContext } from "../contexts/AdminContext";
 import { ClipLoader } from "react-spinners";
+import { useEffect } from "react";
 
 const AdminAddArt = () => {
   const {
@@ -12,7 +14,12 @@ const AdminAddArt = () => {
     sendError,
     setSelectedImages,
     selectedImages,
+    currentPage,
   } = useAdminContext();
+
+  useEffect(() => {
+    setSelectedImages([]);
+  }, [currentPage]);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -22,7 +29,6 @@ const AdminAddArt = () => {
     price: "",
     from_home: "",
     likes: "",
-    images: [],
   });
 
   function handleFormChange(e) {
@@ -47,11 +53,16 @@ const AdminAddArt = () => {
       }
     }
 
+    const formDataObject = {};
+    selectedFiles.forEach((file, index) => {
+      formDataObject[`image${index + 1}`] = file;
+    });
+
     setSelectedImages(selectedFiles);
     setFormData((prev) => {
       return {
         ...prev,
-        images: selectedFiles,
+        ...formDataObject,
       };
     });
   };

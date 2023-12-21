@@ -137,6 +137,130 @@ const AdminContextProvider = ({ children }) => {
     }
   }
 
+  //========================================================to handle exhibitions =========
+
+  async function submitExhibit(data) {
+    try {
+      setTinyLoader(true);
+
+      const formData = new FormData();
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+
+      const response = await axios.post(
+        "https://slumart-production.up.railway.app/slum/create/exhibit/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      if (response.status === 201) {
+        navigate("/admin/exhibition");
+      }
+    } catch (error) {
+      console.log("error =>", error);
+      setsendError("An error occurred");
+    } finally {
+      setTinyLoader(false);
+    }
+  }
+
+  const [allExhibitions, setAllExhibitions] = useState([]);
+
+  async function fetchExhibition() {
+    try {
+      setTinyLoader(true);
+
+      const response = await axios.get(
+        "https://slumart-production.up.railway.app/slum/create/exhibit/",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      setAllExhibitions(response.data);
+    } catch (error) {
+      console.error("Error fetching exhibit:", error);
+    } finally {
+      setTinyLoader(false);
+    }
+  }
+
+  const [deleteIdEx, setdeleteIdEx] = useState(null);
+
+  async function deleteExhibition(token, exhibitId) {
+    try {
+      const confirmed = window.confirm(
+        "Are you sure you want to delete this exhibition?"
+      );
+
+      if (!confirmed) {
+        return;
+      }
+
+      setTinyLoader(true);
+      setdeleteId(exhibitId);
+
+      const response = await axios.delete(
+        `https://slumart-production.up.railway.app/slum/create/exhibit/${exhibitId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response?.status === 200) {
+        navigate("/admin/exhibition");
+      }
+    } catch (error) {
+      console.error("Error deleting exhibit:", error);
+    } finally {
+      setTinyLoader(false);
+      setdeleteIdEx(null);
+      fetchExhibition(token);
+    }
+  }
+
+  async function editExhibition(data, token, exhibitId) {
+    try {
+      setTinyLoader(true);
+
+      const formData = new FormData();
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+
+      const response = await axios.put(
+        `https://slumart-production.up.railway.app/slum/create/exhibit/${exhibitId}/`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response?.status === 200) {
+        navigate("/admin/exhibition");
+      }
+    } catch (error) {
+      console.error("Error updating exhibiton:", error);
+      setsendError("An error occurred");
+    } finally {
+      setTinyLoader(false);
+      fetchExhibition(token);
+    }
+  }
+
   //==========================================================to handle art pieces ====================
   const [allArtpieces, setAllArtpieces] = useState([]);
 
@@ -163,6 +287,7 @@ const AdminContextProvider = ({ children }) => {
   }
 
   const [selectedImages, setSelectedImages] = useState([]);
+  const [selectedImagesBlog, setSelectedImagesBlog] = useState([]);
 
   async function submitProject(data) {
     try {
@@ -406,6 +531,14 @@ const AdminContextProvider = ({ children }) => {
         regSuccess,
         registerAdmin,
         formData,
+        selectedImagesBlog,
+        setSelectedImagesBlog,
+        submitExhibit,
+        allExhibitions,
+        fetchExhibition,
+        editExhibition,
+        deleteExhibition,
+        deleteIdEx,
       }}
     >
       {children}

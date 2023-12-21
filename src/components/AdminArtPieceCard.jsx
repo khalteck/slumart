@@ -13,7 +13,7 @@ const AdminArtPieceCard = ({ item }) => {
       data-aos="fade-left"
       data-aos-duration="1000"
       data-aos-delay="300"
-      className="w-full min-w-[300px] flex flex-col rounded-lg bg-neutral-200 shadow-md"
+      className="w-full md:w-[300px] flex flex-col rounded-lg bg-neutral-200 shadow-md"
     >
       <div
         className="h-[200px] relative overflow-hidden bg-cover bg-no-repeat"
@@ -22,7 +22,7 @@ const AdminArtPieceCard = ({ item }) => {
       >
         <img
           className="rounded-t-lg w-full h-full object-cover object-center"
-          src={item?.images[0]}
+          src={item?.image1}
           alt=""
         />
         <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>

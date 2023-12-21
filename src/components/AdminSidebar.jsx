@@ -24,7 +24,7 @@ const AdminSidebar = () => {
             {currentPage === "/admin" && (
               <div className="w-2 h-[80%] absolute top-[50%] left-0 translate-y-[-50%] rounded-md bg-[#f97316]"></div>
             )}
-            Projects
+            Blogs
           </li>
           <li
             onClick={() => navigate("/admin/art-piece")}
@@ -34,6 +34,15 @@ const AdminSidebar = () => {
               <div className="w-2 h-[80%] absolute top-[50%] left-0 translate-y-[-50%] rounded-md bg-[#f97316]"></div>
             )}
             Art Pieces
+          </li>
+          <li
+            onClick={() => navigate("/admin/exhibition")}
+            className="w-full bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer py-3 pl-6 flex gap-3 relative"
+          >
+            {currentPage === "/admin/exhibition" && (
+              <div className="w-2 h-[80%] absolute top-[50%] left-0 translate-y-[-50%] rounded-md bg-[#f97316]"></div>
+            )}
+            Exhibitions
           </li>
           <li
             onClick={() => navigate("/admin/add-admin")}
@@ -83,7 +92,7 @@ const AdminSidebar = () => {
                 }}
                 className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer"
               >
-                Projects
+                Blog
               </li>
               <li
                 onClick={() => {
@@ -93,6 +102,15 @@ const AdminSidebar = () => {
                 className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer"
               >
                 Art Pieces
+              </li>
+              <li
+                onClick={() => {
+                  navigate("/admin/exhibition");
+                  toggleSidebar();
+                }}
+                className="w-full p-3 bg-white/10 rounded-md hover:bg-[#f97316]/80 cursor-pointer"
+              >
+                Exhibitions
               </li>
               <li
                 onClick={() => {

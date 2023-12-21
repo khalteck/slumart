@@ -15,23 +15,55 @@ const Section5 = () => {
         <div className="w-full">
           <img
             alt="team"
-            src="/images/team-1.png"
-            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
+            src="/images/1.jpg"
+            className="w-full h-auto bg-black/20 object-cover object-top"
           />
-          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
-            Omotayo Sharon
-          </p>
+        </div>
+        <div className="w-full">
+          <img
+            alt="team"
+            src="/images/3.jpg"
+            className="w-full h-auto bg-black/20 object-cover object-top"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            alt="team"
+            src="/images/4.jpg"
+            className="w-full h-auto bg-black/20 object-cover object-top"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            alt="team"
+            src="/images/5.jpg"
+            className="w-full h-auto bg-black/20 object-cover object-top"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            alt="team"
+            src="/images/6.jpg"
+            className="w-full h-auto bg-black/20 object-cover object-top"
+          />
+        </div>
+        <div className="w-full">
+          <img
+            alt="team"
+            src="/images/8.jpg"
+            className="w-full h-auto bg-black/20 object-cover object-top"
+          />
         </div>
 
-        <div className="w-full sm:mt-10">
+        {/* <div className="w-full sm:mt-10">
           <img
             alt="team"
             src="/images/team-2.png"
             className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
-          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
+          {/* <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
             Kayode Afeez
-          </p>
+          </p> 
         </div>
 
         <div className="w-full">
@@ -40,9 +72,7 @@ const Section5 = () => {
             src="/images/team-3.png"
             className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
-          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
-            Chinedu Tope
-          </p>
+
         </div>
 
         <div className="w-full sm:mt-10 lg:mt-0">
@@ -51,9 +81,7 @@ const Section5 = () => {
             src="/images/team-4.png"
             className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
-          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
-            Tolulope Ahmed
-          </p>
+
         </div>
 
         <div className="w-full lg:mt-10">
@@ -62,9 +90,7 @@ const Section5 = () => {
             src="/images/team-5.png"
             className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
-          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
-            Hamidat Chi
-          </p>
+
         </div>
 
         <div className="w-full sm:mt-10 lg:mt-0">
@@ -73,10 +99,10 @@ const Section5 = () => {
             src="/images/team-6.png"
             className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
-          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
+          {/* <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
             Sandra Bola
-          </p>
-        </div>
+          </p> 
+        </div> */}
       </div>
     </section>
   );

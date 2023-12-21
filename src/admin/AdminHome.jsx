@@ -47,7 +47,7 @@ const AdminHome = () => {
                 />
               </button>
             </div>
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
+            <div className="w-full flex flex-wrap gap-5 md:gap-10">
               {allProjects?.map((x, index) => {
                 return <AdminProjectCard key={index} item={x} />;
               })}

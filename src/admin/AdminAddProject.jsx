@@ -13,6 +13,7 @@ const AdminAddProject = () => {
     title: "",
     content: "",
     author: userData?.user_data?.id,
+    image: "",
   });
 
   function handleFormChange(e) {
@@ -24,6 +25,19 @@ const AdminAddProject = () => {
       };
     });
   }
+
+  const handleFileInputChange = (e) => {
+    const files = e.target.files;
+
+    // setSelectedImagesBlog(files[0]);
+    setFormData((prev) => {
+      return {
+        ...prev,
+        image: files[0],
+      };
+    });
+  };
+
   return (
     <>
       <AdminSidebar />
@@ -52,6 +66,19 @@ const AdminAddProject = () => {
                 className="w-full md:w-[80%] bg-white p-3 border border-black/60 rounded-sm outline-none"
                 placeholder="Example content"
                 onChange={handleFormChange}
+              />
+            </div>
+
+            <div className="flex flex-col gap-1">
+              <label htmlFor="profile_image">Upload Image</label>
+              <input
+                type="file"
+                id="Images"
+                className={`w-full md:w-[80%] px-3 py-4 border border-black/30 mt-2 outline-none`}
+                required
+                multiple
+                accept="image/*"
+                onChange={handleFileInputChange}
               />
             </div>
 

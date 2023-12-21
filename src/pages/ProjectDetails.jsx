@@ -8,6 +8,7 @@ import { useAppContext } from "../contexts/AppContext";
 import { useState } from "react";
 import { ClipLoader } from "react-spinners";
 import Comment from "../components/Comment";
+import { capitalizeFirstLetter } from "../utils/capitalizeFirstLetter";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -73,7 +74,8 @@ const ProjectDetails = () => {
       <Header />
       <main className="w-full md:pt-[80px] min-h-screen pb-10 bg-neutral-100/50">
         <section
-          className={`w-full h-[300px] md:h-[400px] bg-cover bg-center relative z-0 bg-projects`}
+          className={`w-full h-[300px] md:h-[400px] bg-cover bg-center relative z-0`}
+          style={{ backgroundImage: `url(${currentProject?.image})` }}
         >
           <div className="w-full h-full absolute top-0 left-0 bg-black/60 px-3 py-[100px] lg:px-[15%] lg:py-[150px] md:flex justify-center items-center">
             <div className="flex flex-col items-center gap-3 mt-[50px] sm:mt-[100px] lg:mt-0 relative">
@@ -95,7 +97,7 @@ const ProjectDetails = () => {
           <div className="w-full flex flex-col rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-white border-2 border-[#F7C30D] text-neutral-700 lg:flex-row">
             <div className="w-full flex flex-col justify-start p-6">
               <h5 className="mb-2 text-[1.5rem] md:text-[2.5rem] font-medium">
-                {currentProject?.title}
+                {capitalizeFirstLetter(currentProject?.title)}
               </h5>
               <p className="mb-4 text-[1.1rem]">{currentProject?.content}</p>
               <div className="w-fit text-neutral-600 mt-auto flex gap-5 items-center justify-between">

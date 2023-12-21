@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Section3 = () => {
   return (
     <section className="w-full pb-[80px] md:pt-10 px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">
@@ -39,14 +41,16 @@ const Section3 = () => {
 
         <div className="mt-10 flex md:flex-row flex-col">
           <div className="w-full h-[200px] md:h-[300px] md:w-[45%] bg-[#B19943] p-6 flex flex-col text-white">
-            <p className="text-[2rem] lg:text-[2.5rem] font-bold">
+            <p className="text-[2rem] lg:text-[2.5rem] font-bold mb-auto">
               Our
               <br />
               Mission
             </p>
-            <p className="flex gap-2 items-center font-bold mt-auto cursor-pointer hover:underline text-[1.25rem]">
-              Read<span>{">>"}</span>
-            </p>
+            <Link to="/about">
+              <p className="flex gap-2 items-center font-bold mt-auto cursor-pointer hover:underline text-[1.25rem]">
+                Read<span>{">>"}</span>
+              </p>
+            </Link>
           </div>
           <img
             alt=""

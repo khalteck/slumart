@@ -9,8 +9,8 @@ const ShopCard = ({ item }) => {
     >
       <img
         alt=""
-        src={item?.images[0]}
-        className="w-full h-auto min-h-[300px] bg-black/50 hover:scale-110 cursor-pointer transition-all duration-300"
+        src={item?.image1}
+        className="w-full h-[300px] bg-black/50 object-cover hover:scale-110 cursor-pointer transition-all duration-300"
       />
       <div className="flex flex-col gap-2 md:gap-3">
         <p>{item?.name} </p>
