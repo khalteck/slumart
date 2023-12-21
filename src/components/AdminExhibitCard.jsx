@@ -52,7 +52,7 @@ const AdminExhibitCard = ({ item }) => {
               View
             </button> */}
             <div className="flex gap-2 items-center">
-              <div
+              {/* <div
                 onClick={() => navigate(`/admin/exhibition/${item?.id}/edit`)}
                 className="w-8 h-8 p-1 rounded-full bg-green-500/20 cursor-pointer"
               >
@@ -61,7 +61,7 @@ const AdminExhibitCard = ({ item }) => {
                   src="/images/icons8-edit-64.png"
                   className="w-7 h-auto"
                 />
-              </div>
+              </div> */}
               <div
                 onClick={() => deleteExhibition(userData?.access, item?.id)}
                 className="w-8 h-8 p-1 rounded-full bg-red-500/20 cursor-pointer"
