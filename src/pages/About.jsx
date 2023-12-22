@@ -28,7 +28,7 @@ const About = () => {
         >
           <div className="flex flex-col lg:mt-0">
             <h1
-              className={`w-full text-[2rem] md:text-[4.5rem] font-bold leading-tight scale first-section-text`}
+              className={`w-full text-[2rem] md:text-[4.5rem] font-bold leading-tight first-section-text`}
             >
               ABOUT US
             </h1>
