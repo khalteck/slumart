@@ -24,7 +24,7 @@ const About = () => {
       <Header />
       <main className="w-full md:pt-[80px]">
         <section
-          className={`w-full min-h-screen bg-gradient-to-b from-[#01030F] to-[#2C45C8D4] relative z-0 text-white px-3 py-[100px] lg:px-[10%] lg:py-[100px]`}
+          className={`w-full lg:min-h-screen bg-gradient-to-b from-[#01030F] to-[#2C45C8D4] relative z-0 text-white px-3 py-[100px] lg:px-[10%] lg:py-[100px]`}
         >
           <div className="flex flex-col lg:mt-0">
             <h1
