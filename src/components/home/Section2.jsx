@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { useAdminContext } from "../../contexts/AdminContext";
+import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 
 const Section2 = () => {
   const { fetchExhibition, allExhibitions } = useAdminContext();
@@ -51,11 +52,11 @@ const Section2 = () => {
                 <img
                   alt=""
                   src={item?.image}
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-[400px] lg:h-[500px] object-cover"
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black/50 p-5 flex items-center justify-center font-semibold text-[1.5rem] md:text-[2rem] lg:text-[3rem] text-white">
                   <div className="flex flex-col gap-1 items-center">
-                    <p>{item?.title}</p>
+                    <p>{capitalizeFirstLetter(item?.title)}</p>
                     <p>19-05-2022</p>
                   </div>
                 </div>

@@ -5,7 +5,7 @@ const ShopCard = ({ item }) => {
       data-aos="zoom-in"
       data-aos-duration="800"
       data-aos-delay="300"
-      className="flex flex-col w-full md:w-[400px] gap-4 text-[1.5rem] md:text-[2rem] font-light"
+      className="flex flex-col w-full md:w-[380px] gap-4 text-[1.5rem] md:text-[2rem] font-light scale2"
     >
       <img
         alt=""

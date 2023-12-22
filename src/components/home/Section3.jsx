@@ -1,8 +1,38 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../../contexts/AppContext";
 
 const Section3 = () => {
+  const { currentPage } = useAppContext();
+  const [displayindex, setDisplayIndex] = useState(0);
+
+  const [art, setart] = useState("mission");
+
+  useEffect(() => {
+    setart(displayindex === 0 ? "mission" : "vision");
+  }, [displayindex, currentPage]);
+
+  function next() {
+    if (art === "vision") {
+      setDisplayIndex(0);
+    } else {
+      setDisplayIndex((prev) => prev + 1);
+    }
+  }
+
+  function prev() {
+    if (art === "mission") {
+      setDisplayIndex(1);
+    } else {
+      setDisplayIndex((prev) => prev - 1);
+    }
+  }
   return (
-    <section className="w-full pb-[80px] md:pt-10 px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">
+    <section
+      id="section3"
+      className="w-full pb-[80px] md:pt-10 px-3 md:px-[3%] lg:px-[10%] bg-white font-rale"
+    >
       <div className="flex gap-3 items-center relative">
         <div
           data-aos="fade-left"
@@ -27,25 +57,40 @@ const Section3 = () => {
           </h2>
           <div className="flex gap-4">
             <img
+              onClick={prev}
               alt="nav"
               src="/images/left-nav.png"
-              className="w-7 h-7 md:w-10 md:h-10 cursor-pointer"
+              className="w-7 h-7 md:w-10 md:h-10 cursor-pointer  hover:bg-yellow-300/60"
             />
             <img
+              onClick={next}
               alt="nav"
               src="/images/right-nav.png"
-              className="w-7 h-7 md:w-10 md:h-10 cursor-pointer"
+              className="w-7 h-7 md:w-10 md:h-10 cursor-pointer  hover:bg-yellow-300/60"
             />
           </div>
         </div>
 
         <div className="mt-10 flex md:flex-row flex-col">
-          <div className="w-full h-[200px] md:h-[300px] md:w-[45%] bg-[#B19943] p-6 flex flex-col text-white">
-            <p className="text-[2rem] lg:text-[2.5rem] font-bold mb-auto">
-              Our
-              <br />
-              Mission
-            </p>
+          <div
+            className={`w-full h-[200px] md:h-[300px] md:w-[45%] p-6 flex flex-col text-white ${
+              art === "mission" ? "bg-[#B19943] " : "bg-blue-400"
+            }`}
+          >
+            {art === "mission" ? (
+              <p className="text-[2rem] lg:text-[2.5rem] font-bold mb-auto">
+                Our
+                <br />
+                Mission
+              </p>
+            ) : (
+              <p className="text-[2rem] lg:text-[2.5rem] font-bold mb-auto">
+                Our
+                <br />
+                Vision
+              </p>
+            )}
+
             <Link to="/about">
               <p className="flex gap-2 items-center font-bold mt-auto cursor-pointer hover:underline text-[1.25rem]">
                 Read<span>{">>"}</span>
@@ -54,7 +99,7 @@ const Section3 = () => {
           </div>
           <img
             alt=""
-            src="/images/hero3.png"
+            src="/images/hero-3.png"
             className="w-full md:w-[55%] h-auto min-h-[350px] bg-black/50"
           />
         </div>

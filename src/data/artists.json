@@ -1,0 +1,20 @@
+[
+  { "image": "/images/artist1.jpeg", "name": "Sekiu Aishat 4yrs female" },
+  { "image": "/images/artist2.jpeg", "name": "Mohammed Aliyu 7yrs male" },
+  { "image": "/images/artist3.jpeg", "name": "James Sarah 4yrs female" },
+  { "image": "/images/artist4.jpeg", "name": "Dudu Abidemi 3yrs female" },
+  { "image": "/images/artist5.jpeg", "name": "David Damilare 6yrs  male" },
+  { "image": "/images/artist6.jpeg", "name": "James Emmanuel 6yrs male" },
+  { "image": "/images/artist7.jpeg", "name": "Akolade Waris 6yrs Male" },
+  {
+    "image": "/images/artist8.jpeg",
+    "name": "Ismail Fridaus-Nana 6yrs female"
+  },
+  { "image": "/images/artist9.jpeg", "name": "Umaru Nosibat 4yrs female" },
+  { "image": "/images/artist10.jpeg", "name": "Odofin Samuel 3yrs male" },
+  { "image": "/images/artist11.jpeg", "name": "Yemira Yusiro 3yrs female" },
+  { "image": "/images/artist12.jpeg", "name": "Ali Nofisat 3yrs female" },
+  { "image": "/images/artist13.jpeg", "name": "Umaru Sheidat 4yrs female" },
+  { "image": "/images/artist14.jpeg", "name": "Kazeem Aishat 6yrs female" },
+  { "image": "/images/artist15.jpeg", "name": "Odofin Abioye 5yr old female" }
+]

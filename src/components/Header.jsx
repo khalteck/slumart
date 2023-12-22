@@ -259,13 +259,13 @@ const Header = () => {
             <>
               <li
                 onClick={() => navigate("/login")}
-                className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ml-auto ${
+                className={`cursor-pointer transition-all duration-300 text-[.9rem] ml-auto ${
                   currentPage === "/login"
                     ? "text-[#F7C30D] font-bold"
                     : "text-black"
                 }`}
               >
-                <button className="px-3 py-1 border-2 border-black rounded-md">
+                <button className="px-3 py-1 border-2 border-black rounded-md hover:bg-black hover:text-white transition-all duration-300">
                   Login
                 </button>
               </li>

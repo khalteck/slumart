@@ -5,11 +5,10 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import TeamCard from "../components/TeamCard";
 import team from "../data/team.json";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.hash === "#team") {
@@ -25,54 +24,147 @@ const About = () => {
       <Header />
       <main className="w-full md:pt-[80px]">
         <section
-          className={`w-full h-[300px] md:h-[400px] bg-cover bg-center relative z-0 bg-caro1`}
+          className={`w-full min-h-screen bg-gradient-to-b from-[#01030F] to-[#2C45C8D4] relative z-0 text-white px-3 py-[100px] lg:px-[10%] lg:py-[100px]`}
         >
-          <div className="w-full h-full absolute top-0 left-0 bg-black/60 px-3 py-[100px] lg:px-[15%] lg:py-[150px] md:flex justify-center items-center">
-            <div className="flex flex-col items-center gap-3 mt-[50px] sm:mt-[100px] lg:mt-0 relative">
-              <h1
-                className={`w-full text-[2rem] md:text-[3.5rem] md:mt-12 text-center font-bold text-white leading-tight scale first-section-text`}
-              >
-                ABOUT US
-              </h1>
+          <div className="flex flex-col lg:mt-0">
+            <h1
+              className={`w-full text-[2rem] md:text-[4.5rem] font-bold leading-tight scale first-section-text`}
+            >
+              ABOUT US
+            </h1>
+            <p className=" md:text-[1.5rem] mt-4">
+              Many have asked us, what we are, what defines us?
+              <br /> Take a walk with us, let’s find out.
+            </p>
+            <div className="flex gap-10 mt-5 w-full overflow-x-scroll md:overflow-hidden overflow-y-hidden no-scrollbar">
+              <img
+                alt=""
+                src="/images/about1.jpeg"
+                className="w-[320px] md:w-1/3 h-[300px] lg:h-[400px] object-cover"
+              />
+              <img
+                alt=""
+                src="/images/about2.jpeg"
+                className="w-[320px] md:w-1/3 h-[300px] lg:h-[400px] object-cover"
+              />
+              <img
+                alt=""
+                src="/images/about3.jpeg"
+                className="w-[320px] md:w-1/3 h-[300px] lg:h-[400px] object-cover"
+              />
             </div>
           </div>
         </section>
 
-        <section className="w-full px-3 md:px-[10%] py-10 md:py-[80px]">
-          <div className="w-full flex md:flex-row flex-col gap-7 md:gap-10">
-            <h1 className="w-full text-[2rem] md:text-[3rem] text-neutral-800 font-bold leading-tight">
-              We Support Children And Youth To Reach Their Full Potential
-            </h1>
-            <div className="w-full text-neutral-700 text-[1.1rem]">
+        <section className="w-full py-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">
+          <div className="flex gap-3 items-center relative">
+            <h2 className="text-[2rem] lg:text-[2.5rem] font-medium whitespace-nowrap">
+              OUR HISTORY
+            </h2>
+            <div className="w-full h-[1px] bg-[#262626]"></div>
+          </div>
+
+          <div className="w-full mt-5 text-[1.25rem]">
+            <p>
               This CSR Capacity Building project is for the development of Slum
               Art Project associated with School of Art. Its mission is to
               mentor, restructure the mindset and to build up creative talent of
               children from the slum. These children will be put under thorough
               tutorship by creative art teachers to help develop their skills
-              and in turn make income for themselves and their community.
-            </div>
+              and in turn make income for themselves and their community. <br />
+              <br />
+              This project will have twenty intakes (children from ten slum)
+              between ages ten to seventeen. They will undergo trainings from
+              the School of Art. The training runs for a three months. Artworks
+              will be made by each child every week which will be showcased in
+              an exhibition put together by School of Art at the end of the one
+              year.
+              <br />
+              <br />
+              A sustainability model will be created around the Artworks and
+              funds generated will be shared as 40% to community development,
+              30% to the child artist to sustain his education and mental health
+              and 20% goes to the sustainability/expansion of the Slum project
+              and 10% for the art gallery who sales the painting.
+              <br />
+              <br />
+              In the course of the one year training, each child has the benefit
+              of mentorship from his trainee as well as one on one consultation.
+              This gives the child a chance to a better mindset, orientation and
+              fulfillment. Funding of this project will come from private
+              sectors, individuals and international donors that are children
+              and art-minded.
+            </p>
+          </div>
+        </section>
+
+        <section className="w-full pb-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">
+          <div className="flex gap-3 items-center relative">
+            <h2 className="text-[2rem] lg:text-[2.5rem] font-medium whitespace-nowrap">
+              OUR SUPERKIDS
+            </h2>
+            <div className="w-full h-[1px] bg-[#262626]"></div>
           </div>
 
-          <div className="w-full mt-10">
-            <div className="w-full flex flex-col rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-neutral-200 text-neutral-700 lg:flex-row">
-              <img
-                className="h-96 w-full lg:w-1/2 rounded-t-lg object-cover md:h-[500px] md:!rounded-none md:!rounded-l-lg"
-                src="/images/story.jpg"
-                alt=""
-              />
-              <div className="w-full flex flex-col justify-start p-6">
-                <h5 className="mb-2 text-[2.5rem] font-medium">
-                  About the Project{" "}
-                </h5>
-                <p className="mb-4 text-base">
-                  This project will have twenty intakes (children from ten slum)
-                  between ages ten to seventeen. They will undergo trainings
-                  from the School of Art. The training runs for a three months.
-                  Artworks will be made by each child every week which will be
-                  showcased in an exhibition put together by School of Art at
-                  the end of the one year.
-                </p>
+          <div className="w-full mt-5 text-[1.25rem]">
+            <p>
+              A Story of how SlumArt has transformed the lives of the
+              underpriviledged kids of Nigerian Slum.
+            </p>
+
+            <div className="w-full h-[400px] lg:h-[550px] relative mt-8">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/9AGTtA-u7T0?si=KAxGhdYj1cZebhgD"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full pb-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">
+          <div className="flex gap-3 items-center relative">
+            <h2 className="text-[2rem] lg:text-[2.5rem] font-medium whitespace-nowrap">
+              DONATE
+            </h2>
+            <div className="w-full h-[1px] bg-[#262626]"></div>
+          </div>
+
+          <div className="w-full mt-5 text-[1.25rem]">
+            <p>
+              Help us grow, reach more underprivileged children across Nigeria,
+              and teach them to believe that they their voices can be heard
+              through Art.
+            </p>
+
+            <div className="w-full flex flex-wrap gap-5 relative mt-8">
+              <div className="px-14 py-3 border border-black rounded-lg font-bold hover:bg-black hover:text-white cursor-pointer">
+                $50
               </div>
+              <div className="px-14 py-3 border border-black rounded-lg font-bold hover:bg-black hover:text-white cursor-pointer">
+                $150
+              </div>
+              <div className="px-14 py-3 border border-black rounded-lg font-bold hover:bg-black hover:text-white cursor-pointer">
+                $350
+              </div>
+              <div className="px-14 py-3 border border-black rounded-lg font-bold hover:bg-black hover:text-white cursor-pointer">
+                $500
+              </div>
+              <div className="px-14 py-3 border border-black rounded-lg font-bold hover:bg-black hover:text-white cursor-pointer">
+                $750
+              </div>
+              <div className="px-14 py-3 border border-black rounded-lg font-bold hover:bg-black hover:text-white cursor-pointer">
+                $1000
+              </div>
+            </div>
+            <div className="w-full flex justify-center">
+              <button className="w-full md:w-[400px] py-3 border border-black rounded-lg font-bold mt-12 mx-auto hover:bg-black hover:text-white">
+                Donate
+              </button>
             </div>
           </div>
         </section>
@@ -95,7 +187,7 @@ const About = () => {
           </div>
         </section>
 
-        <section
+        {/* <section
           className={`w-full h-[600px] md:h-[500px] bg-cover bg-center relative z-0 bg-caro3 text-white`}
         >
           <div className="w-full h-full absolute top-0 left-0 bg-black/60 md:flex justify-center">
@@ -134,7 +226,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />

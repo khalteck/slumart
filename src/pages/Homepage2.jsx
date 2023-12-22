@@ -17,11 +17,19 @@ const Homepage2 = () => {
     AOS.init();
   }, []);
 
+  function scrollToSection3() {
+    const section3 = document.getElementById("section3");
+
+    if (section3) {
+      section3.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   return (
     <>
       <Header />
       <main className="text-[#262626]">
-        <Section1 />
+        <Section1 scrollToSection3={scrollToSection3} />
 
         <Section2 />
 

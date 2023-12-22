@@ -1,3 +1,4 @@
+import artists from "../../data/artists.json";
 const Section5 = () => {
   return (
     <section className="w-full pb-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">
@@ -11,59 +12,33 @@ const Section5 = () => {
         </p>
       </div>
 
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-10 md:mt-[60px]">
-        <div className="w-full">
-          <img
-            alt="team"
-            src="/images/1.jpg"
-            className="w-full h-auto bg-black/20 object-cover object-top"
-          />
-        </div>
-        <div className="w-full">
-          <img
-            alt="team"
-            src="/images/3.jpg"
-            className="w-full h-auto bg-black/20 object-cover object-top"
-          />
-        </div>
-        <div className="w-full">
-          <img
-            alt="team"
-            src="/images/4.jpg"
-            className="w-full h-auto bg-black/20 object-cover object-top"
-          />
-        </div>
-        <div className="w-full">
-          <img
-            alt="team"
-            src="/images/5.jpg"
-            className="w-full h-auto bg-black/20 object-cover object-top"
-          />
-        </div>
-        <div className="w-full">
-          <img
-            alt="team"
-            src="/images/6.jpg"
-            className="w-full h-auto bg-black/20 object-cover object-top"
-          />
-        </div>
-        <div className="w-full">
-          <img
-            alt="team"
-            src="/images/8.jpg"
-            className="w-full h-auto bg-black/20 object-cover object-top"
-          />
-        </div>
-
-        {/* <div className="w-full sm:mt-10">
+      <p className="mb-2 mt-10 md:mt-[60px] font-bold text-[1.25rem]">
+        Scroll {">>"}
+      </p>
+      <div className="w-full h-[1000px] flex flex-wrap flex-col gap-10 overflow-x-auto no-scrollbar border-2 border-yellow-500">
+        {artists?.map((item, index) => {
+          return (
+            <div key={index} className="w-[300px] md:w-[400px]">
+              <img
+                alt="team"
+                src={item?.image}
+                className="w-full h-[400px] bg-black/20 object-cover"
+              />
+              <p className="mt-4 font-medium text-[1.5rem] text-center">
+                {item?.name}
+              </p>
+            </div>
+          );
+        })}
+        {/* <div className="w-full">
           <img
             alt="team"
             src="/images/team-2.png"
             className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
-          {/* <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
+          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
             Kayode Afeez
-          </p> 
+          </p>
         </div>
 
         <div className="w-full">
@@ -72,36 +47,42 @@ const Section5 = () => {
             src="/images/team-3.png"
             className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
-
+          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
+            Sandra Bola
+          </p>
         </div>
 
-        <div className="w-full sm:mt-10 lg:mt-0">
+        <div className="w-full">
           <img
             alt="team"
             src="/images/team-4.png"
             className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
-
+          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
+            Sandra Bola
+          </p>
         </div>
 
-        <div className="w-full lg:mt-10">
+        <div className="w-full">
           <img
             alt="team"
             src="/images/team-5.png"
             className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
-
+          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
+            Sandra Bola
+          </p>
         </div>
 
-        <div className="w-full sm:mt-10 lg:mt-0">
+        <div className="w-full">
           <img
             alt="team"
             src="/images/team-6.png"
             className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
           />
-          {/* <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
+          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
             Sandra Bola
-          </p> 
+          </p>
         </div> */}
       </div>
     </section>

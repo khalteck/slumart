@@ -1,5 +1,12 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
-const Section1 = () => {
+
+import Carousel from "../Carousel";
+
+// import { useNavigate } from "react-router-dom";
+const Section1 = ({ scrollToSection3 }) => {
+  // const navigate = useNavigate();
+
   return (
     <section className="w-full px-3 md:px-[3%] lg:pl-[10%] md:pr-0 pt-[100px] md:pt-0 flex md:flex-row flex-col-reverse gap-10 md:gap-5 justify-between items-center font-poppins">
       <div className="flex flex-col gap-4 md:pt-[100px] lg:pt-0 w-full md:w-[45%]">
@@ -14,7 +21,7 @@ const Section1 = () => {
           <span className="text-[#F7C30D]">vi</span>
           <span className="text-[#B19943]">ty</span> <br />
           from the unprivileged
-          <br /> communities of <span className="text-[#2C45C8]">Lagos</span>.
+          <br /> communities.
         </h1>
         <p data-aos="fade-up" data-aos-duration="800">
           Art opens doors to opportunity, turning imagination into a gateway for
@@ -23,6 +30,7 @@ const Section1 = () => {
           potential.
         </p>
         <button
+          onClick={scrollToSection3}
           data-aos="fade-up"
           data-aos-duration="800"
           className="bg-black py-3 px-4 flex gap-2 items-center text-white w-fit rounded-2xl font-medium text-[1.2rem] mt-3"
@@ -38,11 +46,14 @@ const Section1 = () => {
           className="w-[200px] h-auto mt-10"
         />
       </div>
-      <img
+      {/* <img
         alt="hero"
         src="/images/hero1.png"
-        className="w-full md:w-[50%] min-h-[600px]"
-      />
+        className="w-full md:w-[50%] md:min-h-[600px]"
+      /> */}
+      <div className="w-full md:w-[50%] md:min-h-[600px]">
+        <Carousel />
+      </div>
     </section>
   );
 };
