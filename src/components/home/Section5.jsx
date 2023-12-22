@@ -27,6 +27,7 @@ const Section5 = () => {
               <p className="mt-4 font-medium text-[1.5rem] text-center">
                 {item?.name}
               </p>
+              <p className="text-black/70 text-center">{item?.info}</p>
             </div>
           );
         })}

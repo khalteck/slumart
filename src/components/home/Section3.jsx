@@ -1,9 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../../contexts/AppContext";
 
 const Section3 = () => {
+  const navigate = useNavigate();
   const { currentPage } = useAppContext();
   const [displayindex, setDisplayIndex] = useState(0);
 
@@ -27,6 +28,10 @@ const Section3 = () => {
     } else {
       setDisplayIndex((prev) => prev - 1);
     }
+  }
+
+  function scrollToSection(id) {
+    navigate(`/about#${id}`);
   }
   return (
     <section
@@ -91,11 +96,12 @@ const Section3 = () => {
               </p>
             )}
 
-            <Link to="/about">
-              <p className="flex gap-2 items-center font-bold mt-auto cursor-pointer hover:underline text-[1.25rem]">
-                Read<span>{">>"}</span>
-              </p>
-            </Link>
+            <p
+              onClick={() => scrollToSection(art)}
+              className="flex gap-2 items-center font-bold mt-auto cursor-pointer hover:underline text-[1.25rem]"
+            >
+              Read<span>{">>"}</span>
+            </p>
           </div>
           <img
             alt=""

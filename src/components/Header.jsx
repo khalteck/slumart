@@ -36,16 +36,16 @@ const Header = () => {
   //   }
   // }
 
-  // function scrollToTeam() {
-  //   if (currentPage?.includes("about")) {
-  //     const teamSection = document.getElementById("team");
-  //     if (teamSection) {
-  //       teamSection.scrollIntoView({ behavior: "smooth" });
-  //     }
-  //   } else {
-  //     navigate("/about#team");
-  //   }
-  // }
+  function scrollToSec() {
+    if (currentPage?.includes("about")) {
+      const teamSection = document.getElementById("donate");
+      if (teamSection) {
+        teamSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/about#donate");
+    }
+  }
 
   return (
     <header
@@ -187,7 +187,7 @@ const Header = () => {
           </li>
 
           <li
-            // onClick={() => navigate("/volunteers")}
+            onClick={scrollToSec}
             className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/volunteer"
                 ? "text-[#F7C30D] font-bold"

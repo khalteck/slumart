@@ -64,7 +64,7 @@ const Section4 = () => {
     }
   }
 
-  // console.log("displayindex", displayindex);
+  // console.log("allArtpieces", allArtpieces);
 
   return (
     <section className="w-full pb-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">

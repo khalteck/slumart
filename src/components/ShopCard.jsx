@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
+import { useNavigate } from "react-router-dom";
+
 const ShopCard = ({ item }) => {
+  const navigate = useNavigate();
   return (
     <div
       data-aos="zoom-in"
@@ -14,10 +17,10 @@ const ShopCard = ({ item }) => {
       />
       <div className="flex flex-col gap-2 md:gap-3">
         <p>{item?.name} </p>
-        <p className="text-[1.3rem]">by- Omotolani Afeez</p>
+        <p className="text-[1.3rem]">by - Omotolani Afeez</p>
         <p>N{item?.price}</p>
         <button
-          // onClick={() => navigate("/gallery")}
+          onClick={() => navigate(`/shop/${item?.id}`)}
           className="w-fit h-fit text-[1.25rem] bg-[#F7C30D] hover:bg-white hover:text-[#F7C30D] border border-[#F7C30D] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
         >
           Buy

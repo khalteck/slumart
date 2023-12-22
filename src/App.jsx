@@ -12,6 +12,8 @@ const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
 const Countries = lazy(() => import("./pages/Countries"));
 const Volunteers = lazy(() => import("./pages/Volunteers"));
 const Shop = lazy(() => import("./pages/Shop"));
+const ArtpieceDetails = lazy(() => import("./pages/ArtpieceDetails"));
+
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
 
@@ -33,7 +35,8 @@ const AdminRegister = lazy(() => import("./admin/AdminRegister"));
 // const Construction = lazy(() => import("./pages/Construction"))
 
 function App() {
-  const { regSuccess, isAdmin } = useAppContext();
+  const { regSuccess, isAdmin, userData } = useAppContext();
+  const isUser = userData?.user_data;
   return (
     <Suspense fallback={<Loader />}>
       {regSuccess && <Banner message={regSuccess} />}
@@ -47,6 +50,11 @@ function App() {
         <Route path="/countries" element={<Countries />} />
         <Route path="/volunteers" element={<Volunteers />} />
         <Route path="/shop" element={<Shop />} />
+        <Route
+          path="/shop/:id"
+          element={isUser ? <ArtpieceDetails /> : <Login />}
+        />
+
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 

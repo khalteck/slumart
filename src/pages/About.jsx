@@ -11,8 +11,20 @@ const About = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.hash === "#team") {
-      const teamSection = document.getElementById("team");
+    if (location.hash === "#mission") {
+      const teamSection = document.getElementById("mission");
+      if (teamSection) {
+        teamSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    if (location.hash === "#vision") {
+      const teamSection = document.getElementById("vision");
+      if (teamSection) {
+        teamSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    if (location.hash === "#donate") {
+      const teamSection = document.getElementById("donate");
       if (teamSection) {
         teamSection.scrollIntoView({ behavior: "smooth" });
       }
@@ -56,7 +68,62 @@ const About = () => {
           </div>
         </section>
 
-        <section className="w-full py-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">
+        <section
+          id="mission"
+          className="w-full py-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale"
+        >
+          <div className="flex gap-3 items-center relative">
+            <h2 className="text-[2rem] lg:text-[2.5rem] font-medium whitespace-nowrap">
+              OUR MISSION
+            </h2>
+            <div className="w-full h-[1px] bg-[#262626]"></div>
+          </div>
+
+          <div className="w-full mt-5 text-[1.25rem]">
+            <p>
+              Slum Art envisions a world where every individual, irrespective of
+              socio-economic background, has equal access to education, creative
+              expression, and sustainable opportunities. Through innovative
+              initiatives, we strive to break barriers, foster talents, and
+              empower underserved communities, creating a future where
+              creativity becomes a catalyst for positive change.
+            </p>
+          </div>
+        </section>
+
+        <section
+          id="vision"
+          className="w-full pb-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale"
+        >
+          <div className="flex gap-3 items-center relative">
+            <h2 className="text-[2rem] lg:text-[2.5rem] font-medium whitespace-nowrap">
+              OUR VISION
+            </h2>
+            <div className="w-full h-[1px] bg-[#262626]"></div>
+          </div>
+
+          <div className="w-full mt-5 text-[1.25rem]">
+            <p>
+              Slum Art is committed to transforming lives in underserved
+              communities through the transformative power of art and education.
+              Our mission is to empower children and teenagers with limited
+              access to resources, offering them a platform for self-expression,
+              creativity, and education. By establishing innovative learning
+              spaces, such as the Pet Bottle School, we aim to provide quality
+              primary education and foster artistic talents. We believe in
+              reducing waste and leaving a positive environmental footprint
+              while guiding these young minds towards a brighter future. Through
+              mentorship, community engagement, and initiatives like the
+              Animation Hub, we aspire to break the cycle of poverty and open
+              doors to opportunities in the tech and creative industries. Slum
+              Art envisions a world where every individual, regardless of their
+              background, has the chance to unleash their potential and
+              contribute meaningfully to society.
+            </p>
+          </div>
+        </section>
+
+        <section className="w-full pb-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">
           <div className="flex gap-3 items-center relative">
             <h2 className="text-[2rem] lg:text-[2.5rem] font-medium whitespace-nowrap">
               OUR HISTORY
@@ -126,7 +193,10 @@ const About = () => {
           </div>
         </section>
 
-        <section className="w-full pb-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">
+        <section
+          id="donate"
+          className="w-full pb-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale"
+        >
           <div className="flex gap-3 items-center relative">
             <h2 className="text-[2rem] lg:text-[2.5rem] font-medium whitespace-nowrap">
               DONATE
