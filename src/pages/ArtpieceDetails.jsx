@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ScrollToTop from "../ScrollToTop";
 import { useAppContext } from "../contexts/AppContext";
 import { usePaystackPayment } from "react-paystack";
@@ -11,7 +11,6 @@ import Footer from "../components/Footer";
 const ArtpieceDetails = () => {
   const { id } = useParams();
   const { userData, currentPage } = useAppContext();
-  const navigate = useNavigate();
 
   const user = userData?.user_data;
 

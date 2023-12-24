@@ -20,6 +20,29 @@ const AdminArtDetails = () => {
   const { id } = useParams();
 
   const currentArt = allArtpieces?.filter((x) => x?.id == id)[0];
+  const imageObj = extractKeys(currentArt) || {};
+  const imageArr = Object?.values(imageObj)?.filter((x) => x !== null);
+
+  function extractKeys(originalObject) {
+    if (originalObject) {
+      const { ...otherKeys } = originalObject; // Destructure 'image' and other keys
+
+      // Define the keys you want to include in the new object
+      const keysToInclude = ["image1", "image2", "image3", "image4"]; // Add the keys you need
+
+      // Filter the 'otherKeys' object to include only specified keys
+      const filteredKeys = Object.keys(otherKeys)
+        .filter((key) => keysToInclude.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = otherKeys[key];
+          return obj;
+        }, {});
+
+      // Construct the final object with 'image' and the filtered keys
+      const resultObject = { ...filteredKeys };
+      return resultObject;
+    }
+  }
 
   return (
     <>
@@ -31,13 +54,13 @@ const AdminArtDetails = () => {
 
           <div className="w-full flex flex-col gap-4">
             <div className="w-full grid grid-cols-2 gap-2">
-              {currentArt?.images?.map((img, ind) => {
+              {imageArr?.map((img, ind) => {
                 return (
                   <img
                     key={ind}
                     src={img}
                     alt={`image-preview-${ind + 1}`}
-                    className="w-full h-[250px] object-cover border-2 border-[#f97316] rounded-lg"
+                    className="w-full h-[250px] md:h-[350px] object-cover border-2 border-[#f97316] rounded-lg"
                   />
                 );
               })}

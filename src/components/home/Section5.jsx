@@ -15,7 +15,7 @@ const Section5 = () => {
       <p className="mb-2 mt-10 md:mt-[60px] font-bold text-[1.25rem]">
         Scroll {">>"}
       </p>
-      <div className="w-full h-[1000px] flex flex-wrap flex-col gap-10 overflow-x-auto no-scrollbar border-2 border-yellow-500">
+      <div className="w-full h-[550px] p-3 md:p-10 flex flex-wrap flex-col gap-10 overflow-x-auto no-scrollbar border-2 border-yellow-500">
         {artists?.map((item, index) => {
           return (
             <div key={index} className="w-[300px] md:w-[400px]">
@@ -31,60 +31,6 @@ const Section5 = () => {
             </div>
           );
         })}
-        {/* <div className="w-full">
-          <img
-            alt="team"
-            src="/images/team-2.png"
-            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
-          />
-          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
-            Kayode Afeez
-          </p>
-        </div>
-
-        <div className="w-full">
-          <img
-            alt="team"
-            src="/images/team-3.png"
-            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
-          />
-          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
-            Sandra Bola
-          </p>
-        </div>
-
-        <div className="w-full">
-          <img
-            alt="team"
-            src="/images/team-4.png"
-            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
-          />
-          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
-            Sandra Bola
-          </p>
-        </div>
-
-        <div className="w-full">
-          <img
-            alt="team"
-            src="/images/team-5.png"
-            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
-          />
-          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
-            Sandra Bola
-          </p>
-        </div>
-
-        <div className="w-full">
-          <img
-            alt="team"
-            src="/images/team-6.png"
-            className="w-full h-auto min-h-[300px] bg-black/20 object-cover"
-          />
-          <p className="mt-4 font-medium text-[1.5rem] md:text-[2rem]">
-            Sandra Bola
-          </p>
-        </div> */}
       </div>
     </section>
   );

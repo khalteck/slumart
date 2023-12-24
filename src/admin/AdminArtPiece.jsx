@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AdminArtPieceCard from "../components/AdminArtPieceCard";
 import AdminHeader from "../components/AdminHeader";
 import AdminSidebar from "../components/AdminSidebar";
 import { useAdminContext } from "../contexts/AdminContext";
 import { useNavigate } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 const AdminArtPiece = () => {
   const { fetchArts, allArtpieces } = useAdminContext();
@@ -15,11 +16,31 @@ const AdminArtPiece = () => {
     fetchArts();
   }, []);
 
+  const itemsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+    // window.scrollTo(0, 0);
+    const secton = document.getElementById("shop");
+    if (secton) {
+      secton.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  const displayedArts = allArtpieces?.slice(startIndex, endIndex);
+
   return (
     <>
       <AdminSidebar />
       <AdminHeader />
-      <div className="w-full md:pl-[300px] md:pr-8 px-3 pt-5 pb-[100px]">
+      <div
+        id="shop"
+        className="w-full md:pl-[300px] md:pr-8 px-3 pt-5 pb-[100px]"
+      >
         <div className="flex flex-col gap-8">
           <div className="w-full md:w-[300px] bg-slate-100 border-2 text-black/70 border-[#f97316] rounded-md p-3 shadow-md">
             <p className="text-[1.5rem] font-bold">Total Art Pieces</p>
@@ -49,9 +70,25 @@ const AdminArtPiece = () => {
               </div>
             )}
             <div className="w-full flex flex-wrap gap-5 md:gap-10">
-              {allArtpieces?.map((x, index) => {
+              {displayedArts?.map((x, index) => {
                 return <AdminArtPieceCard key={index} item={x} />;
               })}
+            </div>
+
+            <div className="mt-10 text-center border border-black/30 rounded-lg py-3 px-1">
+              <ReactPaginate
+                previousLabel={"Prev"}
+                nextLabel={"Next"}
+                breakLabel={"..."}
+                breakClassName={"break-me"}
+                pageCount={Math.ceil(allArtpieces?.length / itemsPerPage)}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={5}
+                onPageChange={handlePageChange}
+                containerClassName={"pagination"}
+                subContainerClassName={"pages pagination"}
+                activeClassName={"active"}
+              />
             </div>
           </div>
         </div>

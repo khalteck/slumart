@@ -37,7 +37,7 @@ const AdminArtPieceCard = ({ item }) => {
         <p className="text-[1rem] text-neutral-500">{item?.size}</p>
         <p className="text-[1rem] text-neutral-500">{item?.materials}</p>
         <p className="text-[1.25rem] text-neutral-600 font-bold mt-3">
-          N {item?.price}
+          ${item?.price}
         </p>
       </div>
       <div className="w-full mt-auto p-6">

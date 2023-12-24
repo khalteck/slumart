@@ -26,7 +26,7 @@ const AdminHome = () => {
           <h1 className="text-[2rem]">Hello Admin!</h1>
 
           <div className="w-full md:w-[300px] bg-slate-100 border-2 text-black/70 border-[#f97316] rounded-md p-3 shadow-md">
-            <p className="text-[1.5rem] font-bold">Total Projects</p>
+            <p className="text-[1.5rem] font-bold">Total Blogs</p>
             <div className="w-[60px] h-[60px] flex justify-center items-center text-white rounded-lg leading-tight bg-[#f97316] font-bold text-[2rem]">
               {allProjects?.length}
             </div>
@@ -34,7 +34,7 @@ const AdminHome = () => {
 
           <div className="w-full bg-slate-100 border-2 text-black/70 border-[#f97316] rounded-md p-3 md:p-6 shadow-md">
             <div className="w-full flex justify-between gap-10 flex-wrap mb-4">
-              <h2 className="text-[1.5rem] font-medium mb-5">Projects List</h2>
+              <h2 className="text-[1.5rem] font-medium mb-5">Blog List</h2>
               <button
                 onClick={() => navigate("/admin/create-project")}
                 className="w-fit h-fit px-3 py-1 border-2 border-[#f97316] hover:border-[#f97316] rounded-sm hover:bg-[#f97316] hover:text-white flex gap-2 items-center"

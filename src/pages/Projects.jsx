@@ -34,7 +34,7 @@ const Projects = () => {
           </div>
         </section>
 
-        <section className="w-full px-3 md:px-[10%] py-10 bg-white md:mt-10">
+        {/* <section className="w-full px-3 md:px-[10%] py-10 bg-white md:mt-10">
           <div className="flex gap-3 items-center relative">
             <h2 className="text-[1.75rem] lg:text-[2.5rem] font-medium whitespace-nowrap">
               ONGOING PROJECTS
@@ -60,7 +60,7 @@ const Projects = () => {
               return <ProjectCard key={index} item={item} />;
             })}
           </div>
-        </section>
+        </section> */}
 
         <section className="w-full px-3 md:px-[10%] py-10 bg-white">
           <div className="flex gap-3 items-center relative">
