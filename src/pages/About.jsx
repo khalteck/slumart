@@ -99,12 +99,21 @@ const About = () => {
 
           <div className="w-full mt-5 text-[1.25rem]">
             <p>
-              Slum Art envisions a world where every individual, irrespective of
-              socio-economic background, has equal access to education, creative
-              expression, and sustainable opportunities. Through innovative
-              initiatives, we strive to break barriers, foster talents, and
-              empower underserved communities, creating a future where
-              creativity becomes a catalyst for positive change.
+              Slum Art is committed to transforming lives in underserved
+              communities through the transformative power of art and education.
+              Our mission is to empower children and teenagers with limited
+              access to resources, offering them a platform for self-expression,
+              creativity, and education. By establishing innovative learning
+              spaces, such as the Pet Bottle School, we aim to provide quality
+              primary education and foster artistic talents. We believe in
+              reducing waste and leaving a positive environmental footprint
+              while guiding these young minds towards a brighter future. Through
+              mentorship, community engagement, and initiatives like the
+              Animation Hub, we aspire to break the cycle of poverty and open
+              doors to opportunities in the tech and creative industries. Slum
+              Art envisions a world where every individual, regardless of their
+              background, has the chance to unleash their potential and
+              contribute meaningfully to society.
             </p>
           </div>
         </section>
@@ -122,21 +131,12 @@ const About = () => {
 
           <div className="w-full mt-5 text-[1.25rem]">
             <p>
-              Slum Art is committed to transforming lives in underserved
-              communities through the transformative power of art and education.
-              Our mission is to empower children and teenagers with limited
-              access to resources, offering them a platform for self-expression,
-              creativity, and education. By establishing innovative learning
-              spaces, such as the Pet Bottle School, we aim to provide quality
-              primary education and foster artistic talents. We believe in
-              reducing waste and leaving a positive environmental footprint
-              while guiding these young minds towards a brighter future. Through
-              mentorship, community engagement, and initiatives like the
-              Animation Hub, we aspire to break the cycle of poverty and open
-              doors to opportunities in the tech and creative industries. Slum
-              Art envisions a world where every individual, regardless of their
-              background, has the chance to unleash their potential and
-              contribute meaningfully to society.
+              Slum Art envisions a world where every individual, irrespective of
+              socio-economic background, has equal access to education, creative
+              expression, and sustainable opportunities. Through innovative
+              initiatives, we strive to break barriers, foster talents, and
+              empower underserved communities, creating a future where
+              creativity becomes a catalyst for positive change.
             </p>
           </div>
         </section>
