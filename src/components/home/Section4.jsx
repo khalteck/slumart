@@ -14,6 +14,28 @@ const Section4 = () => {
   }, []);
 
   const [displayindex, setDisplayIndex] = useState(0);
+  const itemsPerPage = 3;
+  const [lastItemDisplayed, setLastItemDisplayed] = useState(false);
+  const [firstItemDisplayed, setFirstItemDisplayed] = useState(false);
+
+  useEffect(() => {
+    // Calculate the first index of the displayed items
+    const firstDisplayedIndex = displayindex * itemsPerPage;
+    const isFirstDisplayed = firstDisplayedIndex === 0;
+
+    // Update the state accordingly
+    setFirstItemDisplayed(isFirstDisplayed);
+
+    // Calculate the last index of the displayed items
+    const lastDisplayedIndex = (displayindex + 1) * itemsPerPage;
+    const totalItems = allArtpieces?.length || 0;
+
+    // Check if the last set of items is being displayed
+    const isLastDisplayed = lastDisplayedIndex >= totalItems;
+
+    // Update the state accordingly
+    setLastItemDisplayed(isLastDisplayed);
+  }, [displayindex, allArtpieces]);
 
   const [art, setart] = useState(allArtpieces[displayindex]);
 
@@ -22,49 +44,26 @@ const Section4 = () => {
   }, [displayindex, currentPage, allArtpieces]);
 
   function next() {
-    const lastIndex = allArtpieces?.length - 1;
-    if (art === allArtpieces[lastIndex]) {
-      setDisplayIndex(0);
-    } else {
-      setDisplayIndex((prev) => prev + 1);
+    if (!lastItemDisplayed) {
+      const lastIndex = allArtpieces?.length - 1;
+      if (art === allArtpieces[lastIndex]) {
+        setDisplayIndex(0);
+      } else {
+        setDisplayIndex((prev) => prev + 1);
+      }
     }
   }
 
   function prev() {
-    const lastIndex = allArtpieces?.length - 1;
-    if (art === allArtpieces[0]) {
-      setDisplayIndex(lastIndex);
-    } else {
-      setDisplayIndex((prev) => prev - 1);
+    if (!firstItemDisplayed) {
+      const lastIndex = allArtpieces?.length - 1;
+      if (art === allArtpieces[0]) {
+        setDisplayIndex(lastIndex);
+      } else {
+        setDisplayIndex((prev) => prev - 1);
+      }
     }
   }
-
-  const [slicedArr, setSlicedArr] = useState();
-  useEffect(() => {
-    const arr = allArtpieces?.slice(
-      displayindex === 0 ? 0 : displayindex === 1 ? 2 : 3,
-      3
-    );
-    setSlicedArr(arr);
-  }, [displayindex]);
-
-  function nextDesk() {
-    if (slicedArr?.length <= 1) {
-      setDisplayIndex(0);
-    } else {
-      setDisplayIndex((prev) => prev + 1);
-    }
-  }
-
-  function prevDesk() {
-    if (displayindex === 0) {
-      setDisplayIndex(0);
-    } else {
-      setDisplayIndex((prev) => prev - 1);
-    }
-  }
-
-  // console.log("allArtpieces", allArtpieces);
 
   return (
     <section className="w-full pb-[80px] px-3 md:px-[3%] lg:px-[10%] bg-white font-rale">
@@ -95,13 +94,13 @@ const Section4 = () => {
         </div>
         <div className="hidden md:flex gap-4">
           <img
-            onClick={prevDesk}
+            onClick={prev}
             alt="nav"
             src="/images/left-nav.png"
             className="w-7 h-7 md:w-10 md:h-10 cursor-pointer hover:bg-yellow-300/60"
           />
           <img
-            onClick={nextDesk}
+            onClick={next}
             alt="nav"
             src="/images/right-nav.png"
             className="w-7 h-7 md:w-10 md:h-10 cursor-pointer hover:bg-yellow-300/60"
@@ -116,53 +115,19 @@ const Section4 = () => {
       )}
       <div className="w-full flex-wrap gap-4 md:gap-10 mb-8 mt-10 hidden md:flex">
         {allArtpieces
-          ?.slice(displayindex === 0 ? 0 : displayindex === 1 ? 2 : 3, 3)
+          ?.slice(
+            displayindex * itemsPerPage,
+            (displayindex + 1) * itemsPerPage
+          )
           ?.map((item, index) => {
-            return <ShopCard key={index} item={item} />;
+            const currentIndex = displayindex * itemsPerPage + index;
+            return <ShopCard key={currentIndex} item={item} />;
           })}
       </div>
 
       <div className="w-full flex flex-wrap gap-4 md:gap-10 mb-8 mt-10 md:hidden">
         <ShopCard item={art} />;
       </div>
-
-      {/* <div className="mt-10 flex gap-10">
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="800"
-          data-aos-delay="300"
-          className="flex flex-col w-full md:w-[400px] gap-4 text-[1.5rem] md:text-[2rem] font-light"
-        >
-          <img
-            alt=""
-            src="/images/art1.png"
-            className="w-full h-auto min-h-[300px] bg-black/50"
-          />
-          <div className="flex flex-col gap-2 md:gap-3">
-            <p>Roman Empire </p>
-            <p className="text-[1.3rem]">by- Omotolani Afeez</p>
-            <p>N25,000</p>
-          </div>
-        </div>
-
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="800"
-          data-aos-delay="300"
-          className="sm:flex flex-col w-full md:w-[400px] gap-4 text-[1.5rem] md:text-[2rem] font-light hidden"
-        >
-          <img
-            alt=""
-            src="/images/art1.png"
-            className="w-full h-auto min-h-[300px] bg-black/50"
-          />
-          <div className="flex flex-col gap-2 md:gap-3">
-            <p>Roman Empire </p>
-            <p className="text-[1.3rem]">by- Omotolani Afeez</p>
-            <p>N25,000</p>
-          </div>
-        </div>
-      </div> */}
     </section>
   );
 };
