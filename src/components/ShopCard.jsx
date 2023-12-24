@@ -22,7 +22,7 @@ const ShopCard = ({ item }) => {
         <p>${item?.price}</p>
         <button
           onClick={() => navigate(`/shop/${item?.id}`)}
-          className="w-fit h-fit text-[1.25rem] bg-[#F7C30D] hover:bg-white hover:text-[#F7C30D] border border-[#F7C30D] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
+          className="w-fit h-fit text-[1.25rem] bg-[#fecb04] hover:bg-white hover:text-[#fecb04] border border-[#fecb04] px-5 md:px-8 py-2 rounded-sm text-white font-medium transition-all duration-300"
         >
           Buy
         </button>

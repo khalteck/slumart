@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ShopCard from "../components/ShopCard";
 import { useAdminContext } from "../contexts/AdminContext";
 import ScrollToTop from "../ScrollToTop";
+import ReactPaginate from "react-paginate";
 // import { useNavigate } from "react-router-dom";
 
 const Shop = () => {
@@ -16,6 +17,23 @@ const Shop = () => {
   useEffect(() => {
     fetchArts();
   }, []);
+
+  const itemsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+    // window.scrollTo(0, 0);
+    const secton = document.getElementById("shop");
+    if (secton) {
+      secton.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  const displayedArts = allArtpieces?.slice(startIndex, endIndex);
 
   return (
     <>
@@ -38,7 +56,7 @@ const Shop = () => {
           </div>
         </section>
 
-        <section className="w-full px-3 md:px-[10%] py-10 bg-white">
+        <section id="shop" className="w-full px-3 md:px-[10%] py-10 bg-white">
           {/* <h2 className="font-bold text-[1.5rem] md:text-[2rem] mb-10">
             <div className="w-fit mx-auto">
               SHOP WITH US
@@ -62,9 +80,25 @@ const Shop = () => {
             </div>
           )}
           <div className="w-full flex flex-wrap gap-4 md:gap-10 mb-8">
-            {allArtpieces?.map((item, index) => {
+            {displayedArts?.map((item, index) => {
               return <ShopCard key={index} item={item} />;
             })}
+          </div>
+
+          <div className="mt-10 text-center border border-black/30 rounded-lg py-3 px-1">
+            <ReactPaginate
+              previousLabel={"Prev"}
+              nextLabel={"Next"}
+              breakLabel={"..."}
+              breakClassName={"break-me"}
+              pageCount={Math.ceil(allArtpieces?.length / itemsPerPage)}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={handlePageChange}
+              containerClassName={"pagination"}
+              subContainerClassName={"pages pagination"}
+              activeClassName={"active"}
+            />
           </div>
         </section>
       </main>
