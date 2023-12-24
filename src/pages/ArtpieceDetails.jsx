@@ -23,8 +23,7 @@ const ArtpieceDetails = () => {
 
   const currentProduct = allArtpieces?.filter((x) => x?.id === Number(id))[0];
   const imageObj = extractKeys(currentProduct) || {};
-  const imageArr = Object?.values(imageObj);
-  //   console.log("currentProduct", currentProduct);
+  const imageArr = Object?.values(imageObj)?.filter((x) => x !== null);
 
   //   const imageArray = Object.values();
 
@@ -79,7 +78,7 @@ const ArtpieceDetails = () => {
     publicKey: "pk_test_74fb23bf07aaa6560c4d8c4f46820f9694ebcf6b", //pk_live_bbea94d6349d7df61fcbfcf7ea48cd999e3042da
   };
 
-  console.log("config", config);
+  // console.log("config", config);
 
   const onSuccess = (reference) => {
     console.log(reference);

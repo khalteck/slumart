@@ -162,7 +162,7 @@ const Header = () => {
                 : "text-black"
             }`}
           >
-            Gallery
+            SHOP
           </li>
           {/* <li
             onClick={() => navigate("/countries")}
@@ -176,6 +176,17 @@ const Header = () => {
           </li> */}
 
           <li
+            onClick={() => navigate("/projects")}
+            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
+              currentPage === "/projects"
+                ? "text-[#F7C30D] font-bold"
+                : "text-black"
+            }`}
+          >
+            Projects
+          </li>
+
+          <li
             onClick={() => navigate("/volunteers")}
             className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/volunteers"
@@ -186,7 +197,7 @@ const Header = () => {
             Volunteer
           </li>
 
-          <li
+          {/* <li
             onClick={scrollToSec}
             className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
               currentPage === "/volunteer"
@@ -195,18 +206,7 @@ const Header = () => {
             }`}
           >
             DONATE
-          </li>
-
-          <li
-            onClick={() => navigate("/projects")}
-            className={`cursor-pointer hover:text-[#F7C30D] transition-all duration-300 text-[.9rem] ${
-              currentPage === "/projects"
-                ? "text-[#F7C30D] font-bold"
-                : "text-black"
-            }`}
-          >
-            Blogs
-          </li>
+          </li> */}
 
           {/* <li
             onClick={() => navigate("/shop")}
@@ -301,7 +301,7 @@ const Header = () => {
               src="/images/icons8-close-50.png"
             />
           </div>
-          <ul className="slide float-right w-full min-h-[150px] bg-black py-10 text-white gap-3 px-7 text-[1.25rem] md:hidden flex flex-col">
+          <ul className="slide float-right w-full min-h-[150px] bg-[#040921] py-10 text-white gap-3 px-7 text-[1.25rem] md:hidden flex flex-col">
             <li
               onClick={() => {
                 handleClick();
@@ -339,7 +339,17 @@ const Header = () => {
               }}
               className="py-2 uppercase"
             >
-              Gallery
+              Shop
+            </li>
+
+            <li
+              onClick={() => {
+                handleClick();
+                navigate("/projects");
+              }}
+              className="py-2 uppercase"
+            >
+              Projects
             </li>
 
             <li
@@ -352,7 +362,7 @@ const Header = () => {
               Volunteer
             </li>
 
-            <li
+            {/* <li
               onClick={() => {
                 handleClick();
                 // navigate("/countries");
@@ -360,17 +370,7 @@ const Header = () => {
               className="py-2 uppercase"
             >
               Donate
-            </li>
-
-            <li
-              onClick={() => {
-                handleClick();
-                navigate("/projects");
-              }}
-              className="py-2 uppercase"
-            >
-              Blogs
-            </li>
+            </li> */}
 
             {/* <li
               onClick={() => {

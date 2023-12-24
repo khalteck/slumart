@@ -6,6 +6,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ProjectCard from "../components/ProjectCard";
 import { useAppContext } from "../contexts/AppContext";
+import pastProjects from "../data/pastProject.json";
+import PastProjectCard from "../components/PastProjectCard";
 
 const Projects = () => {
   const { allProjectsHome, fetchProjectsHome } = useAppContext();
@@ -26,25 +28,26 @@ const Projects = () => {
               <h1
                 className={`w-full text-[2rem] md:text-[3.5rem] md:mt-12 text-center font-bold text-white leading-tight scale first-section-text`}
               >
-                BLOG
+                PROJECTS
               </h1>
             </div>
           </div>
         </section>
 
-        <section className="w-full px-3 md:px-[10%] py-10 bg-white">
-          <h2 className="font-bold text-[1.5rem] md:text-[2rem] mb-10">
-            <div className="w-fit mx-auto">
-              EXPLORE OUR BLOGS
-              <div className="w-[70%] h-3 bg-[#F7C30D] mt-1"></div>
-            </div>
-          </h2>
-          <p className="mb-10 text-center font-normal text-[1.25rem]">
-            Welcome to our blog page, a curated collection showcasing our
+        <section className="w-full px-3 md:px-[10%] py-10 bg-white md:mt-10">
+          <div className="flex gap-3 items-center relative">
+            <h2 className="text-[1.75rem] lg:text-[2.5rem] font-medium whitespace-nowrap">
+              ONGOING PROJECTS
+            </h2>
+            <div className="w-full h-[1px] bg-[#262626]"></div>
+          </div>
+
+          <p className="mb-10 font-normal text-[1.25rem]">
+            Welcome to our projects page, a curated collection showcasing our
             creative endeavors and innovative solutions.
-            {/* <br /> Dive into a world of diverse projects of various countries,
+            <br /> Dive into a world of diverse projects of various countries,
             each a testament to our passion for excellence and commitment to
-            pushing boundaries.{" "} */}
+            pushing boundaries.{" "}
           </p>
 
           {allProjectsHome?.length === 0 && (
@@ -57,6 +60,19 @@ const Projects = () => {
               return <ProjectCard key={index} item={item} />;
             })}
           </div>
+        </section>
+
+        <section className="w-full px-3 md:px-[10%] py-10 bg-white">
+          <div className="flex gap-3 items-center relative">
+            <h2 className="text-[1.75rem] lg:text-[2.5rem] font-medium whitespace-nowrap">
+              PAST PROJECTS
+            </h2>
+            <div className="w-full h-[1px] bg-[#262626]"></div>
+          </div>
+
+          {pastProjects?.map((item, index) => {
+            return <PastProjectCard key={index} item={item} />;
+          })}
         </section>
       </main>
 

@@ -32,20 +32,26 @@ const Shop = () => {
               <h1
                 className={`w-full text-[2rem] md:text-[3rem] md:mt-12 text-center font-bold text-white leading-tight scale first-section-text`}
               >
-                THE SLUMART GALLERY
+                SHOP
               </h1>
             </div>
           </div>
         </section>
 
         <section className="w-full px-3 md:px-[10%] py-10 bg-white">
-          <h2 className="font-bold text-[1.5rem] md:text-[2rem] mb-10">
+          {/* <h2 className="font-bold text-[1.5rem] md:text-[2rem] mb-10">
             <div className="w-fit mx-auto">
               SHOP WITH US
               <div className="w-[70%] h-3 bg-[#F7C30D] mt-1"></div>
             </div>
-          </h2>
-          <p className="mb-10 text-center font-nornal text-[1.25rem]">
+          </h2> */}
+          <div className="flex gap-3 items-center relative">
+            <h2 className="text-[1.75rem] lg:text-[2.5rem] font-medium whitespace-nowrap">
+              SHOP WITH US
+            </h2>
+            <div className="w-full h-[1px] bg-[#262626]"></div>
+          </div>
+          <p className="mb-10 font-nornal text-[1.25rem]">
             Explore an artistic haven on our shop page, showcasing a curated
             collection of captivating artworks.
           </p>

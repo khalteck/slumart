@@ -1,0 +1,35 @@
+[
+  {
+    "title": "The Slum Art Recycle Workshop",
+    "body": "The Slum Art Recycle Workshop, spanning two impactful weeks, engaged 57 enthusiastic children in the art of turning waste into wealth. Focused on mitigating pet bottle pollution across diverse communities, the workshop transcended traditional boundaries, empowering the participants with creative solutions. Guided by skilled mentors, these young minds not only learned essential recycling techniques but also discovered the transformative power of art. The workshop aimed not just to educate but to instill a sense of responsibility and environmental consciousness, nurturing a generation adept at turning challenges into opportunities. Through hands-on activities and innovative learning, the workshop sowed the seeds for a sustainable future, where waste becomes a valuable resource, and children emerge as champions in the fight against pollution.",
+    "images": [
+      "/images/project1-image1.jpeg",
+      "/images/project1-image2.jpeg",
+      "/images/project1-image3.jpeg",
+      "/images/project1-image4.jpeg",
+      "/images/project1-image5.jpeg"
+    ]
+  },
+  {
+    "title": "The Slum Art Artsurance Project",
+    "body": "The Slum Art Artsurance Project, a collaborative effort with the Nigeria Police Force, is a visionary initiative aimed at rescuing children from the streets. By integrating art with insurance—termed as 'artsurance'—the project focuses on empowering these youngsters through psychomotor-oriented initiatives. The goal is not just to provide an escape from the streets but to engage their minds positively, reducing the likelihood of involvement in crime. Through the transformative power of art and the security of artsurance, this project strives to create a brighter future for these children, breaking the cycle and fostering a sense of purpose and empowerment.",
+    "images": [
+      "/images/project2-image1.jpeg",
+      "/images/project2-image2.jpeg",
+      "/images/project2-image3.jpeg"
+    ]
+  },
+  {
+    "title": "The Jollof Rice Party",
+    "body": "The Jollof Rice Party, an annual Christmas tradition in Nigeria, is more than a celebration—it's a heartwarming project with a noble purpose. In the spirit of giving, the project aims to feed over 1,500 individuals, spanning children, youth, and adults in the Ijora Badia community. This festive event goes beyond the joy of a shared meal; it's a symbol of community, generosity, and ending the year on a note of togetherness. The Jollof Rice Party is a testament to the power of small gestures making a big impact, bringing warmth and joy to the hearts of those it serves.",
+    "images": [
+      "/images/project3-image1.jpeg",
+      "/images/project3-image2.jpeg",
+      "/images/project3-image3.jpeg",
+      "/images/project3-image4.jpeg",
+      "/images/project3-image5.jpeg",
+      "/images/project3-image6.jpeg",
+      "/images/project3-image7.jpeg"
+    ]
+  }
+]

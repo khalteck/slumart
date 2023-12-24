@@ -36,7 +36,7 @@ const About = () => {
       <Header />
       <main className="w-full md:pt-[80px]">
         <section
-          className={`w-full lg:min-h-screen bg-gradient-to-b from-[#01030F] to-[#2C45C8D4] relative z-0 text-white px-3 py-[100px] lg:px-[10%] lg:py-[100px]`}
+          className={`w-full lg:min-h-screen bg-gradient-to-b from-[#01030F] to-[#172554] relative z-0 text-white px-3 py-[100px] lg:px-[10%] lg:py-[100px]`}
         >
           <div className="flex flex-col lg:mt-0">
             <h1
@@ -48,7 +48,9 @@ const About = () => {
               Many have asked us, what we are, what defines us?
               <br /> Take a walk with us, let’s find out.
             </p>
-            <div className="flex gap-10 mt-5 w-full overflow-x-scroll md:overflow-hidden overflow-y-hidden no-scrollbar">
+
+            <p className="font-light mt-7 md:text-[1.5rem]">Swipe {">>"}</p>
+            <div className="flex gap-10 mt-5 w-full overflow-x-scroll overflow-y-hidden no-scrollbar">
               <img
                 alt=""
                 src="/images/about1.jpeg"
@@ -62,6 +64,22 @@ const About = () => {
               <img
                 alt=""
                 src="/images/about3.jpeg"
+                className="w-[320px] md:w-1/3 h-[300px] lg:h-[400px] object-cover"
+              />
+
+              <img
+                alt=""
+                src="/images/project3-image1.jpeg"
+                className="w-[320px] md:w-1/3 h-[300px] lg:h-[400px] object-cover"
+              />
+              <img
+                alt=""
+                src="/images/project2-image3.jpeg"
+                className="w-[320px] md:w-1/3 h-[300px] lg:h-[400px] object-cover"
+              />
+              <img
+                alt=""
+                src="/images/project3-image3.jpeg"
                 className="w-[320px] md:w-1/3 h-[300px] lg:h-[400px] object-cover"
               />
             </div>
